@@ -1,0 +1,121 @@
+#background{
+    display: -webkit-flex;
+    color: #fff;
+    background-color: #00c6ff;
+    padding: 60px 0;
+}
+h1{
+    color: #00c6ff;
+    font-size: 2.5vw;
+    text-align: center;
+    
+    
+    margin-bottom: 20px;
+    margin-top: 140px;
+}
+label{
+    font-family: 'Montserrat', sans-serif;
+    color: #00c6ff;
+    font-size: 1vw;
+    line-height: 1;
+    font-weight:500;
+    text-align: left;
+}
+input{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 1vw;
+    line-height: 1;
+    font-weight:500;
+    text-align: left;
+    color: #00c6ff;
+}
+.buttons{
+    margin-top: 1vw;
+    text-align: center;
+    margin-bottom: 3vw;
+}
+.submit_button button{
+    background-color: #00c6ff;
+    color: rgba(255,255,255,1);
+    border: none;
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: 500;
+    line-height: 0.5vw;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
+    min-width: 70px;
+    min-height: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.cancel button{
+    cursor: pointer;
+    background-color: #00c6ff;
+    color: rgba(255,255,255,1);
+    border: none;
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: 500;
+    line-height: 0.5vw;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
+    min-width: 70px;
+    min-height: 20px;
+}
+.table_inputs input {
+    border: 1px solid #00c6ff;
+    width: 257px;
+    height: 4px;
+    border-radius: 20px;
+    padding: 9px;
+    background-color: transparent;
+    padding: 17px 12px;
+    font-size: 20px;
+}
+input:focus{
+    outline: none;
+}
+.button{
+    background-color: #fff;
+    cursor: pointer;
+    color: #00c6ff;
+    border: solid 1px #00c6ff;
+    font-size: 25px;
+    padding: 6px 20px;
+}
+.file_upload input[type=file]{
+    position: absolute;
+    width: 1%;
+    height: 1%;
+    -ms-transform: scale(20);
+    opacity: 0;
+}
+.change input{
+    background-color: #00c6ff;
+    color: rgba(255,255,255,1);
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    padding: 17px 18px;
+    border-radius: 25px;
+    line-height: 0.6vw;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
+    margin-top: 1vw;
+}
+@media screen and (max-width: 1400px){
+    .h1{
+        font-size: 40px;
+    }
+    .table_inputs label{
+        font-size: 15px;
+    }
+}

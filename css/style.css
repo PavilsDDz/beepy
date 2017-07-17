@@ -1,0 +1,781 @@
+html {
+	overflow-x: hidden;
+}
+body{
+	
+	background-color: white;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;  
+	overflow-x: hidden;
+}
+a {
+	text-decoration: none;
+	color:inherit;
+}
+p {
+	font-family: 'Montserrat', sans-serif;
+	color: #555;
+	font-size: 1.1vw;
+	font-weight:500;
+	text-align: justify;
+}
+h2 {
+	font-size: 5.5vw;
+	font-family: 'Montserrat', sans-serif;
+	color: #ffffff;
+	font-weight:600;
+}
+h3 {
+	font-family: 'Montserrat', sans-serif;
+	color: #699adc;
+	font-size: 1.7vw;
+	font-weight:600;
+}
+h4 {
+	font-family: 'Montserrat', sans-serif;
+	color: #b6b6b6;
+	font-size: 3vw;
+	font-weight:600;
+}
+
+#car_info_block {
+	display: flex;
+	justify-content: center;
+}
+#fixed{
+	position:absolut;
+}
+
+/*id*/
+#header{ 
+    background-image:  url("../img/background.jpg");  
+	background-size: cover;
+	background-position: center center;
+    background-repeat: no-repeat;
+	
+	position: relative;
+	
+	
+	display: flex;
+	flex-direction: column;
+}
+#chooseabrand{
+	z-index: 2;
+	position: relative;
+	height: 9vw;
+}
+#findcarforyou{
+	background-image:  url("../img/background2.jpg"); 
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 95vw;
+	position: relative;
+}
+#table_about_cars{
+	z-index: 2;
+	position: relative;
+	height: 17vw;
+}
+#beepylogo{
+	background-image:  url("../img/background3.jpg"); 
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 75vw;
+	position: relative;
+}
+#blog{
+	z-index: 2;
+	position: relative;
+}
+/* first block*/
+
+.signup_form {
+	position: relative;
+	
+	background-color: rgba(255,255,255,0.8);
+	
+	
+	
+
+	border-radius: 15px;
+}
+.signup_form label {
+	color:#0079a2 ;
+} 
+#second_form form {
+	flex-direction: column;
+	box-sizing: border-box;
+
+	padding: 20px;
+
+
+}
+.signup_form input {
+	width: 100%;
+}
+#error {
+	position: absolute;
+}
+.fb_link {
+	font-size: 0.8em;
+	margin-top: 10px;
+	color: #005a78;
+
+}
+.add_banner {
+	width: 100%;
+	background-color: rgba(255,255,255,0.8);
+	margin-top: 8vw;
+}
+.post_wrap_link {
+	width: 25%;
+	position: relative;
+}
+.post_wrap {
+	
+	height: 300px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	flex-direction: column;
+	justify-content: flex-end;
+
+}
+.post_info{
+	position: relative;
+	z-index: 10;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	justify-content: center;
+	-webkit-justify-content: center;
+	height: 100%;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+
+}
+.post_brnd_price {
+	
+	text-align: right;
+	margin: 0;
+	height: 50px;
+	line-height: 50px;
+	background: rgba(255,255,255,0.8); 
+
+
+}
+.post_brnd_price h3 {
+	font-size: 1.6em;
+	margin: 0;
+	height: 50px;
+	line-height: 50px;
+	color: #444;
+	text-align: center;
+	
+	white-space: nowrap;
+}
+.post_brand {
+	
+	font-size:1em;
+	margin: 0;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+}
+.model {
+	
+	
+	
+	background: rgba(255,255,255,0.8); 
+	 
+	box-sizing: border-box;
+	padding: 0 10px;
+}
+
+.model p {
+	margin: 0;
+	color: #444;
+	line-height: 35px;
+	height: 35px; 
+	width: 50%;
+}
+.model p:nth-child(1){
+	text-align: right;
+	padding:  0 5px 0 0;
+}
+.model p:nth-child(2){
+	padding: 0 0 0 5px;
+
+}
+.model b {
+	font-weight: inherit;
+	font-size: 0.8em;
+}
+.background_grad {
+	position: absolute;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	background: rgba(255,255,255,0.8); 
+    background: -webkit-linear-gradient(rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,1)); 
+    background: -o-linear-gradient(rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,1)); 
+    background: -moz-linear-gradient(rgba(255,255,255,0) 1%,rgba(255,255,255,0.6)30%,rgba(255,255,255,1)); 
+    
+    display:none;background: linear-gradient(rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,1)); 
+}
+.header_forms {
+	width: 50%;
+	position: relative;
+	margin: auto;
+	margin-top: 50px;
+	justify-content: center;
+	-webkit-justify-content: center;
+}
+.small_search {
+
+	width: 70%;
+	box-sizing: border-box;
+	background-color: rgba(0,190,255,1);
+	color: #fff;
+	padding: 20px 40px;
+	border-radius: 15px;
+}
+.search_top {
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+}
+.search_top .select_input {
+	width: 30%
+}
+.submit_search {
+	background-color: #fff;
+	
+	padding: 7px 15px;
+	border-radius: 40px;
+	font-size: 1.3em;
+	color: #00c6ff;
+	border: none;
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
+}
+.groupLabel  {
+	justify-content: center;
+	-webkit-justify-content: center;
+	margin: 5px;
+}
+.range_select  .middle {
+	width: 19%;
+	justify-content: space-between;
+	white-space: nowrap;
+	box-sizing: border-box;
+	padding: 0 1%;
+
+}
+.range_select  .inputs {
+	justify-content: center;
+	-webkit-justify-content: center;
+	position: relative;
+}
+.range_select  .inputs input {
+	width: 27%;
+	background-color: rgba(255,255,255,0.8);
+	border: none;
+}
+.range_select .left {
+	position: absolute;
+	right: 91%;
+}
+.range_select .right {
+	position: absolute;
+	left: 90%;
+}
+#submit {
+	width: 100%;
+	justify-content:center;	
+	-webkit-justify-content:center;	
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+}
+.signup_submit {
+	background-color: #00c6ff;
+	padding: 7px 15px;
+	border-radius: 40px;
+	font-size: 1em;
+	color: #fff;
+	border: none;
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
+	width: 80px !important;
+}
+.signup_submit:focus {
+	outline: none;
+}
+
+.slider {
+	margin: 15px 0;
+}
+.search_top .select_input label {
+	display: block
+}
+.search_top .select_input select {
+	width: 100%;
+	background-color: rgba(255,255,255,0.8);
+}
+/*background cuttings*/
+.cut{
+	position: absolute;
+	bottom: -94vw;
+	width: 150%;
+	transform: rotate(7deg);
+	height: 100vw;
+	left: -25%;
+	background-color: #fff;
+}
+.cut2{
+	position: absolute;
+	bottom: -94vw;
+	width: 150%;
+	transform: rotate(7deg);
+	height: 100vw;
+	left: -25%;
+	background-color: #fff;
+}
+.cut3{
+	position: absolute;
+	bottom: -30vw;
+	width: 150%;
+	transform: rotate(7deg);
+	height: 36vw;
+	left: -25%;
+	background-color: #fff;	
+}
+
+/*tables*/
+.first_tablecars{
+	width: 80%;
+	margin-bottom: 1vw;
+	border-spacing: 0vw 2vw;
+	margin: auto;
+    max-width: 1400px;
+}
+.first_tablecars th{
+	width: 30%;
+	position: relative;
+}
+.first_tablecars .text_wrap th, .first_tablecars .img_wrap th {
+	box-sizing: border-box;
+	padding: 0 4%;
+}
+.first_tablecars .img_cont {
+	width:100%;
+	padding-bottom: 100%;
+	position: relative
+}
+.first_tablecars th img {
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:auto;
+}
+
+.second_tablecars{
+	width: 90%;
+	margin-bottom: 8em;
+	border-spacing: 28px;
+}
+.second_tablecars th{
+	width: 30%;
+	position: relative;
+}
+.second_tablecars .text_wrap2 th, .second_tablecars .img_wrap2 th {
+	box-sizing: border-box;
+	padding: 0 0.2%;
+}
+.second_tablecars .img_cont2 {
+	width:100%;
+	padding-bottom: 85%;
+	position: relative
+}
+.second_tablecars th img {
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:auto;
+}
+
+
+/*margins, styles, positions*/
+    .margins{
+		margin-bottom: 3em;
+   } 
+    .findcar{
+		text-align: center;
+		position: relative;
+	}
+    .findcarlogo{
+		text-align: left;
+		bottom: -55%;
+		right: -28%;
+		position: relative;
+   }
+    .findcarlogo {
+	   display: inline-block
+   }
+    .textundercars{
+		float: left;
+		margin-bottom: 33em;
+   }   
+	.textundercars1{
+		float: left;
+		margin-bottom: 20em;
+		text-align: right;
+   }
+    .beepylogo{
+		text-align: right;
+		position: relative;
+		right: 10%;
+		bottom: -75%;	
+   }
+   .beepylogo p {
+   		text-align: right;
+   		font-size: 18px;
+   		color: #fff;
+   }
+   .beepylogo h2 {
+   		margin-bottom: 0;
+   } 
+    .blog{
+		margin-bottom: 2em;
+		text-align: center;
+   }
+    .image_margin{
+		padding: 30px;
+		text-align: center;
+   }
+    .footerstyle{
+		text-align: center;
+   }
+    .logostylefooter{
+		margin-top: 0em;
+   }
+	.header_content{
+		margin-top: 8vw;
+	}
+	
+    
+/*text styles*/
+   .contacts_content_style{
+		font-family: 'Montserrat', sans-serif;
+		color: #2f518e;
+		font-size: 1.6vw;
+		font-weight:600;
+   }
+   .bottom_text_style{
+		font-family: 'Montserrat', sans-serif;
+		color: #1b2a4c;
+		font-size: 1.6vw;
+		position: absolute;
+		top: 0;
+		margin-top: 0;
+		justify-content: flex-end;
+   }
+
+/*buttons*/
+	.button_search_new, .button_search_used{
+		display: inline-block;
+		width: 48%;
+   }
+    .button_search_new {
+	   position: absolute;
+	   left: 0;
+	   top: 0;
+   }
+    .button_search_used{
+	   position: absolute;
+	   right: 0;
+	   top: 0;
+   }
+	.button_search_new button{
+		 background-color: #47b3ff;
+		 color:rgba(255,255,255,1);
+		 border: none;
+		 font-size: 1.3em;
+		 height: 50px;
+		 width: 100%;
+		 padding: 8px 10px;
+		 border-radius: 23px;
+		 font-weight: 600;
+		 line-height: 0.8em;
+		 font-family: 'Montserrat', sans-serif;
+		 opacity: 0.9;
+   }
+   	.button_search_used button{
+		 background-color: #ffaf47;
+		 color:rgba(255,255,255,1);
+		 border: none;
+		 font-size: 1.3em;
+		 height: 50px;
+		 width: 100%;
+		 padding: 8px 10px;
+		 border-radius: 23px;
+		 font-weight: 600;
+		 line-height: 0.8em;
+		 font-family: 'Montserrat', sans-serif;
+		 opacity: 0.9;
+   }
+    .search_buttons{
+		 width: 60%;
+	  	 max-width: 500px;
+		 margin: auto;
+		 position: relative;
+}
+  
+/*links*/
+
+	.bottomlinks{
+		 font-family: 'Montserrat', sans-serif;
+		 color: #182448;
+		 line-height: 1.5vw;
+		 font-size: 1.5vw;
+		 text-align: left;
+		 padding: 0;
+		 margin-top: 0;
+		 list-style:none;
+		 font-weight: bold;
+	}
+	.bottomlinks li {
+		list-style: none;
+		margin-bottom: 8%;
+	}
+	
+/*form*/
+	.header_form{
+	   width: 60%;
+	   padding: 12px 0;
+	   background-color: rgba(200, 200, 200, 0.8);
+	   margin: auto;
+	   border-radius: 22px;
+	   margin-top: 10px;
+	   margin-bottom: 20px;
+	   max-width: 500px;
+   }
+    .header_form input{
+	   height: 20px;
+	   width: 100%;
+	   box-sizing: border-box;
+	   padding: 0 20px;
+	   background-color: rgba(0, 0, 0, 0);
+	   border: none;
+	   font-size: 1.2em;
+	   font-family: 'Montserrat', sans-serif;
+	   font-style: italic;
+   }
+    .header_form input:focus{
+	   outline: none;
+   }
+
+ /*car logos*/
+    .wrap{
+		width:60%;
+		flex-wrap:wrap;
+		margin: auto;
+		}
+		.logo {
+		width:14%;
+		padding-top:14%;
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		opacity: 0.5;
+		margin: 1%;
+		display: inline-block;
+		transition: all ease 0.3s;
+		background-color: rgba(0,0,0,0);
+		border: none;
+		color: rgba(0,0,0,0);
+		}
+
+		.volvo{
+			background-image:url(../logos/volvo_g.png)
+		}
+		.volvo:hover {
+			background-image:url(../logos/volvo.png);
+			opacity:1;
+		}
+		.mazda{
+			background-image:url(../logos/mazda_g.png)
+		}
+		.mazda:hover {
+			background-image:url(../logos/mazda.png);
+			opacity:1;
+		}
+		.opel{
+			background-image:url(../logos/opel_g.png)
+		}
+		.opel:hover {
+			background-image:url(../logos/opel.png);
+			opacity:1;
+		}
+		.hyundai{
+			background-image:url(../logos/hyundai_g.png)
+		}
+		.hyundai:hover {
+			background-image:url(../logos/hyundai.png);
+			opacity:1;
+		}
+		.mercedes{
+			background-image:url(../logos/mercedes_benz_g.png)
+		}
+		.mercedes:hover {
+			background-image:url(../logos/mercedes_benz.png);
+			opacity:1;
+		}
+		.bmw{
+			background-image:url(../logos/bmw_g.png)
+		}
+		.bmw:hover {
+			background-image:url(../logos/bmw.png);
+			opacity:1;
+		}
+		.lexus{
+			background-image:url(../logos/lexus_g.png)
+		}
+		.lexus:hover {
+			background-image:url(../logos/lexus.png);
+			opacity:1;
+		}
+		.kia{
+			background-image:url(../logos/kia_g.png)
+		}
+		.kia:hover {
+			background-image:url(../logos/kia.png);
+			opacity:1;
+		}
+		.landrover{
+			background-image:url(../logos/land_rover_g.png)
+		}
+		.landrover:hover {
+			background-image:url(../logos/land_rover.png);
+			opacity:1;
+		}
+		.porsche{
+			background-image:url(../logos/porsche_g.png)
+		}
+		.porsche:hover {
+			background-image:url(../logos/porsche.png);
+			opacity:1;
+		}
+		.audi{
+			background-image:url(../logos/audi_g.png)
+		}
+		.audi:hover {
+			background-image:url(../logos/audi.png);
+			opacity:1;
+		}
+		.jaguar{
+			background-image:url(../logos/jaguar_g.png)
+		}
+		.jaguar:hover {
+			background-image:url(../logos/jaguar.png);
+			opacity:1;
+		}
+		.volkswagen{
+			background-image:url(../logos/volkswagen_g.png)
+		}
+		.volkswagen:hover {
+			background-image:url(../logos/volkswagen.png);
+			opacity:1;
+		}
+		.ford{
+			background-image:url(../logos/ford_g.png)
+		}
+		.ford:hover {
+			background-image:url(../logos/ford.png);
+			opacity:1;
+		}
+		.honda{
+			background-image:url(../logos/honda_g.png)
+		}
+		.honda:hover {
+			background-image:url(../logos/honda.png);
+			opacity:1;
+		}
+		.subaru{
+			background-image:url(../logos/subaru_g.png)
+		}
+		.subaru:hover {
+			background-image:url(../logos/subaru.png);
+			opacity:1;
+		}
+		.mitsubishi{
+			background-image:url(../logos/mitsubishi_g.png)
+		}
+		.mitsubishi:hover {
+			background-image:url(../logos/mitsubishi.png);
+			opacity:1;
+		}
+		.peugeot{
+			background-image:url(../logos/peugeot_g.png)
+		}
+		.peugeot:hover {
+			background-image:url(../logos/peugeot.png);
+			opacity:1;
+		}
+		.nissan{
+			background-image:url(../logos/nissan_g.png)
+		}
+		.nissan:hover {
+			background-image:url(../logos/nissan.png);
+			opacity:1;
+		}
+		.tesla{
+			background-image:url(../logos/tesla_g.png)
+		}
+		.tesla:hover {
+			background-image:url(../logos/tesla.png);
+			opacity:1;
+		}
+		
+@media screen and (max-width: 1400px){
+	.text_under_cars {
+		font-size: 1em;
+		text-align:center;
+	}
+	.text_under_cars2 {
+		font-size: 1em;
+		text-align:center;
+	}
+	.text_under_cars_caption{
+		font-size: 1.3em;
+		text-align:center;		
+	}
+	.text_under_cars_caption2{
+		font-size: 1.3em;
+		text-align:center;		
+	}
+	.contacts_content_style{
+		font-size: 1.2em;
+	}
+	.bottom_text_style{
+		font-size: 1em;
+	}
+	.bottomlinks{
+		font-size: 1em;
+	}
+	.choose_style{
+		font-size: 1.8em;
+	}
+	.blog_style{
+		font-size: 1.8em;
+	}
+	.links{
+		font-size: 1.2em;
+	}
+	.header_logo{
+		width: 1000px;;
+	}
+}

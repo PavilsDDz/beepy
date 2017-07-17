@@ -1,0 +1,160 @@
+.compare_view{
+	width: 90%;
+	position: relative;
+	margin: auto;
+	margin-top: 130px;
+}
+.properites {
+	width: 16%;
+
+}
+.back {
+	padding-top: 15vw;
+	border-bottom: solid #fff 2px; 
+
+
+
+}
+.properites p {
+	text-align: right;
+}
+.properites_list {
+	
+	box-sizing: border-box;
+	padding-right: 15px;
+
+}
+.stats p, .properites p {
+	margin: 0;
+	line-height: 35px;
+	height: 35px;
+	font-size: 1.2em;
+	color: #00c6ff;
+
+}
+.cars_wrap{
+	width: 84%;
+	position: relative;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+}
+.eqip {
+	width: 100%;
+}
+.single_car_eqip {
+	width: calc(100% / 3);
+}
+.car_overview {
+	width: calc(100% / 3);
+}
+.slingle_stuff {
+	width: 100%;
+	position: relative;
+	height: 30px;
+	border-bottom: solid 1px rgba(0,0,0,0.2);
+	box-sizing: border-box;
+}
+.slingle_stuff .thing {
+	position: absolute;
+	right: calc(100% + 15px);
+	height: 30px;
+	line-height: 30px;
+	margin:0;
+	top: 0;
+	text-align: right;
+	color: #00c6ff;
+	font-size: 0.9em;
+}
+.stuff_in_eqip {
+	margin: 10px 0;
+	border-top: solid 1px rgba(0,0,0,0.2);
+
+}
+.slingle_stuff .checked {
+	width: calc(100% / 3);
+	justify-content: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-webkit-align-items: center;
+}
+.check {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-image: url(../img/check.png);
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+
+}
+.imgs {
+	position: relative;
+	padding-top: 15vw;
+	border-right: solid #fff 2px; 
+	border-left: solid #fff 2px; 
+	border-bottom: solid #fff 2px; 
+	box-sizing: border-box;
+	
+}
+.img {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.title{
+	color: #fff;
+	background: #00c6ff;
+	margin: 0;
+	height: 40px !important;
+	line-height: 40px;
+	font-weight: 500;
+	font-size: 1.3em;
+	text-align: center;
+}
+.next, .prev {
+	z-index: 2;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	width: 30%;
+	
+	cursor: pointer;
+}
+.prev {
+	left: 0;
+}
+.next {
+	right: 0;
+}
+.stats {
+	border-top: solid 1px rgba(0,0,0,0.3);
+
+}
+.stats p {
+	text-align: center;
+	box-sizing: border-box;
+	border: solid 1px rgba(0,0,0,0.3);
+	border-top: none;
+
+
+}
+.first .stats p {
+	border-right: none;
+}
+.first .imgs {
+	border-right: none; 
+	border-left: none; 
+}
+.last .stats p {
+	border-left: none;
+}
+.last .imgs {
+	border-right: none; 
+	border-left: none;
+}

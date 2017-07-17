@@ -1,0 +1,213 @@
+html {
+	overflow-x: hidden;
+}
+body{
+	
+	background-color: white;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;  
+}
+p{
+	font-family: 'Montserrat', sans-serif;
+
+}
+h3{
+	font-family: 'Montserrat', sans-serif;
+	color: #00c6ff;
+	font-size: 20px;
+	font-weight:600;
+	text-align: left;
+}
+select{
+	width: 172px;
+}
+.container span, label, .img_inline_down{
+	font-family: 'Montserrat', sans-serif;
+	color: #00c6ff;
+	font-size: 18px;
+	line-height: 0.5;
+	font-weight:500;
+	text-align: center;
+}
+#background{
+	display: -webkit-flex;
+    color: #fff;
+    background-color: #00c6ff;
+    padding: 60px 0;
+}
+#error{
+	margin-top: 140px;
+	font-family: 'Montserrat', sans-serif;
+    color: #00c6ff;
+    font-size: 20px;
+    font-weight: 600;
+	padding-bottom: 1vw;
+	text-align: center;
+}
+.carType label{
+	font-family: 'Montserrat', sans-serif;
+	color: grey;
+	font-size: 12px;
+	line-height: 0.5;
+	font-weight:500;
+	text-align: center;
+}
+
+
+
+.carType input[type=checkbox] {
+	visibility: hidden;
+}
+#brand label{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	transition: all .5s ease;
+	cursor: pointer;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.5;
+}
+.carType label {
+	display: inline-block;
+	width: 60px;
+	padding-top: 60px;
+	transition: all .5s ease;
+	cursor: pointer;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.5;
+	margin-bottom: 2vw;
+}
+.additional_checkbox_inline {
+	margin-top: 40px;
+}
+.additional_checkbox_inline th{
+	    font-family: 'Montserrat', sans-serif;
+    color: #00c6ff;
+    font-size: 14px;
+    line-height: 0.5;
+    font-weight: 500;
+    text-align: center;
+}
+#label_coupe {
+	background-image: url(../img/car_types/coupe_g.png);
+}
+#label_minivan {
+	background-image: url(../img/car_types/minivan_g.png);
+}
+#label_pickup {
+	background-image: url(../img/car_types/pickup_g.png);
+}
+#label_sedan {
+	background-image: url(../img/car_types/sedan_g.png);
+}
+#label_unversal {
+	background-image: url(../img/car_types/unversal_g.png);
+}
+#label_offroad {
+	background-image: url(../img/car_types/offroad_g.png);
+}
+#label_sport {
+	background-image: url(../img/car_types/sport_g.png);
+}
+#label_van {
+	background-image: url(../img/car_types/van_g.png);
+}
+#label_hatchback {
+	background-image: url(../img/car_types/hatchback_g.png);
+}
+#label_other {
+	background-image: url(../img/car_types/other_g.png);
+}
+.carType input[type=checkbox]:checked + #label_coupe{
+	background-image: url(../img/car_types/coupe.png) !important;
+}
+.carType input[type=checkbox]:checked + #label_minivan{
+	background-image: url(../img/car_types/minivan.png) !important;
+}
+.carType input[type=checkbox]:checked + #label_pickup{
+	background-image: url(../img/car_types/pickup.png) !important;
+}
+.carType input[type=checkbox]:checked + #label_sedan{
+	background-image: url(../img/car_types/sedan.png) !important;
+}
+.carType input[type=checkbox]:checked + #label_unversal{
+	background-image: url(../img/car_types/unversal.png) !important;
+}
+.carType input[type=checkbox]:checked + #label_offroad{
+	background-image: url(../img/car_types/offroad.png) !important;
+}
+.carType input[type=checkbox]:checked + #label_sport{
+	background-image: url(../img/car_types/sport.png) !important;
+}
+.carType input[type=checkbox]:checked + #label_van{
+	background-image: url(../img/car_types/van.png) !important;
+}
+.carType input[type=checkbox]:checked + #label_hatchback{
+	background-image: url(../img/car_types/hatchback.png) !important;
+}
+.carType input[type=checkbox]:checked + #label_other{
+	background-image: url(../img/car_types/other.png) !important;
+}
+.range_select {
+	width: 20%;
+	position: relative;
+}
+.range_select input {
+	width: 30%;
+}
+
+
+.table th{
+	width: 27%;
+	position: relative;
+	vertical-align: top;
+	padding: 10px;
+}
+
+
+.img_inline_down{
+	width:50%;
+	flex-wrap:wrap;
+	margin: auto;
+	text-align: center;
+}
+
+.information_about tr{
+	height: 1.5vw;
+}
+.information_about td{
+	padding-right: 20px;
+}
+
+.submit_button button{
+	background-color: #00c6ff;
+    color: rgba(255,255,255,1);
+    border: none;
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: 500;
+    line-height: 0.5vw;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
+    min-width: 70px;
+    min-height: 20px;
+}
+.submit_button{
+	margin-bottom: 2vw;
+}
+.additional_checkbox_inline th{
+	text-align:left;
+}
+.additional_checkbox_inline label{
+	font-size: 12px;
+}
+.img_inline_down{
+	margin-top: 2vw;
+}
