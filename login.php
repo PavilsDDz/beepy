@@ -1,6 +1,62 @@
 <?php
 include ('assets/connect.php');
 include('assets/setup.php');
+
+    $texts = [];
+
+    $texts['lv'] = [];
+    $texts['en'] = [];
+    $texts['ru'] = [];
+
+    $texts['lv']['hello'] = 'Sveiki.';
+
+    $texts['lv']['signup_f'] = 'Ieiet caur FACEBOOK';
+    $texts['lv']['uname'] = 'Lietotājs';
+    $texts['lv']['pass'] = 'Parole';
+    $texts['lv']['reg'] = 'Reģistrēties';
+
+    $texts['lv']['succErr'] = 'Jūs esat veiksmīgi piereģistrējies!';
+
+    $texts['lv']['lgin'] = 'Ieiet';
+
+    $texts['lv']['mem'] = 'Jūs neesat reģistrējies';
+    
+    $texts['lv']['erre'] = 'Mēģiniet vēlreiz vai reģistrējaties';
+
+// ------------------------------------------------------>
+
+    $texts['en']['hello'] = 'Hello.';
+
+    $texts['en']['signup_f'] = 'Sing Up with FACEBOOK';
+    $texts['en']['uname'] = 'User Name';
+    $texts['en']['email'] = 'E-mail';
+    $texts['en']['pass'] = 'password';
+    $texts['en']['reg'] = 'Register';
+
+    $texts['en']['succErr'] = 'You are successfully registered!';
+
+    $texts['en']['lgin'] = 'Login';
+
+    $texts['en']['mem'] = 'Not a member';
+
+    $texts['en']['erre'] = 'Re-try or Singin';
+// --------------------------------------------------------->
+    $texts['ru']['hello'] = 'Привет.';
+
+    $texts['ru']['signup_f'] = 'Вход чериз FACEBOOK';
+    $texts['ru']['uname'] = 'Пользователь';
+    $texts['ru']['pass'] = 'Пароль';
+
+    $texts['ru']['reg'] = 'Зарегистрироватся';
+
+    $texts['ru']['succErr'] = 'Вы успешно зарегистрированы!';
+
+    $texts['ru']['lgin'] = 'Bойти';
+
+    $texts['ru']['mem'] = 'Вы не зарегистрированы';
+
+    $texts['ru']['erre'] = 'попробуйте еще раз или зарегистрируйтесь';
+
 require_once __DIR__ . '/assets/Facebook/autoload.php';
 $fb = new \Facebook\Facebook([
   'app_id' => '1909014619367137',
@@ -47,10 +103,10 @@ function dumpAndDie($data) {
                     }
                    
             }else{
-                echo "Re-try or Singin";
+                echo $texts[$lang]['erre'];
             }
         }else{
-           echo "Re-try or Singin";
+           echo $texts[$lang]['erre'];
         }
     }
 ?>
@@ -266,15 +322,15 @@ input {
 			<?php include 'assets/menu_block.php'; ?>
             
                 <div class="hello_style">
-                    <h1>Hello.</h1>
+                    <h1><?php echo $texts[$lang]['hello'] ?></h1>
                 </div>
                 
                 
                 
                 <form class="forms" action="login.php<?php if (isset($_GET['dir'])&&$_GET['dir']=='sell') {echo"?dir=sell";} ?>" method="POST">
-                <p class="borders">username: <input type="text" name="username" class="inputs_style"/></p><br>
-                <p class="borders" >password: <input type="password" name="password" class="inputs_style"/></p>
-                <button class="button_two">Login</button>
+                <p class="borders"><?php echo $texts[$lang]['uname'] ?><input type="text" name="username" class="inputs_style"/></p><br>
+                <p class="borders" ><?php echo $texts[$lang]['pass'] ?><input type="password" name="password" class="inputs_style"/></p>
+                <button class="button_two"><?php echo $texts[$lang]['lgin'] ?></button>
 
                 </form>
 
@@ -292,11 +348,11 @@ input {
                 
             </script>
                         
-                         <a class="fb_link" onclick="fbclick()">Login with Facebook</a>
+                         <a class="fb_link" onclick="fbclick()"><?php echo $texts[$lang]['signup_f'] ?></a>
                     </li>
                     <li class="borders">
-                        <span href="">Not a member</span>
-                        <a href="signup.php" class="sign_in"><button type="button">Sign up</button></a>
+                        <span href=""><?php echo $texts[$lang]['mem'] ?></span>
+                        <a href="signup.php" class="sign_in"><button type="button"><?php echo $texts[$lang]['reg'] ?></button></a>
                         
                     </li>
                     </ul>
