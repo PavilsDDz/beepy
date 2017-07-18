@@ -155,7 +155,7 @@ iframe {
 		height: 45vw;
 	}
 	.hidden_h1{
-		display:block;
+		display: flow-root;
 		text-align: center;
 	}
 	.hidden_h1 h1{

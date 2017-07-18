@@ -73,8 +73,8 @@ body{
     margin: 0;
     padding: 0;
     overflow: hidden;
-      height: 100%;
-    width:100%;
+	width: 100%;
+	height: 100%;
 }
 .content_container {
     height: 100%;
@@ -112,8 +112,8 @@ input {
     border-top: none;
     border-bottom: 1px solid rgb(203,210,223);
     font-size: 1vw;
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: rgba(255,255,255,0.8) !important;
+    background-color: rgba(255,255,255,0) !important;
+	color: white;
 }
 input:focus{
     outline: none;
@@ -129,12 +129,9 @@ input:focus{
     width: 100%;
     position: relative;
     padding-top: 30px;
-    
     display: flex;
     flex-direction: column;
 }
-
-
 .hello_style{
     position: relative;
     left: 18vw;
@@ -143,8 +140,7 @@ input:focus{
     line-height: 1vw;
     color: white;
     font-size: 1vw;
-    font-weight:300;
-    
+    font-weight:300; 
     margin: 5px;
 }
 .forms{
@@ -160,8 +156,6 @@ input:focus{
     height: 30px;
     width: 75px;
     border-radius: 15px;
-
-
 }
 .links_under_forms{
     position: relative;
@@ -176,16 +170,10 @@ input:focus{
     color: rgba(255,255,255,1);
     border: none;
     font-size: 1vw;
-
     padding: 0 19px;
     height: 30px;
-
     border-radius: 15px;
-   
-    
-
     font-family: 'Montserrat', sans-serif;
-    
 }
 button:focus{
     outline:none;
@@ -211,6 +199,62 @@ button:focus{
     width: 78px;
     }
 }
+.menu{display: none;}
+@media screen and (max-width: 800px){
+body{
+	width: auto;
+    height: auto;
+	}
+#header{
+	background-position: 55% 10%;
+	padding-top: 0;
+	height: 200vw;
+}
+.hello_style{
+    position: relative;
+    left: 0vw;
+	text-align: center;
+}
+.hello_style h1 {
+    font-size: 8em;
+}
+.forms {
+    text-align: center;
+    position: relative;
+    top: 0vw;
+    right: 0vw;
+    margin: 0;
+	margin-bottom: 100px;
+}
+.forms p {
+    font-size: 23px;
+    padding: 3px;
+}
+input {
+    font-size: 20px;
+}
+.forms button {
+    height: 40px;
+    width: 180px;
+    border-radius: 30px;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+.links_under_forms {
+    position: relative;
+    top: 0;
+    text-align: center;
+    left: 0;
+}
+.sign_in button {
+    height: 40px;
+    width: 180px;
+    border-radius: 30px;
+    font-size: 22px;
+	margin-top: 20px;
+}
+}
 </style>
 </head>
 
@@ -219,6 +263,7 @@ button:focus{
 
         <div id="header">
             <?php include"assets/header.php" ?>
+			<?php include 'assets/menu_block.php'; ?>
             
                 <div class="hello_style">
                     <h1>Hello.</h1>
@@ -258,6 +303,7 @@ button:focus{
                 </div>
             
         </div>
+
 </div>
 </body>
 </html>
