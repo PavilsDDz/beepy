@@ -34,7 +34,6 @@ li, ul{
     display: flex;
     position: absolute;
     z-index: 2;
-    /* left: 85vw; */
     right: 10px;
     top: 30px;
 }
@@ -73,11 +72,11 @@ li, ul{
 }
 .wrapp {
     display: flex;
-    padding-left: 10vw;
+    padding-left: 13vw;
     padding-top: 10vw;
 }
 .text{
-	padding: 2vw;
+	padding: 1vw;
     text-align: center;
 }
 .text a{
@@ -86,6 +85,12 @@ li, ul{
 	font-weight: 600;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 3.2vw;
+}
+.wrapp button{
+	border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 4vw;
 }
 }
 </style>
@@ -103,23 +108,46 @@ li, ul{
 				<li><a href="login.php"><?php echo $texts_haeder[$lang]['login'] ?></a></li>
 			</ul>
 			
-			<div class="wrapp">
+			<form class="wrapp" action="" method="GET">
+			
+				
+				<?php if ($lang!= 'en') {?>
+				
 				<div class="color column">
 					<div class="text">
-						<a>EN</a>
+						<button type="submit" name="lang" value="en">EN</button>
 					</div>
 				</div>
+				
+				
+				
+				<?php } ?>
+				<?php if ($lang!= 'lv') {?>
+				
 				<div class="color column">
 					<div class="text">
-						<a>LV</a>
+						<button type="submit" name="lang" value="lv">LV</button>
 					</div>
 				</div>
+				
+				<?php } ?>
+				
+				<?php if ($lang!= 'ru') {?>
+				
 				<div class="color column">
 					<div class="text">
-						<a>RU</a>
+						<button type="submit" name="lang" value="ru">RU</button>
 					</div>
 				</div>
-			</div>
+				
+				<?php } ?>
+				
+				<?php if (isset($_GET['id'])&&!empty($_GET['id'])) { ?>
+					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+				<?php } ?>
+				
+				
+			</form>
 			
 		</div>
 	</div>

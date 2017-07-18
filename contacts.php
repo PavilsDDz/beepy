@@ -160,7 +160,7 @@ iframe {
 	}
 	.hidden_h1 h1{
 		font-size: 10vw;
-		margin-top: 6vw;
+		margin-top: 10vw;
 		margin-bottom: 3vw;
 	}
 	.header_mobile{
