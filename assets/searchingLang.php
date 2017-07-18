@@ -413,13 +413,13 @@
 
 // lv
     $texts['lv']['text1name'] = "Viss vienuviet";
-        $texts['lv']['text4'] = "auto; moto; kravas auto; serviss. Beepy ir revolucionārs digitāls auto tirdzniecības portāls, kas saviem lietotājiem piedāvā vispilnīgāko un vieglāk saprotamo auto iegādes pieredzi Baltijā.";
+        $texts['lv']['text4'] = "Auto; moto; kravas auto; serviss. Beepy ir revolucionārs digitāls auto tirdzniecības portāls, kas saviem lietotājiem piedāvā vispilnīgāko un vieglāk saprotamo auto iegādes pieredzi Baltijā.";
 
     $texts['lv']['text2name'] = "Vienmēr saskarē ar jauno";
         $texts['lv']['text5'] = "Ar nelietoto mašīnu uzbūves tipiem iespējams iepazīties 'Auto skatē', kur demonstrēti visi portāla piedāvāto marku modeļi, ļaujot potenciālajam klientam atrast sev atbilstošāko, nepametot mājas komfortu.";
 
     $texts['lv']['text3name'] = "Jauna auto tirdzniecības sistēma";
-        $texts['lv']['text6'] = "kompānijai izanalizējot un publicējot informāciju par aktuālajiem cenu rādītājiem, nodrošināti nepieciešamie parametri godīgiem darījumiem un savstarpēja uzticība starp auto pircējiem un pārdevējiem";
+        $texts['lv']['text6'] = "Kompānijai izanalizējot un publicējot informāciju par aktuālajiem cenu rādītājiem, nodrošināti nepieciešamie parametri godīgiem darījumiem un savstarpēja uzticība starp auto pircējiem un pārdevējiem.";
 
 // en
     $texts['en']['text1name'] = "All in one-auto; motto; trucks; service.";
@@ -429,17 +429,17 @@
         $texts['en']['text5'] = "With an unused car design types you may click on 'Auto show' where are all the brand models support portal, allowing potential client find a best fit, without leaving home comfort.";
 
     $texts['en']['text3name'] = "A new car trading system";
-        $texts['en']['text6'] = "to the analysis and publication of information on the real price indicators, the necessary parameters fair transactions and mutual trust between buyers and sellers of car";
+        $texts['en']['text6'] = "To the analysis and publication of information on the real price indicators, the necessary parameters fair transactions and mutual trust between buyers and sellers of car.";
 
 //  ru
     $texts['ru']['text1name'] = "Все в одном месте";
-        $texts['ru']['text4'] = "машины; мотоциклы; грузовые автомобили; сервис. Beepy является революционным порталом в дигатальной торговле, который предлагает своим пользователям облегченное приобретение опыта в покупке автомобилей в Балтии.";
+        $texts['ru']['text4'] = "Mашины; мотоциклы; грузовые автомобили; сервис. Beepy является революционным порталом в дигатальной торговле, который предлагает своим пользователям облегченное приобретение опыта в покупке автомобилей в Балтии.";
 
     $texts['ru']['text2name'] = "Всегда соприкосновение с новым";
         $texts['ru']['text5'] = "С не используемыми типами машин можно ознакомиться 'Просмотр машин', где будут демонстрироваться все марки и модели предлагаемые порталом, позволяющего потенциальному клиенту найти себе более соответствующий автомобиль, не покидая домашний комфорт.";
 
     $texts['ru']['text3name'] = "Новая система торговли";
-        $texts['ru']['text6'] = "компании, проанализировав и публикуя информацию о самых актуальных исходя из роста цен, обеспечены необходимые параметры для честных сделок и взаимодоверия между покупателями и продавцами автомобилей";
+        $texts['ru']['text6'] = "Kомпании, проанализировав и публикуя информацию о самых актуальных исходя из роста цен, обеспечены необходимые параметры для честных сделок и взаимодоверия между покупателями и продавцами автомобилей.";
 
 
     $texts['lv']['blog'] = "Blogs";
@@ -458,7 +458,7 @@
         $texts['lv']['text2'] = "Lietotāju ērtībai pieejams “Viedais meklētājs”, kas ļauj atlasīt klientam vispiemērotākos auto modeļus, atbilstoši nepieciešamībai, vēlmēm un iespējām. Papildus piedāvāti modeļu apraksti ar iespēja tos salīdzināt.";
 
     $texts['lv']['text6name'] = "Ērtāk, Ātrāk un Vienkāršāk";
-        $texts['lv']['text3'] = "Ērtāk – online katalogs ar sadaļu katrai jauno auto markai. Iespēja prezentēt savu marku starp Latvijā vadošajiem auto dīleriem. Ātrāk – ļauj auto interesentiem nākt pie tevis. Piesaisti klientus, kas jau ir ieinteresēti auto iegādē. Vienkāršāk – ietaupi laiku un      līdzekļus savas mājas lapas administrēšanā. Izstādi piedāvājumu tam paredzētajā sagatavē un sāc tirgoties jau šodien.";
+        $texts['lv']['text3'] = "Ērtāk – online katalogs ar sadaļu katrai jauno auto markai. Iespēja prezentēt savu marku starp Latvijā vadošajiem auto dīleriem. Ātrāk – ļauj auto interesentiem nākt pie tevis. Piesaisti klientus, kas jau ir ieinteresēti auto iegādē. Vienkāršāk – ietaupi laiku un   līdzekļus savas mājas lapas administrēšanā. Izstādi piedāvājumu tam paredzētajā sagatavē un sāc tirgoties jau šodien.";
 
 // en
     $texts['en']['text4name'] = "The wider car business opportunities in Baltics";
@@ -469,20 +469,16 @@
 ";
 
     $texts['en']['text6name'] = "Comfortable, Faster, Easier";
-        $texts['en']['text3'] = "Comfortable – online catalog with each new car brand. Present your brand among the leading car dealers in Latvia.
-            Faster – allows car enthusiasts to come to you. To customers who are already interested in purchasing the car.
-            Easier – saving time and money administering your home page. The exhibition will offer in blank and begin to trade today.";
+        $texts['en']['text3'] = "Comfortable – online catalog with each new car brand. Present your brand among the leading car dealers in Latvia. Faster – allows car enthusiasts to come to you. To customers who are already interested in purchasing the car.Easier – saving time and money administering your home page. The exhibition will offer in blank and begin to trade today.";
 
 //  ru
     $texts['ru']['text4name'] = "Обширнейшие возможности авто сделок в Балтии";
-        $texts['ru']['text1'] = "машины; мотоциклы; грузовые автомобили; сервис. Beepy является революционным порталом в дигатальной торговле, который предлагает своим пользователям облегченное приобретение опыта в покупке автомобилей в Балтии.";
+        $texts['ru']['text1'] = "Mашины; мотоциклы; грузовые автомобили; сервис. Beepy является революционным порталом в дигатальной торговле, который предлагает своим пользователям облегченное приобретение опыта в покупке автомобилей в Балтии.";
 
     $texts['ru']['text5name'] = "Твой идеальный автомобиль находился на расстоянии нажатия";
         $texts['ru']['text2'] = "С не используемыми типами машин можно ознакомиться 'Просмотр машин', где будут демонстрироваться все марки и модели предлагаемые порталом, позволяющего потенциальному клиенту найти себе более соответствующий автомобиль, не покидая домашний комфорт.";
 
     $texts['ru']['text6name'] = "Гораздо удобнее, Скорее и Проще";
-        $texts['ru']['text3'] = "Гораздо удобнее – для каждой марки машины свой каталог с данным разделом. Возможность презентовать свою марку, между Латвийскими ведущими автомобильными дилерами.
-            Скорее – позволяет всем желающим автомобиля прийти к тебе. Привлечение клиентов, которые уже заинтересованы приобретением автомобиля.
-            Проще – экономь время и средства для администрирования своей домашней страницы . Выставь предложение и начинай торговаться уже сегодня.";
+        $texts['ru']['text3'] = "Гораздо удобнее – для каждой марки машины свой каталог с данным разделом. Возможность презентовать свою марку, между Латвийскими ведущими автомобильными дилерами. Скорее – позволяет всем желающим автомобиля прийти к тебе. Привлечение клиентов, которые уже заинтересованы приобретением автомобиля. Проще – экономь время и средства для администрирования своей домашней страницы. Выставь предложение и начинай торговаться уже сегодня.";
 
 ?>
