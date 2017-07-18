@@ -4,8 +4,23 @@
 	$ids;
 
 	$query = "SELECT * FROM products LIMIT 3";
-	$result = getAllDataFromDatabase($query);
 	//print_r($result);
+
+	if (isset($_GET['id'])) {
+		$ids = $_GET['id'];
+
+		$Q="SELECT * FROM products WHERE ";
+		$counter1 = 0;
+		foreach ($ids as $value) {
+			$Q = $Q.' id = '.$value;
+			if($counter1<count($ids)-1){
+				$Q .= " OR";
+			}
+		$counter1++;
+		}
+	$result = getAllDataFromDatabase($Q);
+
+	}
 
  ?>
  <!DOCTYPE html>
@@ -169,4 +184,5 @@
    	})
    })
  </script>
+ <?php echo $Q; ?>
  </html>

@@ -289,6 +289,18 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
 <?php 
     include"assets/header.php"
      ?>
+
+    <div class="compare_box">
+        <div class="compare_toggle">
+            <a>compare</a>
+        </div>
+        <div class="car flex"></div>
+        <div class="car flex"></div>
+        <div class="car flex"></div>
+        <div class="compare_link">
+            <a id="compare_link" href="">comp</a>
+        </div>
+    </div>
     <div id="header">
         
             
@@ -494,17 +506,20 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                         <?php foreach($searchStmt as $item) { ?>
                             <?php $imgLinks = explode(";", $item['photoid']); ?>
 
-                                    <a href="product.php?id=<?php echo $item['id'] ?>" target="blank">
                                     <div class="logo" >
+                                        <div class="compare_butt" info="<?php echo $item['id']; ?>" infopic="<?php echo $imgLinks[0] ?>" infomodel='<?php echo $item['model']; ?>' infobrand='<?php echo $item['brand']; ?>' infomillage='<?php echo $item['millage']; ?>' infoprice='<?php echo $item['price']; ?>'>
+                                            
+                                        </div>
                                     
                                         <div class="img"><div class="img_wrap flex"><img src="<?php echo $imgLinks[0] ?>"></div><div class="bg_cover"></div></div>
+                                        <a href="product.php?id=<?php echo $item['id'] ?>" target="blank">
                                         <div class="text" >
                                             <br><h3><?php echo $item['brand'].' '.$item['model'].' '.$item['enginecapacity'].' '.$item['year']?></h3>
                                             
                                             <p><?php echo $item['price']; ?></p>
                                         </div>
+                                        </a>
                                     </div>
-                                    </a>
 
                         <?php } ?>
                     </div>
@@ -515,6 +530,70 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
         </div>
         <?php include"assets/footer.php" ?>
 </div>
+<script type="text/javascript">
+    var visable = 0;
+    $(function(){
+        $('.compare_toggle a').click(function(){
+            if(visable==0){
+            $('.compare_butt').css('display','block');
+                visable=1
+            }else{
+                $('.compare_butt').css('display','none');
+                visable = 0
+            }
+        })
+        var counter = []
+        function upadet_link(){
+              var linkStr= "compare.php?"
+                for (var i = 0; i < counter.length; i++) {
+                    if (i==counter.length-1) {
+                        linkStr = linkStr+"id[]="+counter[i]
+                    }else{
+                        linkStr = linkStr+"id[]="+counter[i]+'&'
+                    }
+                }
+                $('#compare_link').attr('href',linkStr)
+        }
 
+        $('.compare_butt').click(function(){
+            that = $(this)
+
+            if (counter.length<3) {
+
+                id = that.attr('info')
+                millage = that.attr('infomillage')
+                brand = that.attr('infobrand')
+                model = that.attr('infomodel')
+                price = that.attr('infoprice')
+                img = that.attr('infopic')
+                counter.push(id)
+
+                upadet_link();
+                //alert(linkStr)
+
+                $('.compare_box .car:eq('+(counter.length-1)+')').append('<div class="comp_icon" style="background-image:url('+img+')"></div><div class="comp_info"></div><div class="remove_comp"></div>')
+
+
+            }
+
+
+        })
+        $('.compare_box .car').delegate($('.remove_comp'),'click',function(){
+
+            that = $(this)
+            that.html('')
+            index = that.index()
+
+            counter.splice(index-1,1)
+
+            upadet_link()
+
+            console.log(counter)
+
+        })
+
+    })
+
+</script>
 </body>
 </html>
