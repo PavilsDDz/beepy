@@ -32,7 +32,7 @@
 	$texts['ru']['adress'] = 'Улица Уденс 13,Рига,Латвия';
 	
 
-
+//heeeeeeeeeeelooooooooooooo
 
  ?>
 
