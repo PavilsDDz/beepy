@@ -305,15 +305,12 @@ $fb = new \Facebook\Facebook([
 	text-align: center;
 }
 #background{
-	display: -webkit-flex;
-    color: #fff;
-    background-color: #00c6ff;
     padding: 60px 0;
 }
 label{
 	font-family: 'Montserrat', sans-serif;
 	color: #00c6ff;
-	font-size: 1vw;
+	font-size: 22px;
 	line-height: 1;
 	font-weight:500;
 	text-align: left;
@@ -344,9 +341,9 @@ input{
 }
 #form input {
 	border: 1px solid #00c6ff;
-    width: 10vw;
-    height: 1vw;
-    border-radius: 1vw;
+    width: 250px;
+    height: 27px;
+    border-radius: 30px;
     padding: 9px;
     background-color: transparent;
 }
@@ -378,29 +375,35 @@ form #submit input{
 	background-color: #00c6ff;
     color: rgba(255,255,255,1);
     border: none;
-    font-size: 1vw;
-    height: 5%;
+    font-size: 22px;
+    height: 50px;
     width: 100%;
-    padding: 0.7vw 1.7vw;
-    border-radius: 2vw;
+        padding: 10px 20px;
+    border-radius: 30vw;
     font-weight: 500;
-    line-height: 0.5vw;
+    line-height: 2px;
     font-family: 'Montserrat', sans-serif;
     opacity: 0.8;
 }
 .fb_link {
-    position: absolute;
+    position: relative;
     top: 0;
-    left: 25%;
+    right: 25%;
     color: #00c6ff;
-
     transition: ease all 0.3s;
+	    font-size: 22px;
 }
 .fb_link:hover {
     color: #00aacc
 }
 .wraper {
     position: relative;
+}
+#submit {
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+    left: 0;
 }
 </style>
 		
