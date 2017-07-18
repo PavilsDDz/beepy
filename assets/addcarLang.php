@@ -148,11 +148,9 @@
     $texts['en']['automatic'] = 'automatic';
     $texts['en']['semi'] = 'semi';
 
-
 //  REGISTRATION NUMBER
     $texts['en']['RegNum'] = 'Registration number';
 
-    
 //  Technical Inspection:
     $texts['en']['TechnicalInsp'] = 'Technical Inspection';
 
@@ -226,10 +224,8 @@
 //  REGISTRATION NUMBER
     $texts['ru']['RegNum'] = 'Pегистрационный номер';
 
-    
 //  Technical Inspection:
     $texts['ru']['TechnicalInsp'] = 'Технический просмотр';
-
 //  INFO:
     $texts['ru']['info'] = 'Дополнительная информация';
 
@@ -239,12 +235,12 @@
 // Extras LV 
     $texts['lv']['eq'] = 'Aprīkojums';
         $texts['lv']['hyd'] = 'Stūres pastiprinātājs';
-        $texts['lv']['elBooster'] = '...';
+        $texts['lv']['elBooster'] = 'Elektroniskais pastiprinātājs';
         $texts['lv']['condit'] = 'Kondicionieris';
         $texts['lv']['clicontr'] = 'Klimatu kontrole';
-        $texts['lv']['salonFilt'] = '...';
+        $texts['lv']['salonFilt'] = 'Salona filtrs';
         $texts['lv']['onboardCom'] = 'Borta Dators';
-        $texts['lv']['tirePre'] = '..';
+        $texts['lv']['tirePre'] = 'Riepu spiediena kontroles mērītājs';
         $texts['lv']['parkSensor'] = 'Parkošanās sensori';
         $texts['lv']['rearViewCam'] = 'Atpakaļskata kamera';
 
@@ -256,10 +252,10 @@
 
 $texts['lv']['SW'] = 'Stūre';
         $texts['lv']['addsteer'] = 'Stūres pastiprinātājs';
-        $texts['lv']['eladd'] = '...';
-        $texts['lv']['multifuncwheel'] = 'Kondicionieris';
-        $texts['lv']['sportsteer'] = 'Klimatu kontrole';
-        $texts['lv']['heatedwheel'] = '...';
+        $texts['lv']['eladd'] = 'Papildus elektroniskā stūrešana';
+        $texts['lv']['multifuncwheel'] = 'Multifunkcionāla stūre';
+        $texts['lv']['sportsteer'] = 'Sporta stūre';
+        $texts['lv']['heatedwheel'] = 'Apsildāmā stūre';
 
 $texts['lv']['seats'] = 'Krēsli';
         $texts['lv']['eladdseats'] = 'Ādas salons';
@@ -270,26 +266,18 @@ $texts['lv']['seats'] = 'Krēsli';
         $texts['lv']['massageSeats'] = 'Elkoņa atbalsts';
 
 $texts['lv']['lights'] = 'Gaismas';
-        $texts['lv']['xenon'] = 'xenon';
+        $texts['lv']['xenon'] = 'Xenon';
         $texts['lv']['bixen'] = 'Bixenon';
         $texts['lv']['led'] = 'LED';
         $texts['lv']['ledbrakled'] = 'Klimatu kontrole';
         $texts['lv']['foglight'] = 'Miglas Gaismas';
         $texts['lv']['lCleaner'] = 'Lampu tīrītāji';
 
-$texts['lv']['seats'] = 'Krēsli';
-        $texts['lv']['eladdseats'] = 'Automātiski regulējami';
-        $texts['lv']['heatedSeats'] = '..';
-        $texts['lv']['sportSeats'] = 'Sporta Beņķi';
-        $texts['lv']['rec'] = 'Recaro';
-        $texts['lv']['ventSeats'] = '...';
-        $texts['lv']['massageSeats'] = '..';
-
 $texts['lv']['mirrors'] = 'Spoguļi';
         $texts['lv']['eladdmir'] = 'Automāstiski regulējami spoguļi ';
-        $texts['lv']['heatedMir'] = '..';
+        $texts['lv']['heatedMir'] = 'Apsildāmie spoguļi';
         $texts['lv']['sportaMir'] = 'Sporta Spoguļi';
-        $texts['lv']['autoBend'] = '..';
+        $texts['lv']['autoBend'] = 'Automātiskā spoguļu locīšana';
 
 $texts['lv']['safety'] = 'Drošība';
         $texts['lv']['abs'] = 'ABS';
@@ -297,94 +285,18 @@ $texts['lv']['safety'] = 'Drošība';
         $texts['lv']['alrm'] = 'Avarijas signāls';
         $texts['lv']['imob'] = 'imobilaizers';
         $texts['lv']['airB'] = 'Gaisa spilveni';
-        $texts['lv']['esp'] = '...i';
+        $texts['lv']['esp'] = 'ESP';
         $texts['lv']['asr'] = 'ASR';
-        $texts['lv']['marking'] = '...';
+        $texts['lv']['marking'] = 'Marķēšana';
 
-$texts['lv']['HIFI'] = 'Krēsli';
+$texts['lv']['HIFI'] = 'HI - FI';
         $texts['lv']['fm/am'] = 'FM / AM';
         $texts['lv']['cd'] = 'CD';
         $texts['lv']['dvd'] = 'DVD';
         $texts['lv']['mp3'] = 'MP3';
         $texts['lv']['gps'] = 'GPS';
         $texts['lv']['bluet'] = 'Bluetooth';
-        $texts['lv']['handfree'] = '..';
-        $texts['lv']['sub'] = 'Sabūfers';
-        $texts['lv']['lcd'] = 'lcd televīzors';
-        $texts['lv']['tv'] = 'Televīzors';
-
-// Extras ENG
-    $texts['lv']['eq'] = 'Aprīkojums';
-        $texts['lv']['hyd'] = 'Stūres pastiprinātājs';
-        $texts['lv']['elBooster'] = '...';
-        $texts['lv']['condit'] = 'Kondicionieris';
-        $texts['lv']['clicontr'] = 'Klimatu kontrole';
-        $texts['lv']['salonFilt'] = '...';
-        $texts['lv']['onboardCom'] = 'Borta Dators';
-        $texts['lv']['tirePre'] = '..';
-        $texts['lv']['parkSensor'] = 'Parkošanās sensori';
-        $texts['lv']['rearViewCam'] = 'Atpakaļskata kamera';
-
-    $texts['lv']['interior'] = 'Interjērs';
-        $texts['lv']['leaInt'] = 'Ādas salons';
-        $texts['lv']['handstand'] = 'Elkoņa atbalsts';
-        $texts['lv']['tindWin'] = 'Tonētie stikli';
-        $texts['lv']['ref'] = 'Ledusskapis';
-
-$texts['lv']['SW'] = 'Stūre';
-        $texts['lv']['addsteer'] = 'Stūres pastiprinātājs';
-        $texts['lv']['eladd'] = '...';
-        $texts['lv']['multifuncwheel'] = 'Kondicionieris';
-        $texts['lv']['sportsteer'] = 'Klimatu kontrole';
-        $texts['lv']['heatedwheel'] = '...';
-
-$texts['lv']['seats'] = 'Krēsli';
-        $texts['lv']['eladdseats'] = 'Ādas salons';
-        $texts['lv']['heatedSeats'] = 'Elkoņa atbalsts';
-        $texts['lv']['sportSeats'] = 'Tonētie stikli';
-        $texts['lv']['rec'] = 'Ledusskapis';
-        $texts['lv']['ventSeats'] = 'Ādas salons';
-        $texts['lv']['massageSeats'] = 'Elkoņa atbalsts';
-
-$texts['lv']['lights'] = 'Gaismas';
-        $texts['lv']['xenon'] = 'xenon';
-        $texts['lv']['bixen'] = 'Bixenon';
-        $texts['lv']['led'] = 'LED';
-        $texts['lv']['ledbrakled'] = 'Klimatu kontrole';
-        $texts['lv']['foglight'] = 'Miglas Gaismas';
-        $texts['lv']['lCleaner'] = 'Lampu tīrītāji';
-
-$texts['lv']['seats'] = 'Krēsli';
-        $texts['lv']['eladdseats'] = 'Automātiski regulējami';
-        $texts['lv']['heatedSeats'] = '..';
-        $texts['lv']['sportSeats'] = 'Sporta Beņķi';
-        $texts['lv']['rec'] = 'Recaro';
-        $texts['lv']['ventSeats'] = '...';
-        $texts['lv']['massageSeats'] = '..';
-
-$texts['lv']['mirrors'] = 'Spoguļi';
-        $texts['lv']['eladdmir'] = 'Automāstiski regulējami spoguļi ';
-        $texts['lv']['heatedMir'] = '..';
-        $texts['lv']['sportaMir'] = 'Sporta Spoguļi';
-        $texts['lv']['autoBend'] = '..';
-
-$texts['lv']['Safety'] = 'Drošība';
-        $texts['lv']['abs'] = 'ABS';
-        $texts['lv']['ckey'] = 'Centrālā atslēga';
-        $texts['lv']['alrm'] = 'Avarijas signāls';
-        $texts['lv']['imob'] = 'imobilaizers';
-        $texts['lv']['airB'] = 'Gaisa spilveni';
-        $texts['lv']['asr'] = 'ASR';
-        $texts['lv']['marking'] = '...';
-
-$texts['lv']['HI FI'] = 'Krēsli';
-        $texts['lv']['fm/am'] = 'FM / AM';
-        $texts['lv']['cd'] = 'CD';
-        $texts['lv']['dvd'] = 'DVD';
-        $texts['lv']['mp3'] = 'MP3';
-        $texts['lv']['gps'] = 'GPS';
-        $texts['lv']['bluet'] = 'Bluetooth';
-        $texts['lv']['handfree'] = '..';
+        $texts['lv']['handfree'] = 'AUX';
         $texts['lv']['sub'] = 'Sabūfers';
         $texts['lv']['lcd'] = 'lcd televīzors';
         $texts['lv']['tv'] = 'Televīzors';
@@ -393,13 +305,13 @@ $texts['lv']['HI FI'] = 'Krēsli';
     $texts['ru']['eq'] = 'ОБОРУДОВАНИЕ';
         $texts['ru']['hyd'] = 'Гидроусилитель';
         $texts['ru']['elBooster'] = 'Электронный усилитель';
-        $texts['ru']['condit'] = 'кондиционер';
+        $texts['ru']['condit'] = 'Kондиционер';
         $texts['ru']['clicontr'] = 'Контроль климата';
         $texts['ru']['salonFilt'] = 'Салоновый фильтр';
         $texts['ru']['onboardCom'] = 'Встроенный вычислитель';
         $texts['ru']['tirePre'] = 'Контроль давления шин';
         $texts['ru']['parkSensor'] = 'Датчик парковки';
-        $texts['ru']['rearViewCam'] = 'камера заднего вида';
+        $texts['ru']['rearViewCam'] = 'Kамера заднего вида';
 
     $texts['ru']['interior'] = 'ИНТЕРЬЕР';
         $texts['ru']['leaInt'] = 'Кожаный салон';
@@ -445,7 +357,7 @@ $texts['ru']['safety'] = 'БЕЗОПАСНОСТЬ  ';
         $texts['ru']['airB'] = 'Gaisa spilveni';
         $texts['ru']['esp'] = 'Gaisa spilveni';
         $texts['ru']['asr'] = 'ASR';
-        $texts['ru']['marking'] = '...';
+        $texts['ru']['marking'] = 'Mаркировка';
 
 $texts['ru']['HIFI'] = 'HI - FI';
         $texts['ru']['fm/am'] = 'FM / AM';
@@ -454,7 +366,7 @@ $texts['ru']['HIFI'] = 'HI - FI';
         $texts['ru']['mp3'] = 'MP3';
         $texts['ru']['gps'] = 'GPS';
         $texts['ru']['bluet'] = 'Bluetooth';
-        $texts['ru']['handfree'] = '..';
+        $texts['ru']['handfree'] = 'AUX';
         $texts['ru']['sub'] = 'Sabūfers';
         $texts['ru']['lcd'] = 'lcd televīzors';
         $texts['ru']['tv'] = 'Televīzors';
@@ -524,7 +436,7 @@ $texts['en']['HIFI'] = 'HI - FI';
         $texts['en']['mp3'] = 'MP3';
         $texts['en']['gps'] = 'GPS';
         $texts['en']['bluet'] = 'Bluetooth';
-        $texts['en']['handfree'] = 'hands free';
+        $texts['en']['handfree'] = 'AUX';
         $texts['en']['sub'] = 'subwoofer';
         $texts['en']['lcd'] = 'lcd';
         $texts['en']['tv'] = 'TV';
