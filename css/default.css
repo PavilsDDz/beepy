@@ -1,18 +1,12 @@
+li{
+	list-style:none;
+}
 .top_wrap{
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 10;
 	width: 100%;
-}
-body {
-	margin: 0;
-	 font-family: 'Montserrat', sans-serif;
-
-}
-a{
-	text-decoration: none;
-	color: inherit;
 }
 /*USER PROFILE USER PROFILE USER PROFILE */
 .user_profile {
@@ -30,7 +24,6 @@ a{
 	display: flex;
 	display: -webkit-flex;
 }
-
 button {
 	 font-family: 'Montserrat', sans-serif;
 }
@@ -133,7 +126,6 @@ button {
 	color: #00c6ff;
 	border-radius: 20px;
 	height: 20px;
-	font-family: 'Montserrat', sans-serif;
 	
 	z-index: 10;
 	background-color: #fff;
@@ -163,12 +155,24 @@ button {
 	outline: none;
 }
 /*FOOTER FOOTER FOOTER FOOTER FOOTER */
-
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.flex_div {
+    position: relative;
+    margin: auto;
+    width: 40%;
+	margin-top: 0;
+}
 #footer a { 
     text-decoration: none;
 	color: #083a6c;
 	font-family: 'Montserrat', sans-serif;
-	line-height: 1.5vw;
+	line-height: 2.5vw;
 	font-size: 1.3vw;
 	font-weight: 600;
 	opacity: 0.8;
@@ -181,34 +185,82 @@ button {
 	background-repeat: no-repeat;
 }
 .tablefooter{
-	padding-top: 6vw;
-	padding-bottom: 5vw;
+	padding-top: 10vw;
+    padding-bottom: 10vw;
 	width: 100%;
-}
-.tablefooter td{
-	vertical-align: top;
-	position: relative;
 }
 .bottom_text_style{
     font-family: 'Montserrat', sans-serif;
     color: #083a6c;
-    font-size: 1.1vw;
+    font-size: 1.3vw;
+	line-height: 2.5vw;
 	width: 100%;
-	padding-left: 3vw;
 }
 .table_links{
 	padding-left: 3vw;
 	width: 100%;
 }
-.table_links td{
-	height: 3vw;
-}
 
 .fb_link {
 	cursor: pointer;
+}
+
+.socials{
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	flex-direction: row;
+	width: 60%;
+	padding: 0; 
+	justify-content: space-between;
 }
 @media screen and (max-width: 1400px){
 	.links{
 	font-size: 15px;
 	}
+}
+@media screen and (max-width: 800px){
+	/*FOOTER*/
+.flex {
+    flex-direction: column;
+}
+.flex_div {
+    width: 100%;
+}
+.bottom_text_style {
+	left: 15vw;
+	right: 10vw;
+	position: relative;
+    font-size: 3.5vw;
+    line-height: 4vw;
+	width: 100%;
+	padding-top: 3vw;
+	padding-bottom: 10vw;
+}
+.bottom_text_style td{
+	width: 0%;
+}
+.tablefooter{
+	width: 80%;
+}
+.footerlogo{
+	width: 70%;
+}
+.table_links {
+    padding-left: 15vw;
+    width: 100%;
+	padding-bottom: 10vw;
+}
+.table_links td{
+	width: 0%;
+}
+#footer a { 
+	font-size: 4vw;
+    line-height: 6vw;
+}
+.socials {
+    width: 50%;
+}
 }

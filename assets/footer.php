@@ -36,13 +36,11 @@
     $texts_footer['ru']['account'] = '';
 
  ?>
-<div id="footer">
+<div id="footer" align="center">
 
-            <div align="center">
-                <table class="tablefooter">
-                    <tr>
-                        <td width="25%" style="text-align:center"><img src="img/logo3.png" width="60%"></td>
-                        <td width="30%">
+                <div class="tablefooter flex">
+                        <div class="flex_div" style="text-align:center"><img src="img/logo3.png" class="footerlogo" width="60%"></div>
+                        <div class="flex_div">
                             <table class="bottom_text_style">
                             <tr>
                                 <td width="10%"><b><?php echo $texts_footer[$lang]['adress']; ?></b></td>
@@ -57,9 +55,9 @@
                                 <td>info@beepy.lv</td>
                             </tr>
                             </table>
-                        </td>
+                        </div>
                         
-                        <td width="35%">
+                        <div class="flex_div">
                             <table class="table_links">
                             <tr>
                                 <td width="20%"><a href="index.php"><?php echo $texts_footer[$lang]['home']; ?></a></td>
@@ -73,10 +71,14 @@
                                 <td><a href="profile.php"><?php echo $texts_footer[$lang]['account']; ?></a></td>
                             </tr>
                             </table>
-                        </td>
-                        <td width="10%" style="text-align:right padding-right:1vw"><img src="img/google.png" width="70%"></td>
-                    </tr>
-                </table>
-            </div>
+                        </div>
+                        <div class="flex_div" style="text-align:right padding-right:1vw">
+						<ul class="socials">
+						<li><a><img src="img/facebook.png" width="40%"></a></li>
+						<li><a><img src="img/twitter.png" width="40%"></a></li>
+						<li><a><img src="img/instagram.png" width="40%"></a></li>
+						</ul>
+						</div>
+                </div>
 
-        </div>  
+</div>  
