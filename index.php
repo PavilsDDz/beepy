@@ -3,6 +3,15 @@
     include ('assets/connect.php');
     include ('assets/setup.php');
     include ('assets/brandsandmodels.php');
+    include ('assets/functions.php');
+
+
+    include ('assets/searchingLang.php');
+
+
+
+
+
 
     if(isset($_GET["logout"])){
         unset($_SESSION['uid']);
@@ -73,31 +82,41 @@ $fb = new \Facebook\Facebook([
 
 
 // FIRST NAME
+        $nameError = '';
+
         if (empty($firstName)) {
             $trueError = true;
-            $FnameError = "Please enter your full name.";
+            // $FnameError = "Please enter your full name.";
+            $nameError = 'nameErrorA';
 
         } else if (strlen($firstName) < 3) {
             $trueError = true;
-            $FnameError = "Name must have atleat 3 characters.";
+            // $FnameError = "Name must have atleat 3 characters.";
+            $nameError = 'nameErrorB';
 
         } else if (!preg_match("/^[a-zA-Z ]+$/",$firstName)) {
             $trueError = true;
-            $FnameError = "Name must contain alphabets and space.";
+            // $FnameError = "Name must contain alphabets and space.";
+            $nameError = 'nameErrorC';
         }
 
 // LAST NAME
+        $lNameError = '';
+
         if (empty($lastName)) {
             $trueError = true;
-            $LnameError = "Please enter your full first name.";
+            // $LnameError = "Please enter your full first name.";
+            $lNameError = 'lNameErrorA';
 
         } else if (strlen($lastName) < 3) {
             $trueError = true;
-            $LnameError = "Name must have atleat 3 characters.";
+            // $LnameError = "Name must have atleat 3 characters.";
+            $lNameError = 'lNameErrorB';
 
         } else if (!preg_match("/^[a-zA-Z ]+$/",$lastName)) {
             $trueError = true;
-            $LnameError = "Name must contain alphabets and space.";
+            // $LnameError = "Name must contain alphabets and space.";
+            $lNameError = 'lNameErrorC';
         }
 
 // USER NAME
@@ -107,21 +126,24 @@ $fb = new \Facebook\Facebook([
                     'username' => $userName,
                 ]);
 
-
+                $uNameError = '';
                 if($row['username']==$userName) {
-                    $userError = "sorry USERNAME already taken ! ".$row['username'];
+                    // $userError = "sorry USERNAME already taken ! ".$row['username'];
                     $trueError = true;
+                    $uNameError = 'uNameErrorC'.$row['username'];
                 }
 
             }
-            
+
             if (empty($userName)) {
                 $trueError = true;
-                $userError = "Please enter your User name.";
+                // $userError = "Please enter your User name.";
+                $uNameError = 'uNameErrorA';
 
             } else if (strlen($userName) < 3) {
                 $trueError = true;
-                $userError = "Name must have atleat 3 characters.";
+                // $userError = "Name must have atleat 3 characters.";
+                $uNameError = 'uNameErrorB';
             }
 
 // E-MAIL
@@ -131,22 +153,26 @@ $fb = new \Facebook\Facebook([
             ]);
 
             // dumpAndDie($row);
-
+            $emailErr = '';
             if($row['email']==$email) {
-                $emailError = "sorry EMAIL id already taken ! ".$row['email'];
+                // $emailError = "sorry EMAIL id already taken ! ".$row['email'];
                 $trueError = true;
+                $emailErr = 'emailErr'.$row['email'];
             }
 
         }
 
 // password validation
+        $passError = '';
         if (empty($password)){
             $trueError = true;
-            $passError = "Please enter password.";
+            // $passError = "Please enter password.";
+            $passError = 'passErrorA';
 
         } else if(strlen($password) < 6) {
             $trueError = true;
-            $passError = "Password must have atleast 6 characters.";
+            // $passError = "Password must have atleast 6 characters.";
+            $passError = 'passErrorB';
         }
 
         //  $pass = hash('sha256', $password);  < --- kmp dēļ šītās rindiņās met eroru??
@@ -223,27 +249,29 @@ $fb = new \Facebook\Facebook([
             
             <div class="header_content">
                 <div class="findcar">
-                    <a href="searching.php"><img src="img/findacar.png" width="34%"></a> 
+
+                    <a href="searching.php"><?php echo $texts[$lang]['findcar'] ?></a> 
+
                     <div class="header_forms flex">
                         <div class="small_search">
                             <form action="<?php echo $SiteUrl; ?>searching.php" method="POST">
                                 <div class="search_top flex">
                                     <!-- CARTYPE -->
                                     <div class="select_input">
-                                        <label>Car type</label>
+                                        <label><?php echo $texts[$lang]['type'] ?></label>
                                         <select name="carType[]" >
                                             <option value=""></option>  
-                                            <?php  $car_types = ['coupe','hatchback','minivan','van','pickup','sedan','universal','offroad','sport','other'];
+                                            <?php  $car_types = ['coupe','hatchback','minivan','van','pickup','sedan','unversal','offroad','sport','other'];
                                             foreach ($car_types as $type) {
                                                ?>
-                                               <option value="<?php echo $type ?>"><?php echo $type ?></option>
+                                               <option value="<?php echo $type ?>"><?php echo $texts[$lang][$type];?></option>
                                                <?php } ?>
                                         </select>
                                     </div>
 
                                     <!-- BRAND -->
                                     <div class="select_input">
-                                        <label>Brand</label>
+                                        <label><?php echo $texts[$lang]['brands'] ?></label>
                                         <select name="brand[]" id="brand" onchange="launch_req()">
                                             <option value=""></option>
                                             <?php
@@ -256,7 +284,7 @@ $fb = new \Facebook\Facebook([
 
                                     <!-- MODELS -->
                                     <div class="select_input">
-                                        <label>Model</label>
+                                        <label><?php echo $texts[$lang]['model'] ?></label>
                                         <select id="models_list" name="model[]">
                                             
                                         </select>
@@ -264,22 +292,22 @@ $fb = new \Facebook\Facebook([
                                 </div>
                                  <!--MILLAGE-->
                                 <div class="range_select millage_select line_select">   
-                                    <div class="groupLabel flex"><label >Millage:</label></div>
+                                    <div class="groupLabel flex"><label ><?php echo $texts[$lang]['millage'] ?></label></div>
                                     <div class="inputs flex">
-                                        <label class="left">from</label><input type="text" name="millage_from" id="millage_from" placeholder="0" value="" ><div class="middle flex"><label style="margin-right: 5px;">km</label>
-                                        <label>to</label></div>
-                                        <input type="text" name="millage_to" placeholder="300000" id="millage_to" value="" ><label class="right">km</label>
+                                        <label class="left"><?php echo $texts[$lang]['from'] ?></label><input type="text" name="millage_from" id="millage_from" placeholder="0" value="" ><div class="middle flex"><label style="margin-right: 5px;"><?php echo $texts[$lang]['km'] ?></label>
+                                        <label><?php echo $texts[$lang]['to'] ?></label></div>
+                                        <input type="text" name="millage_to" placeholder="300000" id="millage_to" value="" ><label class="right"><?php echo $texts[$lang]['km'] ?></label>
                                     </div>
                                     <div id="millage-range" class="slider"></div>
                                 </div>
 
                                 <!--PRICE-->
                                 <div class="range_select price_select line_select">
-                                    <div class="groupLabel flex"><label >Price:</label></div>
+                                    <div class="groupLabel flex"><label ><?php echo $texts[$lang]['price'] ?></label></div>
                                     <div class="inputs flex">
-                                        <label class="left">from</label>
+                                        <label class="left"><?php echo getData("year_from"); ?><?php echo $texts[$lang]['from'] ?></label>
                                         <input type="text" name="price_from" id="price_from" value="" ><div class="middle flex">
-                                        <label style="margin-right: 5px;">€</label><label>to</label></div>
+                                        <label style="margin-right: 5px;">€</label><label><?php echo getData("year_to"); ?><?php echo $texts[$lang]['to'] ?></label></div>
                                         <input type="text" name="price_to" id="price_to" value="" ><label  class="right">€</label>
                                     </div>
                                     <div id="price-range" class="slider"></div>
@@ -288,19 +316,20 @@ $fb = new \Facebook\Facebook([
 
                                  <!--YEARS-->
 
-                               
                                     <div class="range_select year_select line_select">
-                                            <label class="groupLabel flex">Year:</label>
+                                            <label class="groupLabel flex"><?php echo $texts[$lang]['year'] ?></label>
                                         <div class="inputs flex">
+                                            <label class="left"><?php echo $texts[$lang]['from'] ?></label>
                                             <input type="text" name="year_from" id="year_from" placeholder="1970" value="" ><div class="middle flex" style="justify-content: center;-webkit-justify-content: center;">
                                             <label>-</label></div>
+                                            <label><?php echo $texts[$lang]['to']?></label>
                                             <input type="text" name="year_to" id="year_to" placeholder="2017" value="" >
                                         </div>
                                         <div id="year-range" class="slider"></div>
                                     </div>
 
                                
-                                <input class="submit_search" type="submit" name="search" value="search">
+                                <input class="submit_search" type="submit" name="search" value="<?php echo $texts[$lang]['search']?>">
                             </form>  
                         </div>
                         <?php if(isset($_SESSION['uid']) && $_SESSION['uid'] > 0){ }else{ ?>
@@ -311,37 +340,31 @@ $fb = new \Facebook\Facebook([
                             <div id="second_form">
                                 <form method="POST" class="flex" action="" autocomplete="false" enctype="multipart/form-data">
 
-                                    <span class="text-danger"><?php echo $FnameError; ?></span>
+                                    <span class="text-danger"><?php if(isset($_POST['submit'])&&!empty($nameError)) {echo $texts[$lang][$nameError];} ?></span>
                                     <!--<span class="text-agree"><?php echo $trueError; ?></span><br/>-->
-                                    <label>First Name</label>
+                                    <label><?php echo $texts[$lang]['fname'] ?></label>
                                     <input type="text" value="<?php if(isset($_POST['firstname'])){echo $_POST['firstname'];} ?>" name="firstname">
 
-                                    <span class="text-danger"><?php echo $LnameError; ?></span><br/>
-                                    <label>Last Name</label>
+                                    <span class="text-danger"><?php if(isset($_POST['submit'])&&!empty($lNameError)) {echo $texts[$lang][$lNameError];} ?></span><br/>
+                                    <label><?php echo $texts[$lang]['lname'] ?></label>
                                     <input type="text" value="<?php if(isset($_POST['lastname'])){echo $_POST['lastname'];} ?>" name="lastname">
 
-                                    <span class="text-danger"><?php echo $userError; ?></span><br/>
-                                    <label>User Name</label>
+                                    <span class="text-danger"><?php if(isset($_POST['submit'])&&!empty($uNameError)) {echo $texts[$lang][$uNameError];} ?></span><br/>
+                                    <label><?php echo $texts[$lang]['uname'] ?></label>
                                     <input type="text" value="<?php if(isset($_POST['username'])){echo $_POST['username'];} ?>" name="username">
 
-                                    <span class="text-danger"><?php echo $emailError; ?></span><br/>
-                                    <label>E-Mail</label>
+                                    <span class="text-danger"><?php if(isset($_POST['submit'])&&!empty($emailErr)) {echo $texts[$lang]["emailErr"];} ?></span><br/>
+                                    <label><?php echo $texts[$lang]['email'] ?></label>
                                     <input type="email" autocomplete="false" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" name="email">
 
-                                    <span class="text-danger"><?php echo $passError; ?></span><br/>
-                                    <label>Password</label>
+                                    <span class="text-danger"><?php if(isset($_POST['submit'])&&!empty($passError)) {echo $texts[$lang][$passError];} ?></span><br/>
+                                    <label><?php echo $texts[$lang]['pass'] ?></label>
                                     <input type="password" autocomplete="new-password" name="password">
 
-                                  
 
-                                    
+                                    <a class="fb_link" href="<?php echo $loginUrl; ?>"><?php echo $texts[$lang]['signup_f'] ?></a>
 
-                                    <a class="fb_link" href="<?php echo $loginUrl; ?>">Sing Up with FACEBOOK</a>
-                                 
-
-                                            <div  id="submit" class="flex" style="float:left"><input class="signup_submit" type="submit" name="signup" value="signup"></div>
-                                        
-
+                                            <div  id="submit" class="flex" style="float:left"><input class="signup_submit" type="submit" name="signup" value="<?php echo $texts[$lang]['reg'] ?>"></div>
                                 </form>
 
                             </div>
@@ -350,10 +373,6 @@ $fb = new \Facebook\Facebook([
 
                         <?php  } ?>
                 </div>
-                  
-             
-
-                
             </div>   
             <div class="cut"></div>
             <div class="add_banner">
@@ -386,7 +405,7 @@ $fb = new \Facebook\Facebook([
 
         <div id="chooseabrand" style="text-align: center">
             <div class="margins">
-                <h4 class="choose_style">Choose a brand</h4></div>
+                <h4 class="choose_style"><?php echo $texts[$lang]['choose'] ?></h4></div>
 
             <form class="wrap" action="searching.php" method="POST">
                 <input class="logo volvo" type="submit" value="Volvo" name="brand[]">
@@ -414,7 +433,7 @@ $fb = new \Facebook\Facebook([
         
         <div id="findcarforyou" style="text-align: center">     
             <div class="findcarlogo">
-                <h2>Find the right<br>car for you</h2>
+                <h2><?php echo $texts[$lang]['chooseThebest'] ?></h2>
             </div>
                 <div class="cut2"></div>
         </div>
@@ -428,16 +447,16 @@ $fb = new \Facebook\Facebook([
                 </tr>
                 <tr class="text_wrap">
                 <th>
-                <h3 class="text_under_cars_caption">All in one - auto, motto, trucks, service.<br></h3>
-                <p class="text_under_cars">Beepy is a revolutionary digital car sales portal what offers the most complete for users and easily understandable car purchase experience in the Baltics.</p>
+                <h3 class="text_under_cars_caption"><?php echo $texts[$lang]['text1name'] ?><br></h3>
+                <p class="text_under_cars"><?php echo $texts[$lang]['text4'] ?></p>
                 </th>
                 <th>
-                <h3 class="text_under_cars_caption">Always in contact with the new<br></h3>
-                <p class="text_under_cars">With an unused car design types you may click on "Auto show" where are all the brand models support portal, allowing potential client find a best fit, without leaving home comfort.</p>
+                <h3 class="text_under_cars_caption"><?php echo $texts[$lang]['text2name'] ?><br></h3>
+                <p class="text_under_cars"><?php echo $texts[$lang]['text5'] ?></p>
                 </th>
                 <th>
-                <h3 class="text_under_cars_caption">A new car trading system<br></h3>
-                <p class="text_under_cars">To the analysis and publication of information on the real price indicators, the necessary parameters fair transactions and mutual trust between buyers and sellers of car.</p>
+                <h3 class="text_under_cars_caption"><?php echo $texts[$lang]['text3name'] ?><br></h3>
+                <p class="text_under_cars"><?php echo $texts[$lang]['text6'] ?></p>
                 </th>
                 </tr>
                 </table>
@@ -448,39 +467,42 @@ $fb = new \Facebook\Facebook([
                 <img src="img/logo2.png" width="20%">
             </div>-->
             <div class="why_beepy_link beepylogo">
-               <a href="downloads/Beepy_prezentācija2.pdf" download="Beepy_prezentācija2"><h2>Why Beepy?</h2></a>
-               <p>See our presentation</p>
+               <a href="downloads/Beepy_prezentācija2.pdf" download="Beepy_prezentācija2"><h2><?php echo $texts[$lang]['why'] ?></h2></a>
+               <p><?php echo $texts[$lang]['present'] ?></p>
             </div>
             <div class="cut3"></div>
         </div>
         
         <div id="blog">
             <div class="blog">
-                <h4 class="blog_style">Blog</h4>
+                <h4 class="blog_style"><?php echo $texts[$lang]['blog'] ?></h4>
             </div>      
     
             <div align="center">
                 <table class="second_tablecars">
-                <tr class="img_wrap2">
-                <th><div class="img_cont2"><img src="img/4car.png" width="418" height="345"></div></th>
-                <th><div class="img_cont2"><img src="img/5car.png" width="418" height="345"></div></th>
-                <th><div class="img_cont2"><img src="img/6car.png" width="418" height="345"></div></th>
-                </tr>
-                <tr class="text_wrap2">
-                <th>
-                <h3 class="text_under_cars_caption2">The wider car business opportunities in Baltics<br></h3>
-                <p class="text_under_cars2">The site offers some new and used cars. Provides a wide range of business opportunities in the lead car opportunities in Baltics.</p>
-                </th>
-                <th>
-                <h3 class="text_under_cars_caption2">Your ideal car one click away<br></h3>
-                <p class="text_under_cars2">User convenience available “Smart seeker”, which allows you to select the most appropriate car models, according to customer needs, desires and options. In addition to the proposed model descriptions with the opportunity to compare them.</p>
-                </th>
-                <th>
-                <h3 class="text_under_cars_caption2">Comfortable. Faster. Easier.<br></h3>
-                <p class="text_under_cars2">Comfortable – online catalog with each new car brand. Present your brand among the leading car dealers in Latvia. Faster – allows car enthusiasts to come to you. To customers who are already interested in purchasing the car. Easier – saving time and money administering your home page. The exhibition will offer in blank and begin to trade today.</p>
-                </th>
-                </tr>
-                </table>    
+                    <tr class="img_wrap2">
+                        <th><div class="img_cont2"><img src="img/4car.png" width="418" height="345"></div></th>
+                        <th><div class="img_cont2"><img src="img/5car.png" width="418" height="345"></div></th>
+                        <th><div class="img_cont2"><img src="img/6car.png" width="418" height="345"></div></th>
+                    </tr>
+
+                    <tr class="text_wrap2">
+                        <th>
+                            <h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text4name'] ?><br></h3>
+                            <p class="text_under_cars2"><?php echo $texts[$lang]['text1'] ?></p>
+                        </th>
+
+                        <th>
+                            <h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text5name'] ?><br></h3>
+                            <p class="text_under_cars2"><?php echo $texts[$lang]['text2'] ?></p>
+                        </th>
+
+                        <th>
+                            <h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text6name'] ?><br></h3>
+                            <p class="text_under_cars2"><?php echo $texts[$lang]['text3'] ?></p>
+                        </th>
+                    </tr>
+                </table>
             </div>
             
         </div>
@@ -488,4 +510,5 @@ $fb = new \Facebook\Facebook([
         <?php include 'assets/footer.php'; ?>  
 </div>  
     </body>
+
 </html>

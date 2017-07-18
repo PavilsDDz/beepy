@@ -200,7 +200,7 @@ $fb = new \Facebook\Facebook([
                 if($row['username']==$userName) {
                     // $userError = "sorry USERNAME already taken ! ".$row['username'];
                     $trueError = true;
-                    $uNameError = 'uNameErrorC'.$row['username'];;
+                    $uNameError = 'uNameErrorC'.$row['username'];
                 }
 
             }
