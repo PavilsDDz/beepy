@@ -6,6 +6,7 @@ include ('assets/setup.php');
 include("assets/brandsandmodels.php");
 include("assets/functions.php");
 include("assets/searchingLang.php");
+include("assets/searchingTwoLang.php");
 include("assets/addcarLang.php");
 
 
@@ -293,7 +294,7 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
 
     <div class="compare_box">
         <div class="compare_toggle">
-            <a>compare</a>
+            <a><?php echo $searchL[$lang]['compare'] ?></a>
         </div>
         <div class="compare_content">
             <div class="car flex"><div class="comp_icon"> </div></div>
@@ -440,8 +441,8 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                     <div>
                         <label><?php echo $texts[$lang]['from'] ?></label>
                         <input type="text" name="price_from" id="price_from" value="<?php echo getData("price_from"); ?>" >
-                        <label style="margin-right: 5px;"><?php echo $texts[$lang]['euro'] ?></label><label><?php echo $texts[$lang]['to'] ?></label>
-                        <input type="text" name="price_to" id="price_to" value="<?php echo getData("price_to"); ?>" ><label><?php echo $texts[$lang]['euro'] ?></label>
+                        <label style="margin-right: 5px;">€</label><label><?php echo $texts[$lang]['to'] ?></label>
+                        <input type="text" name="price_to" id="price_to" value="<?php echo getData("price_to"); ?>" >€</label>
                     </div>
                     <div id="price-range"></div>
 
@@ -470,19 +471,19 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                     </div>
                 </div>
 
-            <label><?php echo $texts[$lang]['sort'] ?></label>
+            <label><?php echo $searchL[$lang]['sort'] ?></label>
 
             <select name="sort">
-                <option value="price"><?php echo $texts[$lang]['sortpice'] ?></option>
-                <option value="millage"><?php echo $texts[$lang]['sortmillage'] ?></option>
-                <option value="year"><?php echo $texts[$lang]['sortyear'] ?></option>
+                <option value="price"><?php echo $searchL[$lang]['sortpice'] ?></option>
+                <option value="millage"><?php echo $searchL[$lang]['sortmillage'] ?></option>
+                <option value="year"><?php echo $searchL[$lang]['sortyear'] ?></option>
             </select>
 
-            <label><?php echo $texts[$lang]['order'] ?></label>
+            <label><?php echo $searchL[$lang]['order'] ?></label>
 
             <select name="order">
-                <option value="DESC"><?php echo $texts[$lang]['orderto'] ?></option>
-                <option value="ASC"><?php echo $texts[$lang]['orderfrom'] ?></option>
+                <option value="DESC"><?php echo $searchL[$lang]['orderto'] ?></option>
+                <option value="ASC"><?php echo $searchL[$lang]['orderfrom'] ?></option>
             </select>
             
             <br/>
@@ -490,12 +491,12 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
             </br>
 
             <div class="selected_filters">
-                <h2><?php echo $texts[$lang]['selectf'] ?></h2>
+                <h2><?php echo $searchL[$lang]['selectf'] ?></h2>
                 
                 <?php include"assets/filters.php"; ?>
             </div>
 
-            <input name="search" type="submit" value="<?php echo $texts[$lang]['search'] ?>" >
+            <input name="search" type="submit" value="<?php echo $searchL[$lang]['search'] ?>" >
 
         </form>
     </div>

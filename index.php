@@ -323,7 +323,7 @@ $fb = new \Facebook\Facebook([
                                             <label class="left"><?php echo $texts[$lang]['from'] ?></label>
                                             <input type="text" name="year_from" id="year_from" placeholder="1970" value="" ><div class="middle flexx" style="justify-content: center;-webkit-justify-content: center;">
                                             <label>-</label></div>
-                                            <label><?php echo $texts[$lang]['to']?></label>
+                                            <label><?php echo $texts[$lang]['to']?> </label>
                                             <input type="text" name="year_to" id="year_to" placeholder="2017" value="" >
                                         </div>
                                         <div id="year-range" class="slider"></div>
