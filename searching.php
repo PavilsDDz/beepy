@@ -294,11 +294,13 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
         <div class="compare_toggle">
             <a>compare</a>
         </div>
-        <div class="car flex"></div>
-        <div class="car flex"></div>
-        <div class="car flex"></div>
-        <div class="compare_link">
-            <a id="compare_link" href="">comp</a>
+        <div class="compare_content">
+            <div class="car flex"><div class="comp_icon"> </div></div>
+            <div class="car flex"><div class="comp_icon"> </div></div>
+            <div class="car flex"><div class="comp_icon"> </div></div>
+            <div class="compare_link">
+                <a id="compare_link" href="">comp</a>
+            </div>
         </div>
     </div>
     <div id="header">
@@ -536,10 +538,14 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
         $('.compare_toggle a').click(function(){
             if(visable==0){
             $('.compare_butt').css('display','block');
+
+            $('.compare_content').slideToggle()
                 visable=1
             }else{
                 $('.compare_butt').css('display','none');
                 visable = 0
+                $('.compare_content').slideToggle()
+
             }
         })
         var counter = []
