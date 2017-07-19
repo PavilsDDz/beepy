@@ -135,18 +135,20 @@ $(function(){
 <!--for hided table-->
 	<script>
 $(document).ready(function() { 
-      $("A#trigger").toggle(function() { 
-      $("DIV#box").fadeIn();
-        return false;
-      },  
-      function() { 
-        $("DIV#box").fadeOut();
-        return false;
-      });
+      // $("A#trigger").toggle(function() { 
+      // $("DIV#box").fadeIn();
+      //   return false;
+      // },  
+      // function() { 
+      //   $("DIV#box").fadeOut();
+      //   return false;
+      // });
 	  
 	   $('A#trigger').click(function(){
-       $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-        return false;
+	   	$("DIV#box").slideToggle(400, function(){
+	       $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+	        return false;
+	   	});
     });
 });
 	</script>
