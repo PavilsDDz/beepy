@@ -225,7 +225,6 @@ h4 {
 	color: #fff;
 	padding: 20px 40px;
 	border-radius: 15px;
-	padding-top: 50px;
 }
 .search_top {
 	justify-content: space-between;
@@ -247,7 +246,7 @@ h4 {
 .groupLabel  {
 	justify-content: center;
 	-webkit-justify-content: center;
-	margin: 5px;
+	margin: 21px;
 }
 .range_select  .middle {
 	width: 19%;
@@ -432,56 +431,6 @@ h4 {
 		margin-top: 0;
 		justify-content: flex-end;
    }
-
-/*buttons*/
-	.button_search_new, .button_search_used{
-		display: inline-block;
-		width: 48%;
-   }
-    .button_search_new {
-	   position: absolute;
-	   left: 0;
-	   top: 0;
-   }
-    .button_search_used{
-	   position: absolute;
-	   right: 0;
-	   top: 0;
-   }
-	.button_search_new button{
-		 background-color: #47b3ff;
-		 color:rgba(255,255,255,1);
-		 border: none;
-		 font-size: 1.3em;
-		 height: 50px;
-		 width: 100%;
-		 padding: 8px 10px;
-		 border-radius: 23px;
-		 font-weight: 600;
-		 line-height: 0.8em;
-		 font-family: 'Montserrat', sans-serif;
-		 opacity: 0.9;
-   }
-   	.button_search_used button{
-		 background-color: #ffaf47;
-		 color:rgba(255,255,255,1);
-		 border: none;
-		 font-size: 1.3em;
-		 height: 50px;
-		 width: 100%;
-		 padding: 8px 10px;
-		 border-radius: 23px;
-		 font-weight: 600;
-		 line-height: 0.8em;
-		 font-family: 'Montserrat', sans-serif;
-		 opacity: 0.9;
-   }
-    .search_buttons{
-		 width: 60%;
-	  	 max-width: 500px;
-		 margin: auto;
-		 position: relative;
-}
   
 /*links*/
 
@@ -688,6 +637,27 @@ h4 {
 			background-image:url(../logos/tesla.png);
 			opacity:1;
 		}
+		
+.seeourpresentation{
+	display: inline;
+	background-color: #47b3ff;
+    color: rgba(255,255,255,1);
+    border: none;
+    font-size: 1.3em;
+    height: 55px;
+    width: 146px;
+    padding: 10px 10px;
+    border-radius: 30px;
+    font-weight: 600;
+    line-height: 0.8em;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.9;
+}
+.beepylogo p{
+	padding: 0;
+    margin: 0;
+	text-align: center;
+}
 .menu, .logoo{display: none;}		
 @media screen and (max-width: 1400px){
 	.text_under_cars, .text_under_cars2, .bottom_text_style, .bottomlinks {font-size: 1em;}
@@ -790,5 +760,8 @@ h4 {
 }
 .beepylogo {
     bottom: -60%;
+}
+   .groupLabel  {
+	margin: 5px;
 }
 }

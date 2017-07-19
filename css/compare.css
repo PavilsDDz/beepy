@@ -55,6 +55,7 @@
 	box-sizing: border-box;
 }
 .slingle_stuff .thing {
+	white-space: nowrap;
 	position: absolute;
 	right: calc(100% + 15px);
 	height: 30px;

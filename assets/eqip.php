@@ -17,15 +17,16 @@ $eqipament_list['Equipment'] = [
 
 
 
-$eqipament_list['Interior'] = [
-'leather_interior',
-'hand_stand',
-'tinted_windows',
-'refrigerator'
+$eqipament_list['Steering'] = [
+'addaptable_steering',
+'electronicly_addaptable_steeringwheel',
+'multi_functional',
+'sport',
+'heated_steeringwheel'
 ];
 
 
-$eqipament_list['Steering'] = [
+$eqipament_list['Interior'] = [
 'leather_interior',
 'hand_stand',
 'tinted_windows',

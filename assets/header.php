@@ -67,6 +67,19 @@
 				<?php if ($lang!= 'ru') {?>
 				<button type="submit" name="lang" value="ru">на Русском</button>
 				<?php } ?>
+<<<<<<< HEAD
+=======
+				<?php if (isset($_GET['id'])&&!empty($_GET['id'])) { ?>
+					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+				<?php } ?>
+				<?php if (isset($_GET['idc'])&&!empty($_GET['idc'])) {
+					$idc = $_GET['idc'];
+					foreach($idc as $index){ ?>
+					<input type="hidden" name="idc[]" value="<?php echo $index; ?>">
+
+					<?php }
+				 } ?>
+>>>>>>> fe32f42be224787e5650aba491d3692858e37e6b
 			</form>
 		</div>
 		<div class="acount_manage flex">
