@@ -6,6 +6,7 @@ include ('assets/setup.php');
 include("assets/brandsandmodels.php");
 include("assets/functions.php");
 include("assets/searchingLang.php");
+include("assets/addcarLang.php");
 
 
 //search data by submited values
@@ -553,9 +554,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
               var linkStr= "compare.php?"
                 for (var i = 0; i < counter.length; i++) {
                     if (i==counter.length-1) {
-                        linkStr = linkStr+"id[]="+counter[i]
+                        linkStr = linkStr+"idc[]="+counter[i]
                     }else{
-                        linkStr = linkStr+"id[]="+counter[i]+'&'
+                        linkStr = linkStr+"idc[]="+counter[i]+'&'
                     }
                 }
                 $('#compare_link').attr('href',linkStr)

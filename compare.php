@@ -1,13 +1,23 @@
 <?php 
 	include "assets/setup.php";
 	include "assets/connect.php";
+	include "assets/searchingLang.php";
+	include "assets/extras.php";
+	//include "assets/session.php"; 
+	
+	$texts['lv']['TechnicalInsp'] = 'Tehniskā apskate';
+
+	$texts['en']['TechnicalInsp'] = 'Tehnical inspection';
+
+	$texts['ru']['TechnicalInsp'] = 'Технический просмотр';
+
 	$ids;
 
 	$query = "SELECT * FROM products LIMIT 3";
 	//print_r($result);
 
-	if (isset($_GET['id'])) {
-		$ids = $_GET['id'];
+	if (isset($_GET['idc'])) {
+		$ids = $_GET['idc'];
 
 		$Q="SELECT * FROM products WHERE ";
 		$counter1 = 0;
@@ -39,16 +49,15 @@
  					<div class="back"></div>
  					<p class="title" style="background-color: rgba(0,0,0,0);"></p>
  					<div class="properites_list">
-	 					<p>Year:</p>
-	 					<p>Car type:</p>
-	 					<p>Likes:</p>
-	 					<p>Millage:</p>
-	 					<p>Fuel type:</p>
-	 					<p>Engine:</p>
-	 					<p>Gear box:</p>
-	 					<p>Color:</p>
-	 					<p>Technical inspection:</p>
-	 					
+	 					<p><?php echo $texts[$lang]['year'] ?></p>
+	 					<p><?php echo $texts[$lang]['type'] ?></p>
+	 					<p><?php echo $texts[$lang]['likes'] ?></p>
+	 					<p><?php echo $texts[$lang]['millage'] ?></p>
+	 					<p><?php echo $texts[$lang]['fuel_type'] ?></p>
+	 					<p><?php echo $texts[$lang]['engine_capacity'] ?></p>
+	 					<p><?php echo $texts[$lang]['transmission'] ?></p>
+	 					<p><?php echo $texts[$lang]['color'] ?></p>
+	 					<p><?php echo $texts[$lang]['TechnicalInsp'] ?></p>
  					</div>
  				</div>
  				<div class="cars_wrap flex">
@@ -62,6 +71,7 @@
 
  					$ekstras[$counter] = $car['additional'];
  					$extraStuff[$counter] = [];
+
  					$explodeindex = array('Equipment', 'Lights', 'Interior', 'Steering', 'Safety', 'Mirrors', 'Audiosystem', 'Seats');
  					
 
@@ -88,14 +98,15 @@
  						<p class="title"><?php echo $car['brand'].' '.$car['model'] ?></p>
  						<div class="stats">
  							<p><?php echo $car['year']; ?></p>
- 							<p><?php echo $car['cartype']; ?></p>
+							<p><?php echo $texts[$lang][$car['cartype']]; ?></p>
  							<p><?php echo $car['price']; ?> €</p>
- 							<p><?php echo $car['millage']; ?> km</p>
- 							<p><?php echo $car['fueltype']; ?></p>
+ 							<p><?php echo $car['millage']; ?> <?php echo $texts[$lang]['km']; ?></p>
+							<p><?php echo $texts[$lang][$car['fueltype']]; ?></p>
  							<p><?php echo $car['enginecapacity']; ?></p>
- 							<p><?php echo $car['gearbox']; ?></p>
+ 							<p><?php echo $texts[$lang][$car['gearbox']]; ?></p>
  							<p><?php echo $car['color']; ?></p>
  							<p><?php echo $car['technicalinspection']; ?></p>
+
  						</div>
  					</div>
  					<?php $counter++; } ?>
@@ -108,11 +119,11 @@
 
 
  					<?php foreach ($eqipament_list as $list_key => $list) { ?>
- 						<p class="title"><?php echo $list_key; ?></p>
+ 						<p class="title"><?php echo $langu[$lang][$list_key] ?></p>
  						<div class="stuff_in_eqip">
  						<?php foreach ($list as $thing) { ?>
  							<div class="slingle_stuff flex">
- 							<p class="thing"><?php echo $thing; ?></p>
+ 							<p class="thing"><?php echo $langu[$lang][$thing] ?></p>
  								<?php $counter2=0;
  									while($counter2<=count($result)-1){
  										if (in_array($thing, $extraStuff[$counter2][$list_key])) {?>
@@ -184,5 +195,9 @@
    	})
    })
  </script>
+<?php
+
+  ?> 
+
  <?php echo $Q; ?>
  </html>

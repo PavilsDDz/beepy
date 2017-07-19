@@ -262,7 +262,7 @@ $texts['lv']['seats'] = 'Krēsli';
         $texts['lv']['heatedSeats'] = 'Elkoņa atbalsts';
         $texts['lv']['sportSeats'] = 'Tonētie stikli';
         $texts['lv']['rec'] = 'Ledusskapis';
-        $texts['lv']['ventSeats'] = 'Ādas salons';
+        $texts['lv']['ventSeats'] = 'Sēdekļi ar ventilāciju';
         $texts['lv']['massageSeats'] = 'Elkoņa atbalsts';
 
 $texts['lv']['lights'] = 'Gaismas';
@@ -298,7 +298,7 @@ $texts['lv']['HIFI'] = 'HI - FI';
         $texts['lv']['bluet'] = 'Bluetooth';
         $texts['lv']['handfree'] = 'AUX';
         $texts['lv']['sub'] = 'Sabūfers';
-        $texts['lv']['lcd'] = 'lcd televīzors';
+        $texts['lv']['lcd'] = 'LCD televīzors';
         $texts['lv']['tv'] = 'Televīzors';
 
 // Extras RUS
@@ -351,10 +351,10 @@ $texts['ru']['mirrors'] = 'ЗЕРКАЛА';
 
 $texts['ru']['safety'] = 'БЕЗОПАСНОСТЬ  ';
         $texts['ru']['abs'] = 'ABS';
-        $texts['ru']['ckey'] = 'Centrālā atslēga';
-        $texts['ru']['alrm'] = 'Avarijas signāls';
-        $texts['ru']['imob'] = 'imobilaizers';
-        $texts['ru']['airB'] = 'Gaisa spilveni';
+        $texts['ru']['ckey'] = 'Центральный замок';
+        $texts['ru']['alrm'] = 'Cигнал тревоги';
+        $texts['ru']['imob'] = 'Иммобилайзер';
+        $texts['ru']['airB'] = 'Подушки безопасности';
         $texts['ru']['esp'] = 'Gaisa spilveni';
         $texts['ru']['asr'] = 'ASR';
         $texts['ru']['marking'] = 'Mаркировка';
@@ -373,61 +373,61 @@ $texts['ru']['HIFI'] = 'HI - FI';
 
         // Extras ENG
     $texts['en']['eq'] = 'EQUIPMENT';
-        $texts['en']['hyd'] = 'hydrplic booster';
-        $texts['en']['elBooster'] = 'electronic booster';
-        $texts['en']['condit'] = 'conditioner';
-        $texts['en']['clicontr'] = 'climat control';
-        $texts['en']['salonFilt'] = 'salon ari filter';
-        $texts['en']['onboardCom'] = 'onboard computre';
-        $texts['en']['tirePre'] = 'tire presure control';
-        $texts['en']['parkSensor'] = 'parking sensor';
-        $texts['en']['rearViewCam'] = 'rear view camera';
+        $texts['en']['hyd'] = 'Hydrplic booster';
+        $texts['en']['elBooster'] = 'Electronic booster';
+        $texts['en']['condit'] = 'Conditioner';
+        $texts['en']['clicontr'] = 'Climat control';
+        $texts['en']['salonFilt'] = 'Salon ari filter';
+        $texts['en']['onboardCom'] = 'Onboard computre';
+        $texts['en']['tirePre'] = 'Tire presure control';
+        $texts['en']['parkSensor'] = 'Parking sensor';
+        $texts['en']['rearViewCam'] = 'Rear view camera';
 
     $texts['en']['interior'] = 'INTERIOR';
-        $texts['en']['leaInt'] = 'leather interior';
-        $texts['en']['handstand'] = 'hand stand';
-        $texts['en']['tindWin'] = 'tinted windows';
-        $texts['en']['ref'] = 'refrigerator';
+        $texts['en']['leaInt'] = 'Leather interior';
+        $texts['en']['handstand'] = 'Hand stand';
+        $texts['en']['tindWin'] = 'Tinted windows';
+        $texts['en']['ref'] = 'Refrigerator';
 
 $texts['en']['SW'] = 'STEERING WHEEL';
-        $texts['en']['addsteer'] = 'addaptable steering';
-        $texts['en']['eladd'] = 'electronicly addaptable steeringwheel';
-        $texts['en']['multifuncwheel'] = 'multi functional wheel';
-        $texts['en']['sportsteer'] = 'sports steering wheel';
-        $texts['en']['heatedwheel'] = 'heated steering wheel';
+        $texts['en']['addsteer'] = 'Addaptable steering';
+        $texts['en']['eladd'] = 'Electronicly addaptable steeringwheel';
+        $texts['en']['multifuncwheel'] = 'Multi functional wheel';
+        $texts['en']['sportsteer'] = 'Sports steering wheel';
+        $texts['en']['heatedwheel'] = 'Heated steering wheel';
 
 $texts['en']['seats'] = 'SEATS';
-        $texts['en']['eladdseats'] = 'electonicly addaptable seats';
-        $texts['en']['heatedSeats'] = 'heated seats';
-        $texts['en']['sportSeats'] = 'sport seats';
-        $texts['en']['rec'] = 'recaro';
-        $texts['en']['ventSeats'] = 'ventable seats';
-        $texts['en']['massageSeats'] = 'massage seats';
+        $texts['en']['eladdseats'] = 'Electonicly addaptable seats';
+        $texts['en']['heatedSeats'] = 'Heated seats';
+        $texts['en']['sportSeats'] = 'Sport seats';
+        $texts['en']['rec'] = 'Recaro';
+        $texts['en']['ventSeats'] = 'Ventable seats';
+        $texts['en']['massageSeats'] = 'Massage seats';
 
 $texts['en']['lights'] = 'LIGHTS';
-        $texts['en']['xenon'] = 'xenon';
-        $texts['en']['bixen'] = 'bi xenon';
-        $texts['en']['led'] = 'led';
-        $texts['en']['ledbrakled'] = 'led braking lights';
-        $texts['en']['foglight'] = 'fog lights';
-        $texts['en']['lCleaner'] = 'light cleaners';
+        $texts['en']['xenon'] = 'Xenon';
+        $texts['en']['bixen'] = 'Bi xenon';
+        $texts['en']['led'] = 'Led';
+        $texts['en']['ledbrakled'] = 'Led braking lights';
+        $texts['en']['foglight'] = 'Fog lights';
+        $texts['en']['lCleaner'] = 'Light cleaners';
 
 
 $texts['en']['mirrors'] = 'MIRRORS';
-        $texts['en']['eladdmir'] = 'electronicly addaptable mirrors';
-        $texts['en']['heatedMir'] = 'heated mirorrs';
-        $texts['en']['sportaMir'] = 'sports mirrors';
-        $texts['en']['autoBend'] = 'automatic bend';
+        $texts['en']['eladdmir'] = 'Electronicly addaptable mirrors';
+        $texts['en']['heatedMir'] = 'Heated mirorrs';
+        $texts['en']['sportaMir'] = 'Sports mirrors';
+        $texts['en']['autoBend'] = 'Automatic bend';
 
 $texts['en']['safety'] = 'SAFETY';
-        $texts['en']['abs'] = 'abs';
-        $texts['en']['ckey'] = 'central key';
-        $texts['en']['alrm'] = 'alarm';
-        $texts['en']['imob'] = 'imobilazer';
-        $texts['en']['airB'] = 'air bag';
-        $texts['en']['esp'] = 'esp';
+        $texts['en']['abs'] = 'ABS';
+        $texts['en']['ckey'] = 'Central key';
+        $texts['en']['alrm'] = 'Alarm';
+        $texts['en']['imob'] = 'Imobilazer';
+        $texts['en']['airB'] = 'Air bag';
+        $texts['en']['esp'] = 'ESP';
         $texts['en']['asr'] = 'ASR';
-        $texts['en']['marking'] = 'marking';
+        $texts['en']['marking'] = 'Marking';
 
 $texts['en']['HIFI'] = 'HI - FI';
         $texts['en']['fm/am'] = 'FM / AM';
@@ -437,8 +437,8 @@ $texts['en']['HIFI'] = 'HI - FI';
         $texts['en']['gps'] = 'GPS';
         $texts['en']['bluet'] = 'Bluetooth';
         $texts['en']['handfree'] = 'AUX';
-        $texts['en']['sub'] = 'subwoofer';
-        $texts['en']['lcd'] = 'lcd';
+        $texts['en']['sub'] = 'Subwoofer';
+        $texts['en']['lcd'] = 'LCD';
         $texts['en']['tv'] = 'TV';
 
 

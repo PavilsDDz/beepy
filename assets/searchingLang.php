@@ -5,6 +5,14 @@
     $texts['en'] = [];
     $texts['ru'] = [];
 
+// like lv, en, rus!!
+
+$texts['lv']['likes'] = 'Patīk';
+
+$texts['en']['likes'] = 'Likes';
+
+$texts['ru']['likes'] = 'Нравится';
+
 // ----------------------------------------------->
 // LV
 //  CAR TYPE

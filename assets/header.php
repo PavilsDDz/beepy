@@ -72,6 +72,13 @@
 				<?php if (isset($_GET['id'])&&!empty($_GET['id'])) { ?>
 					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 				<?php } ?>
+				<?php if (isset($_GET['idc'])&&!empty($_GET['idc'])) {
+					$idc = $_GET['idc'];
+					foreach($idc as $index){ ?>
+					<input type="hidden" name="idc[]" value="<?php echo $index; ?>">
+
+					<?php }
+				 } ?>
 			</form>
 		</div>
 		<div class="acount_manage flex">
