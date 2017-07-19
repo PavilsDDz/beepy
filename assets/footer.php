@@ -25,15 +25,15 @@
     $texts_footer['en']['contacts'] = 'Contacts';
     $texts_footer['en']['account'] = 'My Account';
 
-    $texts_footer['ru']['adress'] = '';
-    $texts_footer['ru']['call'] = '';
-    $texts_footer['ru']['email'] = '';
-    $texts_footer['ru']['adress_'] = '';
-    $texts_footer['ru']['home'] = '';
-    $texts_footer['ru']['buy'] = '';
-    $texts_footer['ru']['sell'] = '';
-    $texts_footer['ru']['contacts'] = '';
-    $texts_footer['ru']['account'] = '';
+    $texts_footer['ru']['adress'] = 'Адрес';
+    $texts_footer['ru']['call'] = 'Званите';
+    $texts_footer['ru']['email'] = 'Злектронойпочтa';
+    $texts_footer['ru']['adress_'] = 'Улица Уденс 13,Рига,Латвия';
+    $texts_footer['ru']['home'] = 'Главная';
+    $texts_footer['ru']['buy'] = 'Купить';
+    $texts_footer['ru']['sell'] = 'Продать';
+    $texts_footer['ru']['contacts'] = 'Контакты';
+    $texts_footer['ru']['account'] = 'Мой Профиль';
 
  ?>
 <div id="footer" align="center">

@@ -25,11 +25,11 @@
 	$texts['en']['adress'] = 'Udens iela 12, Riga, Latvia';
 
 
-	$texts['ru']['h1'] = '';
-	$texts['ru']['subscribe_h2'] = '';
-	$texts['ru']['placeholder'] = '';
-	$texts['ru']['subscribe'] = '';
-	$texts['ru']['adress'] = '';
+	$texts['ru']['h1'] = 'Свяжитесь с нами';
+	$texts['ru']['subscribe_h2'] = 'Подписывайтесь на электронную почту и получайте новинки';
+	$texts['ru']['placeholder'] = 'ваш адрес электронойпочты';
+	$texts['ru']['subscribe'] = 'подписываться';
+	$texts['ru']['adress'] = 'Улица Уденс 13,Рига,Латвия';
 	
 
 //nothing
