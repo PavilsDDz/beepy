@@ -126,9 +126,10 @@
 <html>
 <head>
 <meta charset="utf-8">
+    <?php include"assets/head.php" ?>
+
 <link rel="stylesheet" type="text/css" href="css/profile.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800" rel="stylesheet">
-        <script type="text/javascript" src="scripts/jquery-2.2.3.js"></script>
+
 
 </head>
 

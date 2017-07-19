@@ -61,13 +61,11 @@
 
 <html>
 <head>
+    <?php include"assets/head.php" ?>
+
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/product.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 	
-	<script src="scripts/jquery-3.2.1.js" type="text/javascript"></script>
 	<script src="jquery.autocolumnlist.js" type="text/javascript"></script>
 
 <!--for buttons-->	

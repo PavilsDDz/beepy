@@ -206,9 +206,8 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
         <meta charset="utf-8">
 
         <link rel="stylesheet" type="text/css" href="css/search_style.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800" rel="stylesheet">
-
-        <script type="text/javascript" src="scripts/jquery-2.2.3.js"></script>
+    <?php include"assets/head.php" ?>
+        
         <script type="text/javascript" src="scripts/checkbox.js"></script>
         <script type="text/javascript" src="scripts/handles.js"></script>
         <script type="text/javascript" src="scripts/ui/jquery-ui.js"></script>

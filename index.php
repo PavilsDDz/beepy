@@ -321,16 +321,13 @@ $fb = new \Facebook\Facebook([
                                             <label class="groupLabel flexx"><?php echo $texts[$lang]['year'] ?></label>
                                         <div class="inputs flexx">
                                             <label class="left"><?php echo $texts[$lang]['from'] ?></label>
-<<<<<<< HEAD
+
                                             <input type="text" name="year_from" id="year_from" placeholder="1970" value="" ><div class="middle flexx" >
                                             <label></label>
                                             <label>-</label>
                                             <label><?php echo $texts[$lang]['to']?></label></div>
-=======
-                                            <input type="text" name="year_from" id="year_from" placeholder="1970" value="" ><div class="middle flexx" style="justify-content: center;-webkit-justify-content: center;">
-                                            <label>-</label></div>
-                                            <label><?php echo $texts[$lang]['to']?> </label>
->>>>>>> fe32f42be224787e5650aba491d3692858e37e6b
+
+
                                             <input type="text" name="year_to" id="year_to" placeholder="2017" value="" >
                                         </div>
                                         <div id="year-range" class="slider"></div>

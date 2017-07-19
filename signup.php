@@ -296,7 +296,8 @@ $fb = new \Facebook\Facebook([
 	
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="css/style.css">
-        <script src="https://code.jquery.com/jquery-2.2.3.js" crossorigin="anonymous"></script>
+    <?php include"assets/head.php" ?>
+        
 
         <title>SIGNUP</title>
 		
