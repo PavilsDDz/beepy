@@ -135,18 +135,20 @@ $(function(){
 <!--for hided table-->
 	<script>
 $(document).ready(function() { 
-      $("A#trigger").toggle(function() { 
-      $("DIV#box").fadeIn();
-        return false;
-      },  
-      function() { 
-        $("DIV#box").fadeOut();
-        return false;
-      });
-	  
-	   $('A#trigger').click(function(){
-       $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-        return false;
+      // $("A#trigger").toggle(function() { 
+      // $("DIV#box").fadeIn();
+      //   return false;
+      // },  
+      // function() { 
+      //   $("DIV#box").fadeOut();
+      //   return false;
+      // });
+      
+       $('A#trigger').click(function(){
+        $("DIV#box").slideToggle(400, function(){
+           $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+            return false;
+        });
     });
 });
 	</script>
@@ -184,6 +186,7 @@ $(function(){
 	
  ?>
 	<div id="header">
+
 		<div id="car_photo_block">
 			<div id="imgs" class="photos_wrap">
 
@@ -222,12 +225,14 @@ $(function(){
 			<table class="information_table">
 			  
 			<tr>
-				<th>				
+				<th>	
+
 					<?php echo '<h1>'.$row['price']."$".'</h1>' ?>
 					<?php echo'<h2>'.$row['brand']." ".$row['model']." ".$row['enginecapacity']." | ".$row['year'].'</h2>' ?>
 				</th>
 				<th></th>
 			</tr>
+			
 			<tr><td><p>Car type:</p></td> <td><span class="small_car_image"><img src="img/car_types/<?php echo $row['cartype']?>.png" width="35%"></span></td></tr>
 			<tr><td><p>Mileage:</p></td> <td><p><?php echo $row['millage']?></p></td></tr>
 			<tr><td><p>Fuel type:</p></td> <td><p><?php echo $row['fueltype']." ".$row['enginecapacity'] ?></p></td></tr>
@@ -235,15 +240,25 @@ $(function(){
 			<tr><td><p>Color:</p></td> <td><div class="color" style="background-color: <?php echo $row['color'] ?>"></div></td></tr>
 			<tr><td><p>VIN:</p></td> <td><p><?php echo $row['registrationnumber'] ?></p></td></tr>
 			<tr><td><p>Tehniska skate:</p></td> <td><p><?php echo $row['technicalinspection'] ?></p></td></tr>
+
 				
 			<tr>
-			<th>				
-				<div class="tech_spec">
-				<a href='#' id='trigger'><button type="button">Tech spech</button></a>
-				</div>
-			</th>
-			<th></th>
+				<th>				
+					<div class="tech_spec">
+					<a href='#' id='trigger'><button type="button">Tech spech</button></a>
+					</div>
+				</th>
+
+				<th>						<!--edit button-->
+					<div class="edit_info">
+						<?php	if(isset($_session['uid']) && $_session['uid'] == $result[0]["userid"]){ ?>
+									<a href='editproduct.php?id=<?php echo $_GET['id']; ?>'><button type="button">Product Edit</button></a>
+						<?php } ?>
+					</div>		<!--edit button ends-->
+				</th>
 			</tr>
+
+
 			   
 			</table>
 		</div>
