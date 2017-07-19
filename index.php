@@ -470,7 +470,7 @@ $fb = new \Facebook\Facebook([
             </div>-->
             <div class="why_beepy_link beepylogo">
                <a href="downloads/Beepy_prezentācija2.pdf" download="Beepy_prezentācija2"><h2><?php echo $texts[$lang]['why'] ?></h2></a>
-               <p><?php echo $texts[$lang]['present'] ?></p>
+               <a href="downloads/Beepy_prezentācija2.pdf" download="Beepy_prezentācija2"><p><?php echo $texts[$lang]['present'] ?></p></a>
             </div>
             <div class="cut3"></div>
         </div>
