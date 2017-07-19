@@ -109,16 +109,18 @@
 <!doctype html>
 <html>
 <head>
-	<?php 
-    include"assets/header.php"
-    ?>
+    <?php include"assets/head.php" ?>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="css/editprofile.css">
-	<link rel="stylesheet" href="css/style.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/editprofile.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
     <body>
+	<?php 
+    include"assets/header.php"
+    ?>
 
 	<div align="center">
         <form method="post" enctype="multipart/form-data">

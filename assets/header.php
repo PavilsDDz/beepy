@@ -30,8 +30,6 @@
 	$texts_haeder['ru']['signup'] = 'зарегистрироться';
 	$texts_haeder['ru']['login'] = 'войти';
 
-
-
  ?>
 
 <div class="top_wrap">	
@@ -59,7 +57,7 @@
 				})
 			</script>
 			<div class="langbutt"><span><?php if ($lang == 'en') {echo 'english';}else if ($lang == 'lv') {echo 'latviski';}else if($lang == 'ru') {echo 'на Русском';} ?></span></div>
-			<form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="GET" class="lang_select">
+			<form action="" method="GET" class="lang_select">
 				<?php if ($lang!= 'en') {?>
 				<button type="submit" name="lang" value="en">english</button>
 				<?php } ?>
@@ -68,9 +66,6 @@
 				<?php } ?>
 				<?php if ($lang!= 'ru') {?>
 				<button type="submit" name="lang" value="ru">на Русском</button>
-				<?php } ?>
-				<?php if (isset($_GET['id'])&&!empty($_GET['id'])) { ?>
-					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 				<?php } ?>
 			</form>
 		</div>
@@ -106,7 +101,4 @@
 
 </div>
 <link rel="stylesheet" type="text/css" href="css/default.css">
-
-
-
 

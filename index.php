@@ -40,15 +40,15 @@ $fb = new \Facebook\Facebook([
 <!DOCTYPE html> 
 <html>
     <head>
+    <?php include"assets/head.php" ?>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800" rel="stylesheet">
-        <script type="text/javascript" src="scripts/jquery-2.2.3.js"></script>
-        <script type="text/javascript" src="scripts/handles.js"></script>
+        
         <script type="text/javascript" src="scripts/ui/jquery-ui.js"></script>
 
         <link rel="stylesheet" type="text/css" href="scripts/ui/jquery-ui.css">
+        <script type="text/javascript" src="scripts/handles.js"></script>
 
 
         <title>index</title>
@@ -321,9 +321,10 @@ $fb = new \Facebook\Facebook([
                                             <label class="groupLabel flexx"><?php echo $texts[$lang]['year'] ?></label>
                                         <div class="inputs flexx">
                                             <label class="left"><?php echo $texts[$lang]['from'] ?></label>
-                                            <input type="text" name="year_from" id="year_from" placeholder="1970" value="" ><div class="middle flexx" style="justify-content: center;-webkit-justify-content: center;">
-                                            <label>-</label></div>
-                                            <label><?php echo $texts[$lang]['to']?></label>
+                                            <input type="text" name="year_from" id="year_from" placeholder="1970" value="" ><div class="middle flexx" >
+                                            <label></label>
+                                            <label>-</label>
+                                            <label><?php echo $texts[$lang]['to']?></label></div>
                                             <input type="text" name="year_to" id="year_to" placeholder="2017" value="" >
                                         </div>
                                         <div id="year-range" class="slider"></div>

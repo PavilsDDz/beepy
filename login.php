@@ -116,7 +116,8 @@ function dumpAndDie($data) {
 <head>
 <meta charset="utf-8">
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800" rel="stylesheet">
+    <?php include"assets/head.php" ?>
+
 <style>
 html {
     overflow: hidden;

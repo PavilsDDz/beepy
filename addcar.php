@@ -204,12 +204,14 @@ if ($success) {
 <!DOCTYPE html>
 <html>
     <head>
+    <?php include"assets/head.php" ?>
+        
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/addcar.css">
 
-		<script src="https://code.jquery.com/jquery-2.2.3.js" crossorigin="anonymous"></script>
-		<link href="scripts/jquery.fileuploader.css" media="all" rel="stylesheet">
+		
+        <link href="scripts/jquery.fileuploader.css" media="all" rel="stylesheet">
         <script src="scripts/jquery.fileuploader.min.js" type="text/javascript"></script>
         <script src="scripts/photo_upload.js" type="text/javascript"></script>
 
