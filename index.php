@@ -243,19 +243,20 @@ $fb = new \Facebook\Facebook([
         </script>
 
 <div id="fixed" class="content_container">
-
+<?php include 'assets/menu_block.php'; ?>
+<div class="logoo"><img src="img/beepylogo.png" style="width: 30%; margin: auto;"></div>
         <div id="header">
         <!--    -->
             
             <div class="header_content">
                 <div class="findcar">
 
-                    <a href="searching.php"><?php echo $texts[$lang]['findcar'] ?></a> 
+                    <h2><a href="searching.php"><?php echo $texts[$lang]['findcar'] ?></a></h2> 
 
-                    <div class="header_forms flex">
+                    <div class="header_forms flexx">
                         <div class="small_search">
                             <form action="<?php echo $SiteUrl; ?>searching.php" method="POST">
-                                <div class="search_top flex">
+                                <div class="search_top flexx">
                                     <!-- CARTYPE -->
                                     <div class="select_input">
                                         <label><?php echo $texts[$lang]['type'] ?></label>
@@ -292,9 +293,9 @@ $fb = new \Facebook\Facebook([
                                 </div>
                                  <!--MILLAGE-->
                                 <div class="range_select millage_select line_select">   
-                                    <div class="groupLabel flex"><label ><?php echo $texts[$lang]['millage'] ?></label></div>
-                                    <div class="inputs flex">
-                                        <label class="left"><?php echo $texts[$lang]['from'] ?></label><input type="text" name="millage_from" id="millage_from" placeholder="0" value="" ><div class="middle flex"><label style="margin-right: 5px;"><?php echo $texts[$lang]['km'] ?></label>
+                                    <div class="groupLabel flexx"><label ><?php echo $texts[$lang]['millage'] ?></label></div>
+                                    <div class="inputs flexx">
+                                        <label class="left"><?php echo $texts[$lang]['from'] ?></label><input type="text" name="millage_from" id="millage_from" placeholder="0" value="" ><div class="middle flexx"><label style="margin-right: 5px;"><?php echo $texts[$lang]['km'] ?></label>
                                         <label><?php echo $texts[$lang]['to'] ?></label></div>
                                         <input type="text" name="millage_to" placeholder="300000" id="millage_to" value="" ><label class="right"><?php echo $texts[$lang]['km'] ?></label>
                                     </div>
@@ -303,10 +304,10 @@ $fb = new \Facebook\Facebook([
 
                                 <!--PRICE-->
                                 <div class="range_select price_select line_select">
-                                    <div class="groupLabel flex"><label ><?php echo $texts[$lang]['price'] ?></label></div>
-                                    <div class="inputs flex">
+                                    <div class="groupLabel flexx"><label ><?php echo $texts[$lang]['price'] ?></label></div>
+                                    <div class="inputs flexx">
                                         <label class="left"><?php echo getData("year_from"); ?><?php echo $texts[$lang]['from'] ?></label>
-                                        <input type="text" name="price_from" id="price_from" value="" ><div class="middle flex">
+                                        <input type="text" name="price_from" id="price_from" value="" ><div class="middle flexx">
                                         <label style="margin-right: 5px;">€</label><label><?php echo getData("year_to"); ?><?php echo $texts[$lang]['to'] ?></label></div>
                                         <input type="text" name="price_to" id="price_to" value="" ><label  class="right">€</label>
                                     </div>
@@ -317,10 +318,10 @@ $fb = new \Facebook\Facebook([
                                  <!--YEARS-->
 
                                     <div class="range_select year_select line_select">
-                                            <label class="groupLabel flex"><?php echo $texts[$lang]['year'] ?></label>
-                                        <div class="inputs flex">
+                                            <label class="groupLabel flexx"><?php echo $texts[$lang]['year'] ?></label>
+                                        <div class="inputs flexx">
                                             <label class="left"><?php echo $texts[$lang]['from'] ?></label>
-                                            <input type="text" name="year_from" id="year_from" placeholder="1970" value="" ><div class="middle flex" style="justify-content: center;-webkit-justify-content: center;">
+                                            <input type="text" name="year_from" id="year_from" placeholder="1970" value="" ><div class="middle flexx" style="justify-content: center;-webkit-justify-content: center;">
                                             <label>-</label></div>
                                             <label><?php echo $texts[$lang]['to']?></label>
                                             <input type="text" name="year_to" id="year_to" placeholder="2017" value="" >
@@ -370,10 +371,13 @@ $fb = new \Facebook\Facebook([
                             </div>
                         </div>
                     </div>
+					
+					
 
                         <?php  } ?>
                 </div>
-            </div>   
+            </div>  
+			
             <div class="cut"></div>
             <div class="add_banner">
                 <div class="flex ">
@@ -438,28 +442,26 @@ $fb = new \Facebook\Facebook([
                 <div class="cut2"></div>
         </div>
         
-        <div id="table_about_cars" align="center">
-                <table class="first_tablecars">
-                <tr class="img_wrap">
-                <th><div class="img_cont"><img src="img/1car.png" width="297" height="296"></div></th>
-                <th><div class="img_cont"><img src="img/2car.png" width="297" height="296"></div></th>
-                <th><div class="img_cont"><img src="img/3car.png" width="297" height="296"></div></th>
-                </tr>
-                <tr class="text_wrap">
-                <th>
-                <h3 class="text_under_cars_caption"><?php echo $texts[$lang]['text1name'] ?><br></h3>
-                <p class="text_under_cars"><?php echo $texts[$lang]['text4'] ?></p>
-                </th>
-                <th>
-                <h3 class="text_under_cars_caption"><?php echo $texts[$lang]['text2name'] ?><br></h3>
-                <p class="text_under_cars"><?php echo $texts[$lang]['text5'] ?></p>
-                </th>
-                <th>
-                <h3 class="text_under_cars_caption"><?php echo $texts[$lang]['text3name'] ?><br></h3>
-                <p class="text_under_cars"><?php echo $texts[$lang]['text6'] ?></p>
-                </th>
-                </tr>
-                </table>
+        <div id="table_about_cars">
+			<div class="first_tablecars flex3">
+				<table class="img_wrap" id="columns_wrapping">
+				<tr><th><div class="img_cont"><img src="img/1car.png" width= "80%"></div></th></tr>
+				<tr><th><h3 class="text_under_cars_caption"><?php echo $texts[$lang]['text1name'] ?><br></h3></th></tr>
+				<tr><th><p class="text_under_cars"><?php echo $texts[$lang]['text4'] ?></p></th></tr>
+				</table>
+							
+				<table class="text_wrap" id="columns_wrapping">
+				<tr><th><div class="img_cont"><img src="img/2car.png" width= "80%"></div></th></tr>
+				<tr><th><h3 class="text_under_cars_caption"><?php echo $texts[$lang]['text2name'] ?><br></h3></th></tr>
+				<tr><th><p class="text_under_cars"><?php echo $texts[$lang]['text5'] ?></p></th></tr>
+				</table>
+							
+				<table class="text_wrap" id="columns_wrapping">
+				<tr><th><div class="img_cont"><img src="img/3car.png" width= "80%"></div></th></tr>
+				<tr><th><h3 class="text_under_cars_caption"><?php echo $texts[$lang]['text3name'] ?><br></h3></th></tr>
+				<tr><th><p class="text_under_cars"><?php echo $texts[$lang]['text6'] ?></p></th></tr>
+				</table>
+			</div>
         </div>
     
         <div id="beepylogo">
@@ -478,33 +480,24 @@ $fb = new \Facebook\Facebook([
                 <h4 class="blog_style"><?php echo $texts[$lang]['blog'] ?></h4>
             </div>      
     
-            <div align="center">
-                <table class="second_tablecars">
-                    <tr class="img_wrap2">
-                        <th><div class="img_cont2"><img src="img/4car.png" width="418" height="345"></div></th>
-                        <th><div class="img_cont2"><img src="img/5car.png" width="418" height="345"></div></th>
-                        <th><div class="img_cont2"><img src="img/6car.png" width="418" height="345"></div></th>
-                    </tr>
-
-                    <tr class="text_wrap2">
-                        <th>
-                            <h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text4name'] ?><br></h3>
-                            <p class="text_under_cars2"><?php echo $texts[$lang]['text1'] ?></p>
-                        </th>
-
-                        <th>
-                            <h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text5name'] ?><br></h3>
-                            <p class="text_under_cars2"><?php echo $texts[$lang]['text2'] ?></p>
-                        </th>
-
-                        <th>
-                            <h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text6name'] ?><br></h3>
-                            <p class="text_under_cars2"><?php echo $texts[$lang]['text3'] ?></p>
-                        </th>
-                    </tr>
-                </table>
-            </div>
-            
+            <div class="second_tablecars flex3">
+			<table class="img_wrap2" id="columns_wrapping">
+				<tr><th><div class="img_cont2"><img src="img/4car.png" width="418" height="345"></div></th></tr>
+				<tr><th><h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text4name'] ?><br></h3></th></tr>
+				<tr><th><p class="text_under_cars2"><?php echo $texts[$lang]['text1'] ?></p></th></tr>
+			</table>
+			 <table class="text_wrap2" id="columns_wrapping">
+				<tr><th><div class="img_cont2"><img src="img/5car.png" width="418" height="345"></div></th></tr>
+				<tr><th><h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text5name'] ?><br></h3></th></tr>
+				<tr><th><p class="text_under_cars2"><?php echo $texts[$lang]['text2'] ?></p></th></tr>
+			</table>			
+			<table class="text_wrap2" id="columns_wrapping">
+				<tr><th><div class="img_cont2"><img src="img/6car.png" width="418" height="345"></div></th></tr>
+				<tr><th><h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text6name'] ?><br></h3></th></tr>
+				<tr><th><p class="text_under_cars2"><?php echo $texts[$lang]['text3'] ?></p></th></tr>
+			</table>				
+			</div>
+   
         </div>
         
         <?php include 'assets/footer.php'; ?>  

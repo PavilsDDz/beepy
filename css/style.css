@@ -30,6 +30,7 @@ h3 {
 	color: #699adc;
 	font-size: 1.7vw;
 	font-weight:600;
+	margin: 0;
 }
 h4 {
 	font-family: 'Montserrat', sans-serif;
@@ -52,10 +53,7 @@ h4 {
 	background-size: cover;
 	background-position: center center;
     background-repeat: no-repeat;
-	
 	position: relative;
-	
-	
 	display: flex;
 	flex-direction: column;
 }
@@ -90,13 +88,8 @@ h4 {
 /* first block*/
 
 .signup_form {
-	position: relative;
-	
+	position: relative;	
 	background-color: rgba(255,255,255,0.8);
-	
-	
-	
-
 	border-radius: 15px;
 }
 .signup_form label {
@@ -105,10 +98,7 @@ h4 {
 #second_form form {
 	flex-direction: column;
 	box-sizing: border-box;
-
 	padding: 20px;
-
-
 }
 .signup_form input {
 	width: 100%;
@@ -184,11 +174,7 @@ h4 {
 	text-align: left;
 }
 .model {
-	
-	
-	
-	background: rgba(255,255,255,0.8); 
-	 
+	background: rgba(255,255,255,0.8);  
 	box-sizing: border-box;
 	padding: 0 10px;
 }
@@ -220,8 +206,7 @@ h4 {
 	background: rgba(255,255,255,0.8); 
     background: -webkit-linear-gradient(rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,1)); 
     background: -o-linear-gradient(rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,1)); 
-    background: -moz-linear-gradient(rgba(255,255,255,0) 1%,rgba(255,255,255,0.6)30%,rgba(255,255,255,1)); 
-    
+    background: -moz-linear-gradient(rgba(255,255,255,0) 1%,rgba(255,255,255,0.6)30%,rgba(255,255,255,1));  
     display:none;background: linear-gradient(rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,1)); 
 }
 .header_forms {
@@ -233,13 +218,13 @@ h4 {
 	-webkit-justify-content: center;
 }
 .small_search {
-
 	width: 70%;
 	box-sizing: border-box;
 	background-color: rgba(0,190,255,1);
 	color: #fff;
 	padding: 20px 40px;
 	border-radius: 15px;
+	padding-top: 50px;
 }
 .search_top {
 	justify-content: space-between;
@@ -250,7 +235,6 @@ h4 {
 }
 .submit_search {
 	background-color: #fff;
-	
 	padding: 7px 15px;
 	border-radius: 40px;
 	font-size: 1.3em;
@@ -270,7 +254,6 @@ h4 {
 	white-space: nowrap;
 	box-sizing: border-box;
 	padding: 0 1%;
-
 }
 .range_select  .inputs {
 	justify-content: center;
@@ -294,9 +277,6 @@ h4 {
 	width: 100%;
 	justify-content:center;	
 	-webkit-justify-content:center;	
-	position: absolute;
-	bottom: 20px;
-	left: 0;
 }
 .signup_submit {
 	background-color: #00c6ff;
@@ -307,7 +287,7 @@ h4 {
 	border: none;
 	font-family: 'Montserrat', sans-serif;
 	cursor: pointer;
-	width: 80px !important;
+	width: 90px !important;
 }
 .signup_submit:focus {
 	outline: none;
@@ -354,57 +334,25 @@ h4 {
 
 /*tables*/
 .first_tablecars{
-	width: 80%;
-	margin-bottom: 1vw;
-	border-spacing: 0vw 2vw;
-	margin: auto;
-    max-width: 1400px;
+	width: 100%;
+	justify-content: center;
 }
-.first_tablecars th{
-	width: 30%;
-	position: relative;
+#columns_wrapping{
+	width: 25%;
 }
 .first_tablecars .text_wrap th, .first_tablecars .img_wrap th {
 	box-sizing: border-box;
-	padding: 0 4%;
-}
-.first_tablecars .img_cont {
-	width:100%;
-	padding-bottom: 100%;
-	position: relative
-}
-.first_tablecars th img {
-	position: absolute;
-	left:0;
-	top:0;
-	width:100%;
-	height:auto;
+	padding: 3%;
 }
 
 .second_tablecars{
-	width: 90%;
-	margin-bottom: 8em;
-	border-spacing: 28px;
-}
-.second_tablecars th{
-	width: 30%;
-	position: relative;
+	width: 100%;
+	justify-content: center;
+	margin-bottom: 2vw;
 }
 .second_tablecars .text_wrap2 th, .second_tablecars .img_wrap2 th {
 	box-sizing: border-box;
-	padding: 0 0.2%;
-}
-.second_tablecars .img_cont2 {
-	width:100%;
-	padding-bottom: 85%;
-	position: relative
-}
-.second_tablecars th img {
-	position: absolute;
-	left:0;
-	top:0;
-	width:100%;
-	height:auto;
+	padding: 3%;
 }
 
 
@@ -739,43 +687,107 @@ h4 {
 			background-image:url(../logos/tesla.png);
 			opacity:1;
 		}
-		
+.menu, .logoo{display: none;}		
 @media screen and (max-width: 1400px){
-	.text_under_cars {
-		font-size: 1em;
-		text-align:center;
-	}
-	.text_under_cars2 {
-		font-size: 1em;
-		text-align:center;
-	}
-	.text_under_cars_caption{
-		font-size: 1.3em;
-		text-align:center;		
-	}
-	.text_under_cars_caption2{
-		font-size: 1.3em;
-		text-align:center;		
-	}
-	.contacts_content_style{
-		font-size: 1.2em;
-	}
-	.bottom_text_style{
-		font-size: 1em;
-	}
-	.bottomlinks{
-		font-size: 1em;
-	}
-	.choose_style{
-		font-size: 1.8em;
-	}
-	.blog_style{
-		font-size: 1.8em;
-	}
-	.links{
-		font-size: 1.2em;
-	}
-	.header_logo{
-		width: 1000px;;
-	}
+	.text_under_cars, .text_under_cars2, .bottom_text_style, .bottomlinks {font-size: 1em;}
+	.text_under_cars_caption, .text_under_cars_caption2{font-size: 1.3em;}
+	.contacts_content_style, .links{font-size: 1.2em;}
+	.choose_style, .blog_style{font-size: 1.8em;}
+}
+
+
+.flexx {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.flex3 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@media screen and (max-width: 800px){
+.top_wrap, .signup_form, .add_banner
+{display:none;}
+.small_search{
+    flex-direction: row !important;
+}
+#header{
+    background-position: 57% -6%;
+    background-size: 220%;
+    height: 140vw;
+}
+.flexx {
+	flex-direction: row;
+}
+.findcar h2{
+	font-size: 12vw;
+	padding: 2vw;
+}
+.logoo {
+    display: grid;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+.small_search {
+	width: 85%;
+	padding: 20px 40px;
+}
+.header_forms {
+    width: 100%;
+}
+.cut {
+    position: absolute;
+    bottom: -100vw;
+    width: 298%;
+    transform: rotate(7deg);
+    height: 99vw;
+    left: -40%;
+    background-color: #fff;
+}
+.wrap {
+    width: 100%;
+}
+.logo {
+    width: 30%;
+    padding-top: 23%;
+}
+#chooseabrand {
+    height: auto;
+}
+.choose_style, .findcarlogo h2 {
+    font-size: 7vw;
+}
+#findcarforyou {
+    margin-top: -30vw;
+}
+.findcarlogo {
+	right: -10%;
+}
+.flex3{
+	flex-direction: column;
+}
+#table_about_cars {
+	height: auto;
+	text-align: -webkit-center;
+}
+#columns_wrapping {
+    width: 100%;
+}
+.first_tablecars {
+    width: 65%;
+}
+#beepylogo {
+    height: 80vw;
+    top: -22vw;
+}
+.beepylogo {
+    bottom: -60%;
+}
 }
