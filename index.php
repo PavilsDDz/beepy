@@ -244,7 +244,7 @@ $fb = new \Facebook\Facebook([
 
 <div id="fixed" class="content_container">
 <?php include 'assets/menu_block.php'; ?>
-<div class="logoo"><img src="img/beepylogo.png" style="width: 30%; margin: auto;"></div>
+<div class="logoo"><img src="img/beepy_logo_w.svg" style="width: 30%; margin: auto;"></div>
         <div id="header">
         <!--    -->
             

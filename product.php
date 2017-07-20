@@ -143,21 +143,14 @@ $(document).ready(function() {
       //   $("DIV#box").fadeOut();
       //   return false;
       // });
-<<<<<<< HEAD
-      
-       $('A#trigger').click(function(){
-        $("DIV#box").slideToggle(400, function(){
-           $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-            return false;
-        });
-=======
+
 	  
 	   $('A#trigger').click(function(){
 	   	$("DIV#box").slideToggle(400, function(){
 	       $('html, body').animate({scrollTop:$(document).height()}, 'slow');
 	        return false;
 	   	});
->>>>>>> 3a767a4328341b3433e06c9e36bdda1c6c76b401
+
     });
 });
 	</script>

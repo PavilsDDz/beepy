@@ -272,6 +272,25 @@ $fb = new \Facebook\Facebook([
             ]);
 
             $error = "You are successfully registered";
+
+
+   
+        // EMAIL STUFF
+        //if "email" variable is filled out, send email
+        
+        //Email information
+          //  $admin_email = $userRow['email'];
+            
+            
+           // $comment = 'you have successfully registered';
+        //send email
+        
+        //Email response
+           
+        
+        //if "email" variable is not filled out, display the form
+       
+    
     }
         if (!$trueError) {
             
@@ -281,11 +300,14 @@ $fb = new \Facebook\Facebook([
                 $getID = getDataFromDatabase($qe,$pay);
                 $_SESSION['uid'] = $getID['id'];
                 print_r( $_SESSION['uid']);
-                $link = "http: ".$SiteUrl."profile.php";
+                $link = $SiteUrl."profile.php";
                 header('location:'.$link);
                 exit;
         }
     }
+           if( mail('pavilsdzi@gmail.com', "$subject", $comment, "From:" . 'Beepy')){
+            echo "We cool now!";
+             }
 
 
 ?>
