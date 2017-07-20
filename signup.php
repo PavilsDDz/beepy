@@ -272,9 +272,9 @@ $fb = new \Facebook\Facebook([
             ]);
 
             $error = "You are successfully registered";
+        }
 
-
-   
+        mail('pavilsdzi@gmail.com', "$subject", $comment, "From:" . 'Beepy');
         // EMAIL STUFF
         //if "email" variable is filled out, send email
         
@@ -289,26 +289,19 @@ $fb = new \Facebook\Facebook([
            
         
         //if "email" variable is not filled out, display the form
-       
-    
-    }
         if (!$trueError) {
             
-        $qe = "SELECT id FROM users WHERE email=:email AND date =:date";
-                $pay['email'] = $email;
-                $pay['date'] = $date;
-                $getID = getDataFromDatabase($qe,$pay);
-                $_SESSION['uid'] = $getID['id'];
-                print_r( $_SESSION['uid']);
-                $link = $SiteUrl."profile.php";
-                header('location:'.$link);
-                exit;
+            $qe = "SELECT id FROM users WHERE email=:email AND date =:date";
+                    $pay['email'] = $email;
+                    $pay['date'] = $date;
+                    $getID = getDataFromDatabase($qe,$pay);
+                    $_SESSION['uid'] = $getID['id'];
+                    print_r( $_SESSION['uid']);
+                    $link = $SiteUrl."profile.php";
+                    header('location:'.$link);
+                    exit;
         }
     }
-           if( mail('pavilsdzi@gmail.com', "$subject", $comment, "From:" . 'Beepy')){
-            echo "We cool now!";
-             }
-
 
 ?>
 
