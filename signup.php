@@ -276,19 +276,7 @@ $fb = new \Facebook\Facebook([
 
    
         // EMAIL STUFF
-        //if "email" variable is filled out, send email
         
-        //Email information
-          //  $admin_email = $userRow['email'];
-            
-            
-           // $comment = 'you have successfully registered';
-        //send email
-        
-        //Email response
-           
-        
-        //if "email" variable is not filled out, display the form
        
     
     }
@@ -305,10 +293,7 @@ $fb = new \Facebook\Facebook([
                 exit;
         }
     }
-           if( mail('pavilsdzi@gmail.com', "$subject", $comment, "From:" . 'Beepy')){
-            echo "We cool now!";
-             }
-
+           
 
 ?>
 

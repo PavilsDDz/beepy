@@ -44,7 +44,7 @@ function insertDataInToDataBase($sql, $payload){
 	$stmt = $db->prepare($sql);
 	$stmt->execute($payload);
 
-	return $db->lastInsertId();
+	return true;
 
 }
 
@@ -55,7 +55,7 @@ function insertDataInToDataBaseDemo($sql, $payload){
 	if($stmt->execute($payload)){
 		// echo '<br>sucssesfull<br>';
 		
-	}else{echo '<br>Neiet<br>';}
+	}else{return false;}
 
 	return $db->lastInsertId();
 
