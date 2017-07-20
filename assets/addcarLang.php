@@ -5,6 +5,51 @@
     $texts['en'] = [];
     $texts['ru'] = [];
 
+// productstech spech//
+$texts['lv']['techspech'] = 'Tehniskais apraksts';
+
+$texts['en']['techspech'] = 'Tech spech';
+
+$texts['ru']['techspech'] = 'Техническая спецификация';
+
+
+
+$texts['lv']['emailN'] = 'E-pasts:';
+
+$texts['en']['emailN'] = 'E-mail:';
+
+$texts['ru']['emailN'] = 'Э-почта:';
+
+
+
+$texts['lv']['subj'] = 'No kā:';
+
+$texts['en']['subj'] = 'Subject:';
+
+$texts['ru']['subj'] = 'Кто:';
+
+
+
+$texts['lv']['mess'] = 'Ziņojums:';
+
+$texts['en']['mess'] = 'Message:';
+
+$texts['ru']['mess'] = 'Cообщение:';
+
+
+
+$texts['lv']['mit'] = 'Nosūtīt';
+
+$texts['en']['mit'] = 'Submit';
+
+$texts['ru']['mit'] = 'Отправить';
+
+
+
+
+
+
+
 // ----------------------------------------------->
 // LV
 //  CAR TYPE
@@ -21,7 +66,7 @@
     $texts['lv']['other'] = 'cits';
 
 // Model
-    $texts[$lang]['model'] = 'Modelis';
+    $texts['lv']['model'] = 'Modelis';
     
 // BRANDS
     $texts['lv']['brands'] = 'Markas';
@@ -84,7 +129,7 @@
 // -------------------------------------------------->
     // ENG
 //  CAR TYPE
-    $texts['en']['type'] = 'Car Type:';
+    $texts['en']['type'] = 'Car Type';
     $texts['en']['coupe'] = 'coupe';
     $texts['en']['hatchback'] = 'hatchback';
     $texts['en']['minivan'] = 'minivan';
@@ -97,16 +142,16 @@
     $texts['en']['other'] = 'other';
 
 // MODEL
-    $texts['en']['model'] = 'Model:';
+    $texts['en']['model'] = 'Model';
 
 // BRANDS
-    $texts['en']['brands'] = 'Brands:';
+    $texts['en']['brands'] = 'Brands';
 
 // YEAR
     $texts['en']['year'] = 'Year:';
 
 // MILLAGE
-    $texts['en']['millage'] = 'Millage:';
+    $texts['en']['millage'] = 'Millage';
 
     $texts['en']['km'] = 'km';
     $texts['en']['from'] = 'From:';
@@ -174,7 +219,7 @@
     $texts['ru']['other'] = 'другой';
 
     // MODEL
-    $texts['ru']['model'] = 'Модель:';
+    $texts['ru']['model'] = 'Модель';
 
 // BRANDS
     $texts['ru']['brands'] = 'Марка';
