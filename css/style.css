@@ -15,7 +15,7 @@ a {
 p {
 	font-family: 'Montserrat', sans-serif;
 	color: #555;
-	font-size: 1.1vw;
+
 	font-weight:500;
 	text-align: justify;
 }
@@ -699,12 +699,14 @@ h4 {
 .findcar h2{
 	font-size: 12vw;
 	padding: 2vw;
+	margin-bottom: 30px;
 }
 .logoo {
     display: grid;
     position: absolute;
     z-index: 1;
     width: 100%;
+    margin-top: 20px;
 }
 .small_search {
 	width: 85%;
@@ -712,6 +714,7 @@ h4 {
 }
 .header_forms {
     width: 100%;
+    margin-top: 30px;
 }
 .cut {
     position: absolute;

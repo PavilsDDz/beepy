@@ -35,7 +35,7 @@
 <div class="top_wrap">	
 	<div class="user_profile flex">
 		<div class="header_logo">
-		    <a href="index.php"><img src="img/logo_b.png" ></a>
+		    <a href="index.php"><img src="img/beepy_logo_b.svg" ></a>
 		</div>
 		<div class="nav">
 		    <ul class="links">

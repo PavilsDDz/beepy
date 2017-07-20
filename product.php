@@ -136,6 +136,7 @@
 	</script>
 <!--for hided table-->
 	<script>
+
 				$(document).ready(function() { 
 			// $("A#trigger").toggle(function() { 
 			// $("DIV#box").fadeIn();
@@ -153,6 +154,7 @@
 				});
 			});
 		});
+
 	</script>
 		// <!--for float block-->
 	<script>	

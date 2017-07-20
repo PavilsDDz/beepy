@@ -39,8 +39,9 @@
 <div id="footer" align="center">
 
                 <div class="tablefooter flex">
-                        <div class="flex_div" style="text-align:center"><img src="img/logo3.png" class="footerlogo" width="60%"></div>
+                        <div class="flex_div footerlogo" style="text-align:center"><img src="img/beepy_logo_w.svg"  width="60%"></div>
                         <div class="flex_div">
+                        <!--
                             <table class="bottom_text_style">
                             <tr>
                                 <td width="10%"><b><?php echo $texts_footer[$lang]['adress']; ?></b></td>
@@ -54,10 +55,17 @@
                                 <td><b><?php echo $texts_footer[$lang]['email']; ?></b></td>
                                 <td>info@beepy.lv</td>
                             </tr>
-                            </table>
+                            </table>-->
+
+                            <ul>
+                                <li><p><?php echo $texts_footer[$lang]['adress']; ?></p><?php echo $texts_footer[$lang]['adress_']; ?></li>
+                                <li><p><?php echo $texts_footer[$lang]['call']; ?></p>+371 25566778</li>
+                                <li><p><?php echo $texts_footer[$lang]['email']; ?></p>info@beepy.lv</li>
+                            </ul>
+
                         </div>
-                        
                         <div class="flex_div">
+               <!--         
                             <table class="table_links">
                             <tr>
                                 <td width="20%"><a href="index.php"><?php echo $texts_footer[$lang]['home']; ?></a></td>
@@ -70,15 +78,24 @@
                                 <td><a href="addcar.php"><?php echo $texts_footer[$lang]['sell']; ?></a></td>
                                 <td><a href="profile.php"><?php echo $texts_footer[$lang]['account']; ?></a></td>
                             </tr>
-                            </table>
+                            </table>-->
+                            <ul class="footer_nav">
+                                <li><?php echo $texts_footer[$lang]['home']; ?></a></li>
+                                <li><?php echo $texts_footer[$lang]['buy']; ?></a></li>
+                                <li><?php echo $texts_footer[$lang]['sell']; ?></a></li>
+                                <li><?php echo $texts_footer[$lang]['contacts']; ?></a></li>
+                                <li><?php echo $texts_footer[$lang]['account']; ?></a></li>
+                            </ul>
                         </div>
-                        <div class="flex_div" style="text-align:right padding-right:1vw">
-						<ul class="socials">
-						<li><a><img src="img/facebook.png" width="40%"></a></li>
-						<li><a><img src="img/twitter.png" width="40%"></a></li>
-						<li><a><img src="img/instagram.png" width="40%"></a></li>
+
+                        <div class="flex socials_wrap">
+						<ul class="socials flex">
+						<li><a><div class="soc_link fb"></div></a></li>
+						<li><a><div class="soc_link inst"></div></a></li>
+						<li><a><div class="soc_link tw"></div></a></li>
 						</ul>
 						</div>
                 </div>
+                        <p class="cp">copyrights 2017 beepy</p>
 
 </div>  
