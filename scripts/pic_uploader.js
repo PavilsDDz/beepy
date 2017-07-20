@@ -67,5 +67,7 @@ $(function(){
 		that.siblings('.file_input').click()
 	})
 
+	
+
 
 })

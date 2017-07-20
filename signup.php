@@ -277,23 +277,13 @@ $fb = new \Facebook\Facebook([
         mail('pavilsdzi@gmail.com', "$subject", $comment, "From:" . 'Beepy');
         // EMAIL STUFF
         
-<<<<<<< HEAD
+
        
     
     }
-=======
-        //Email information
-          //  $admin_email = $userRow['email'];
-            
-            
-           // $comment = 'you have successfully registered';
-        //send email
-        
-        //Email response
-           
-        
-        //if "email" variable is not filled out, display the form
->>>>>>> cbd24fee3690e2bad7c33a997088686fff3c1bf6
+
+
+
         if (!$trueError) {
             
             $qe = "SELECT id FROM users WHERE email=:email AND date =:date";
@@ -307,10 +297,6 @@ $fb = new \Facebook\Facebook([
                     exit;
         }
     }
-<<<<<<< HEAD
-           
-=======
->>>>>>> cbd24fee3690e2bad7c33a997088686fff3c1bf6
 
 ?>
 
