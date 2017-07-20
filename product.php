@@ -1,6 +1,8 @@
 <?php
     include ('assets/connect.php');
     include 'assets/setup.php';
+	include 'assets/addcarLang.php';
+	
 
     // include ('oldcardeleter.php');
 
@@ -154,7 +156,7 @@ $(document).ready(function() {
     });
 });
 	</script>
-<!--for float block-->
+// <!--for float block-->
 	<script>	
 $(function(){
 	var ww = $(window).width()
@@ -235,28 +237,29 @@ $(function(){
 				<th></th>
 			</tr>
 			
-			<tr><td><p>Car type:</p></td> <td><span class="small_car_image"><img src="img/car_types/<?php echo $row['cartype']?>.png" width="35%"></span></td></tr>
-			<tr><td><p>Mileage:</p></td> <td><p><?php echo $row['millage']?></p></td></tr>
-			<tr><td><p>Fuel type:</p></td> <td><p><?php echo $row['fueltype']." ".$row['enginecapacity'] ?></p></td></tr>
-			<tr><td><p>Gear box:</p></td> <td><p><?php echo $row['gearbox']?></p></td></tr>
-			<tr><td><p>Color:</p></td> <td><div class="color" style="background-color: <?php echo $row['color'] ?>"></div></td></tr>
-			<tr><td><p>VIN:</p></td> <td><p><?php echo $row['registrationnumber'] ?></p></td></tr>
-			<tr><td><p>Tehniska skate:</p></td> <td><p><?php echo $row['technicalinspection'] ?></p></td></tr>
-
-				
+			<tr><td><p><?php echo $texts[$lang]['type'] ?></p></td> <td><span class="small_car_image"><img src="img/car_types/<?php echo $row['cartype']?>.png" width="35%"></span></td></tr>
+			<tr><td><p><?php echo $texts[$lang]['millage'] ?></p></td> <td><p><?php echo $row['millage']?></p></td></tr>
+			<tr><td><p><?php echo $texts[$lang]['fuel_type'] ?></p></td> <td><p><?php echo $texts[$lang][$row['fueltype']]." ".$row['enginecapacity'] ?></p></td></tr>
+			<tr><td><p><?php echo $texts[$lang]['transmission'] ?></p></td> <td><p><?php echo $texts[$lang][$row['gearbox']] ?></p></td></tr>
+			<tr><td><p><?php echo $texts[$lang]['color'] ?></p></td> <td><div class="color" style="background-color: <?php echo $row['color'] ?>"></div></td></tr>
+			<tr><td><p><?php echo $texts[$lang]['RegNum'] ?></p></td> <td><p><?php echo $row['registrationnumber'] ?></p></td></tr>
+			<tr><td><p><?php echo $texts[$lang]['TechnicalInsp'] ?></p></td> <td><p><?php echo $row['technicalinspection'] ?></p></td></tr>
+			
 			<tr>
 				<th>				
 					<div class="tech_spec">
-					<a href='#' id='trigger'><button type="button">Tech spech</button></a>
+					<a href='#' id='trigger'><button type="button"><?php echo $texts[$lang]['techspech'] ?></button></a>
 					</div>
 				</th>
 
-				<th>						<!--edit button-->
+				<th>						
+				<!--edit button-->
 					<div class="edit_info">
 						<?php	if(isset($_session['uid']) && $_session['uid'] == $result[0]["userid"]){ ?>
 									<a href='editproduct.php?id=<?php echo $_GET['id']; ?>'><button type="button">Product Edit</button></a>
 						<?php } ?>
-					</div>		<!--edit button ends-->
+				<!--edit button ends-->
+					</div>		
 				</th>
 			</tr>
 
@@ -284,9 +287,8 @@ $(function(){
 				<ul class="list1">
 					<li>
 						<a><img src="img/mobile.png" width="2.8%"><?php echo  $sellerResult[0]["telephone"];?></a>
-					<!--	<a href="/beepy/send_email.php" src="img/email.png" width="2%">Send email</a>-->
-					<!--	<a><img src="img/map.png" width="1.8%"><?php// echo $row['placewherecarat']?></a>-->
-					<!--	<a><img src="img/share.png" width="2%">Share</a>-->
+						<a><img src="img/map.png" width="1.8%"><?php// echo $row['placewherecarat']?></a>
+						<a><img src="img/share.png" width="2%">Share</a>
 					</li>
 				</ul>
 
@@ -297,20 +299,20 @@ $(function(){
 	
 	<div id="send_email_form">
 	<form method="post">
-		<p class="borders">Email:  <?php echo $sellerResult[0]["email"]; ?></p>
+		<p class="borders"><?php echo $texts[$lang]['emailN'] ?>     <?php echo $sellerResult[0]["email"]; ?></p>
 		
 			<?php
 			if(isset($_SESSION['uid']) && $_SESSION['uid'] > 0){ ?>
-				<!--<p class="borders">	Subject: <input name="subject" type="text" value="" /><br /></p>-->
+					<p class="borders"><?php echo $texts[$lang]['subj'] ?>     <input name="subject" type="text" value="" /><br /></p>
 			<?php   } else{ ?>
-				<!--	<p class="borders">Subject: <input name="subject" type="text" /><br /></p>-->
+						<p class="borders"><?php echo $texts[$lang]['subj'] ?>     <input name="subject" type="text" /><br /></p>
 			<?php   }
 			?>
 		
-			<p class="borders">Message:</p>
+			<p class="borders"><?php echo $texts[$lang]['mess'] ?></p>
 			<p><textarea name="comment" rows="15" cols="40"></textarea></p>
 			<div class="submit_button">
-			<a><button type="submit" value="Submit">Submit</button></a>
+			<a><button type="submit" value="Submit"><?php echo $texts[$lang]['mit'] ?></button></a>
 			</div>
 			
 	</form>	
