@@ -19,6 +19,8 @@ $(function(){
 	var Himgs
 	var Limgs
 	var counter 
+	var files_del = [];
+	var links_list_str;
 	//var links_list
 
 
@@ -27,7 +29,7 @@ $(function(){
 		Himgs=have_imgs;
 		Limgs = limit;
 		hide_imgs(Himgs,Limgs);
-		counter = Himgs
+		counter = Himgs;
 
 	}else{
 		Himgs=0;
@@ -43,10 +45,30 @@ $(function(){
 		new_path = file_input_change(event);
 		console.log(file_input_change(event))
 		$(this).siblings('.fake_i').children('img').attr('src',new_path)
-		index =  $(this).parent().index()
 		
-		links_list.splice(index,1)
-		console.log(links_list)
+		if (typeof links_list!=='undefined') {
+
+			index =  $(this).parent().index()
+			files_del.push(links_list[index])
+			links_list.splice(index,1)
+
+			links_list_str = '';
+			files_del_str = '';
+
+			for (var i = 0; i < files_del.length; i++) {
+				files_del_str += files_del[i]+";"
+			}
+
+			for (var i = 0; i < links_list.length; i++) {
+				links_list_str += links_list[i]+";"
+			}
+
+			console.log(links_list_str)
+			console.log(files_del_str)
+			$('#files_stay').attr('value',links_list_str);
+			$('#files_del').attr('value',links_list_str);
+		}
+
 	})
 
 	$('#add_img_slot').click(function(){
@@ -67,7 +89,6 @@ $(function(){
 		that.siblings('.file_input').click()
 	})
 
-	
 
 
 })

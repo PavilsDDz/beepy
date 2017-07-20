@@ -17,9 +17,48 @@
        // echo "<br><br><br>";
 
 
-    $fileDestString ='';
+    if (isset($_POST['files_stay'])) {
+        $fileDestString = $_POST['files_stay'];
+    }else{
+        $fileDestString ='';
+    }
+
 
     if(isset($_POST['btn-update'])){
+
+        //print_r($_FILES);
+
+        for ($i=0; $i < count($_FILES['img']['name']); $i  ++) { 
+
+                $fileName = $_FILES['img']['name'][$i];
+                $fileTmpName = $_FILES['img']['tmp_name'][$i];
+                $fileSize = $_FILES['img']['size'][$i];
+                $fileError = $_FILES['img']['error'][$i];
+                $fileType = $_FILES['img']['type'][$i];
+                $fileExt = explode('.', $fileName);
+                $fileActualyExt = strtolower(end($fileExt));
+
+                $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+
+                    if ($fileTmpName != "") {
+                        $fileNameNew = date('YmdHis'). $_SESSION['uid'].$i.'.'.$fileActualyExt;
+
+                        $fileDestination = 'uploads/'.$fileNameNew;
+                    if (move_uploaded_file($fileTmpName, $fileDestination)) {
+                        $fileDestString = $fileDestString.$fileDestination.";";
+                       // echo "<br><br>".$fileDestString."<br><br>";
+
+
+                    }
+                }
+            }
+        if(isset($_POST['files_del'])){
+            $files_to_del = explode(';', $_POST['files_del'])
+            foreach ($files_to_del as $file_del) {
+                unlink($files_del);
+            }
+        }
+
 
        $allIndexNames = array('equipment', 'lights', 'interior', 'steering', 'safety', 'mirrors', 'audiosystem', 'seats');
             $allIndexSeperator = array('Equipment', 'Lights', 'Interior', 'Steering', 'Safety', 'Mirrors', 'Audiosystem', 'Seats');
@@ -59,11 +98,12 @@
         $payload["registrationnumber"] = $_POST['registrationnumber'];
         $payload["technicalinspection"] = $_POST['technicalinspection'];
         $payload["additional"] = $additional;
+        $payload["photoid"] = $fileDestString;
         
 
         $update = "UPDATE products SET cartype = :cartype, model = :model, year = :year, millage = :millage,
         fueltype = :fueltype, color = :color, price = :price, enginecapacity = :enginecapacity, gearbox = :gearbox,
-        info = :info, registrationnumber = :registrationnumber, technicalinspection = :technicalinspection, additional = :additional WHERE id = :id";
+        info = :info, registrationnumber = :registrationnumber, technicalinspection = :technicalinspection, additional = :additional, photoid =:photoid WHERE id = :id";
 
         //echo insertDataInToDataBase($update, $payload);
 
@@ -112,7 +152,7 @@
     </head>
 
     <body>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" action="editproduct.php?id=<?php echo $_GET['id']; ?>" enctype="multipart/form-data">
             <h1>EDIT</h1>
             <div class="img_edit_block">
                 
@@ -159,6 +199,8 @@
 
                 ?>
                 <div id="add_img_slot" style="width: 50px; height: 50px; background-color: #aaa"></div>
+                <input  type="hidden" name="files_del" value="" id="files_del">
+                <input  type="hidden" name="files_stay" value="" id="files_stay">
             </div>
                     
             <label>Car Type:</label>
