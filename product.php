@@ -72,345 +72,343 @@
 
 <!--for buttons-->	
 	<script>
-	var img_count
-$(function(){
-		img_count = $("#imgs img").length
-		
-     $("#imgs img").hide();     
-     var select= $("#imgs img:eq(0)");
-	 console.log($("#imgs img:eq(0)"))
-	 
-     select.show();     
-	 
-		counter = 0 
-		
-     $("#next").click(function(){
-		 
-		counter++
-		
-		if(counter==img_count){
-			counter =0
-		}
-		console.log(counter)
-		 
-        select.hide();
-        select=$("#imgs img:eq("+counter+")");
-        select.show();
-		$('#num').text(counter+1);				
-     });
+			var img_count
+		$(function(){
+				img_count = $("#imgs img").length
+				
+			$("#imgs img").hide();     
+			var select= $("#imgs img:eq(0)");
+			console.log($("#imgs img:eq(0)"))
+			
+			select.show();     
+			
+				counter = 0 
+				
+			$("#next").click(function(){
+				
+				counter++
+				
+				if(counter==img_count){
+					counter =0
+				}
+				console.log(counter)
+				
+				select.hide();
+				select=$("#imgs img:eq("+counter+")");
+				select.show();
+				$('#num').text(counter+1);				
+			});
 
-     $("#forward").click(function(){
-        
-		counter--
-		
-		if(counter<0){
-			counter=img_count-1
-		}
-		console.log(counter)
-		
-		
-		
-        select.hide();
-        select=$("#imgs img:eq("+counter+")");
-        select.show();  
-		$('#num').text(counter+1);		
-     }); 
-	 
-});  
+			$("#forward").click(function(){
+				
+				counter--
+				
+				if(counter<0){
+					counter=img_count-1
+				}
+				console.log(counter)
+				
+				
+				
+				select.hide();
+				select=$("#imgs img:eq("+counter+")");
+				select.show();  
+				$('#num').text(counter+1);		
+			}); 
+			
+		});  
 
-$(function(){
-		img_count
-    var number = 1;
-     $('#next').click(function(){
-        ++number;
-		number = number > img_count ? img_count: number;
-  
-    });
-});
+		$(function(){
+				img_count
+			var number = 1;
+			$('#next').click(function(){
+				++number;
+				number = number > img_count ? img_count: number;
+		
+			});
+		});
 
-$(function(){
-	var img_count = $("#imgs img").length
-	$('#num_count').html(img_count)
-});
+		$(function(){
+			var img_count = $("#imgs img").length
+			$('#num_count').html(img_count)
+		});
 
 	</script>
 <!--for hided table-->
 	<script>
-$(document).ready(function() { 
-      // $("A#trigger").toggle(function() { 
-      // $("DIV#box").fadeIn();
-      //   return false;
-      // },  
-      // function() { 
-      //   $("DIV#box").fadeOut();
-      //   return false;
-      // });
-<<<<<<< HEAD
-      
-       $('A#trigger').click(function(){
-        $("DIV#box").slideToggle(400, function(){
-           $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-            return false;
-        });
-=======
-	  
-	   $('A#trigger').click(function(){
-	   	$("DIV#box").slideToggle(400, function(){
-	       $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-	        return false;
-	   	});
->>>>>>> 3a767a4328341b3433e06c9e36bdda1c6c76b401
-    });
-});
+				$(document).ready(function() { 
+			// $("A#trigger").toggle(function() { 
+			// $("DIV#box").fadeIn();
+			//   return false;
+			// },  
+			// function() { 
+			//   $("DIV#box").fadeOut();
+			//   return false;
+			// });
+
+			$('A#trigger').click(function(){
+				$("DIV#box").slideToggle(400, function(){
+				$('html, body').animate({scrollTop:$(document).height()}, 'slow');
+					return false;
+				});
+			});
+		});
 	</script>
-// <!--for float block-->
+		// <!--for float block-->
 	<script>	
-$(function(){
-	var ww = $(window).width()
+		$(function(){
+			var ww = $(window).width()
 
-	var offset = $('.submit_button').offset()
+			var offset = $('.submit_button').offset()
 
-	 top_ = offset.top-$(".information_table").height()-ww*0
+			top_ = offset.top-$(".information_table").height()-ww*0
 
-	 $(window).scroll(function () {
-	  if ($(this).scrollTop() > top_) {
-	   $('.information_table').css({'position': 'absolute', 'top': top_});
-	  } else {
-	   $('.information_table').attr('style','');
-	  }
-	 $('.information_table').show('slow', {animation:'slide'})
-	 });
-	 $(window).resize(function(){
-		 ww = $(window).width()
-		 offset = $('.submit_button').offset()
-		 top_ = offset.top-$(".information_table").height()-ww*0
- })
- })
+			$(window).scroll(function () {
+			if ($(this).scrollTop() > top_) {
+			$('.information_table').css({'position': 'absolute', 'top': top_});
+			} else {
+			$('.information_table').attr('style','');
+			}
+			$('.information_table').show('slow', {animation:'slide'})
+			});
+			$(window).resize(function(){
+				ww = $(window).width()
+				offset = $('.submit_button').offset()
+				top_ = offset.top-$(".information_table").height()-ww*0
+		})
+		})
 	</script>
 		
 </head>
 
-<body>
-<div id="class_container">
-<?php 
-    include ('assets/header.php');
-	
- ?>
-	<div id="header">
+	<body>
 
-		<div id="car_photo_block">
-			<div id="imgs" class="photos_wrap">
-
-				<?php foreach ($result as $row){ ?>
-                    <?php $imgLinks = explode(";", $row['photoid']); ?>
-                    	<!--<img src="<?php echo $imgLinks[0];?>" alt="Smiley face" height="50" width="50"><br>-->
-					<?php } ?>
-
-					<?php
-						$a=0;
-						while($a <= count($imgLinks)-2){
-							//print_r($imgLinks);
-								
-							echo "<td>";?> <img src="<?php echo $imgLinks[$a]; ?>" height="50" width="50"> <?php echo "</td";
-							$a++;
-						}
-					?>
-			</div>
-
-			<div id="next" class="gonext">
-			<button type="button"></button>
-			</div>
-			
-			<div id="forward" class="goforward">
-			<button type="button"></button>
-			</div>
-			
-			<div class="photo_counter">
-			<span id="num" class="numbers_style">1</span>
-			<span class="numbers_style">/</span>
-			<span id="num_count" class="numbers_style"></span>
-			</div>
-			</div>
-
-		<div id="information_block">
-			<table class="information_table">
-			  
-			<tr>
-				<th>	
-
-					<?php echo '<h1>'.$row['price']."$".'</h1>' ?>
-					<?php echo'<h2>'.$row['brand']." ".$row['model']." ".$row['enginecapacity']." | ".$row['year'].'</h2>' ?>
-				</th>
-				<th></th>
-			</tr>
-			
-			<tr><td><p><?php echo $texts[$lang]['type'] ?></p></td> <td><span class="small_car_image"><img src="img/car_types/<?php echo $row['cartype']?>.png" width="35%"></span></td></tr>
-			<tr><td><p><?php echo $texts[$lang]['millage'] ?></p></td> <td><p><?php echo $row['millage']?></p></td></tr>
-			<tr><td><p><?php echo $texts[$lang]['fuel_type'] ?></p></td> <td><p><?php echo $texts[$lang][$row['fueltype']]." ".$row['enginecapacity'] ?></p></td></tr>
-			<tr><td><p><?php echo $texts[$lang]['transmission'] ?></p></td> <td><p><?php echo $texts[$lang][$row['gearbox']] ?></p></td></tr>
-			<tr><td><p><?php echo $texts[$lang]['color'] ?></p></td> <td><div class="color" style="background-color: <?php echo $row['color'] ?>"></div></td></tr>
-			<tr><td><p><?php echo $texts[$lang]['RegNum'] ?></p></td> <td><p><?php echo $row['registrationnumber'] ?></p></td></tr>
-			<tr><td><p><?php echo $texts[$lang]['TechnicalInsp'] ?></p></td> <td><p><?php echo $row['technicalinspection'] ?></p></td></tr>
-			
-			<tr>
-				<th>				
-					<div class="tech_spec">
-					<a href='#' id='trigger'><button type="button"><?php echo $texts[$lang]['techspech'] ?></button></a>
-					</div>
-				</th>
-
-				<th>						
-				<!--edit button-->
-					<div class="edit_info">
-						<?php	if(isset($_session['uid']) && $_session['uid'] == $result[0]["userid"]){ ?>
-									<a href='editproduct.php?id=<?php echo $_GET['id']; ?>'><button type="button">Product Edit</button></a>
-						<?php } ?>
-				<!--edit button ends-->
-					</div>		
-				</th>
-			</tr>
-
-
-			   
-			</table>
-		</div>
-	</div>
-		
-	<div id="second_div">	
-		<table class="second_table">
-		   <tr>
-			<th class="photo_td" >				
-				<img src="<?php if(isset($sellerRow['image'])&&$sellerRow['image']!=''){echo $sellerRow['image'];}else{echo "img/unset.png";} ?>" width="100%">
-				<p class="seller_name"><?php echo $sellerResult[0]["firstname"];?></p>
-			</th>
-			<th>	
-				<p class="text_under"><?php echo $row['info'] ?></p>
-			</th>
-		   </tr>
-		   <tr>
-			<td>
-			</td>
-			<td>
-				<ul class="list1">
-					<li>
-						<a><img src="img/mobile.png" width="2.8%"><?php echo  $sellerResult[0]["telephone"];?></a>
-						<a><img src="img/map.png" width="1.8%"><?php// echo $row['placewherecarat']?></a>
-						<a><img src="img/share.png" width="2%">Share</a>
-					</li>
-				</ul>
-
-			</td>
-			</tr>
-		</table>
-	</div>
-	
-	<div id="send_email_form">
-	<form method="post">
-		<p class="borders"><?php echo $texts[$lang]['emailN'] ?>     <?php echo $sellerResult[0]["email"]; ?></p>
-		
-			<?php
-			if(isset($_SESSION['uid']) && $_SESSION['uid'] > 0){ ?>
-					<p class="borders"><?php echo $texts[$lang]['subj'] ?>     <input name="subject" type="text" value="" /><br /></p>
-			<?php   } else{ ?>
-						<p class="borders"><?php echo $texts[$lang]['subj'] ?>     <input name="subject" type="text" /><br /></p>
-			<?php   }
-			?>
-		
-			<p class="borders"><?php echo $texts[$lang]['mess'] ?></p>
-			<p><textarea name="comment" rows="15" cols="40"></textarea></p>
-			<div class="submit_button">
-			<a><button type="submit" value="Submit"><?php echo $texts[$lang]['mit'] ?></button></a>
-			</div>
-			
-	</form>	
-	</div>
-	
-	<?php
-		// EMAIL STUFF
-		//if "email" variable is filled out, send email
-		if (isset($_REQUEST['email']))  {
-		//Email information
-			$admin_email = $userRow['email'];
-			$email = $_REQUEST['email'];
-			$subject = $_REQUEST['subject'];
-			$comment = $_REQUEST['comment'];
-		//send email
-		mail($admin_email, "$subject", $comment, "From:" . $email);
-		
-		//Email response
-		echo "Thank you for contacting us!";
-		}
-		//if "email" variable is not filled out, display the form
-		else  {
-		?>
-
-		
-	<?php
-	}
-	?>
-
-	<div id="box">
-		<table class="table" align="center">
-			<?php
-			
-				$allIndexNames = array('equipment', 'lights', 'interior', 'steering', 'safety', 'mirrors', 'audiosystem', 'seats');
-				$explodeindex = array('Equipment', 'Lights', 'Interior', 'Steering', 'Safety', 'Mirrors', 'Audiosystem', 'Seats');
-				$additional = $row['additional'];
-				$extraStuff = [];
-				//echo $additional;
-				foreach($explodeindex as $index){
-
-					$extraStuffString = explode($index, $additional);
-					$additional = $extraStuffString[1];
-					$extraStuff[$index] = explode(" ", $extraStuffString[0]);
-				}
-			?>
+		<div id="class_container">
 
 			<?php 
-				if (isset($additional)) {
-					foreach($explodeindex as $value){
-						$save_values[$value]=array();
-			?>
-						<?php foreach($extraStuff[$value] as $extra){
-							array_push($save_values[$value],$extra);
-						?>
-						<?php }
-					}
-				} else {
-					// echo "NEKAS NAV chill";
-					die();
-				}
-			?>
-			
-			<?php	
-				$explodeindexname = array('Equipment', 'Interior', 'Steering', 'Seats', 'Lights', 'Mirrors', 'Safety', 'Audiosystem');
-
-				if (isset($additional)) {?>
-
-			<tr> <?php
-				foreach($explodeindexname as $value){ ?> 
+				include ('assets/header.php');
 				
-				<th class=>
-					<h4><?php echo $value ?></h4>
+			?>
 
-					<?php foreach($extraStuff[$value] as $extra){?>
-						<h3><?php echo $extra;?></h3>
-					<?php } ?>
-				</th>
+			<div id="header">
 
-				<?php } ?>
-			</tr>
+				<div id="car_photo_block">
+					<div id="imgs" class="photos_wrap">
+
+						<?php foreach ($result as $row){ ?>
+							<?php $imgLinks = explode(";", $row['photoid']); ?>
+								<!--<img src="<?php echo $imgLinks[0];?>" alt="Smiley face" height="50" width="50"><br>-->
+							<?php } ?>
+
+							<?php
+								$a=0;
+								while($a <= count($imgLinks)-2){
+									//print_r($imgLinks);
+										
+									echo "<td>";?> <img src="<?php echo $imgLinks[$a]; ?>" height="50" width="50"> <?php echo "</td";
+									$a++;
+								}
+							?>
+					</div>
+
+					<div id="next" class="gonext">
+						<button type="button"></button>
+					</div>
+					
+					<div id="forward" class="goforward">
+						<button type="button"></button>
+					</div>
+					
+					<div class="photo_counter">
+						<span id="num" class="numbers_style">1</span>
+						<span class="numbers_style">/</span>
+						<span id="num_count" class="numbers_style"></span>
+					</div>
+
+					</div>
+
+				<div id="information_block">
+
+						<!--edit button-->
+						<div class="edit_info">
+							<a href='editproduct.php?id=<?php echo $_GET['id']; ?>'><button type="button">Product Edit</button></a>
+						</div>	
+						<!--edit button ends-->	
+					<table class="information_table">
+					
+					<tr>
+						<th>
+							<?php echo '<h1>'.$row['price']."$".'</h1>' ?>
+							<?php echo'<h2>'.$row['brand']." ".$row['model']." ".$row['enginecapacity']." | ".$row['year'].'</h2>' ?>
+						</th>
+						<th></th>
+					</tr>
+					
+					<tr><td><p><?php echo $texts[$lang]['type'] ?></p></td> <td><span class="small_car_image"><img src="img/car_types/<?php echo $row['cartype']?>.png" width="35%"></span></td></tr>
+					<tr><td><p><?php echo $texts[$lang]['millage'] ?></p></td> <td><p><?php echo $row['millage']?></p></td></tr>
+					<tr><td><p><?php echo $texts[$lang]['fuel_type'] ?></p></td> <td><p><?php echo $texts[$lang][$row['fueltype']]." ".$row['enginecapacity'] ?></p></td></tr>
+					<tr><td><p><?php echo $texts[$lang]['transmission'] ?></p></td> <td><p><?php echo $texts[$lang][$row['gearbox']] ?></p></td></tr>
+					<tr><td><p><?php echo $texts[$lang]['color'] ?></p></td> <td><div class="color" style="background-color: <?php echo $row['color'] ?>"></div></td></tr>
+					<tr><td><p><?php echo $texts[$lang]['RegNum'] ?></p></td> <td><p><?php echo $row['registrationnumber'] ?></p></td></tr>
+					<tr><td><p><?php echo $texts[$lang]['TechnicalInsp'] ?></p></td> <td><p><?php echo $row['technicalinspection'] ?></p></td></tr>
+					
+					<tr>
+						<th>				
+							<div class="tech_spec">
+								<a href='#' id='trigger'><button type="button"><?php echo $texts[$lang]['techspech'] ?></button></a>
+							</div>
+						</th>
+
+						<th>						
+							
+						</th>
+					</tr>
+
+					</table>
+				</div>
+			</div>
+
+
+
+			<div id="second_div">	
+				<table class="second_table">
+					<tr>
+						<th class="photo_td" >				
+							<img src="<?php if(isset($sellerRow['image'])&&$sellerRow['image']!=''){echo $sellerRow['image'];}else{echo "img/unset.png";} ?>" width="100%">
+							<p class="seller_name"><?php echo $sellerResult[0]["firstname"];?></p>
+						</th>
+
+						<th>	
+							<p class="text_under"><?php echo $row['info'] ?></p>
+						</th>
+					</tr>
+
+					<tr>
+						<td>
+						</td>
+
+						<td>
+							<ul class="list1">
+								<li>
+									<a><img src="img/mobile.png" width="2.8%"><?php echo  $sellerResult[0]["telephone"];?></a>
+									<a><img src="img/map.png" width="1.8%"><?php// echo $row['placewherecarat']?></a>
+									<a><img src="img/share.png" width="2%">Share</a>
+								</li>
+							</ul>
+
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div id="send_email_form">
+				<form method="post">
+					<p class="borders"><?php echo $texts[$lang]['emailN'] ?>     <?php echo $sellerResult[0]["email"]; ?></p>
+				
+					<?php
+					if(isset($_SESSION['uid']) && $_SESSION['uid'] > 0){ ?>
+							<p class="borders"><?php echo $texts[$lang]['subj'] ?>     <input name="subject" type="text" value="" /><br /></p>
+					<?php   } else{ ?>
+								<p class="borders"><?php echo $texts[$lang]['subj'] ?>     <input name="subject" type="text" /><br /></p>
+					<?php   }
+					?>
+				
+					<p class="borders"><?php echo $texts[$lang]['mess'] ?></p>
+
+					<p><textarea name="comment" rows="15" cols="40"></textarea></p>
+
+					<div class="submit_button">
+						<a><button type="submit" value="Submit"><?php echo $texts[$lang]['mit'] ?></button></a>
+					</div>
+					
+				</form>	
+			</div>
+			
+			<?php
+				// EMAIL STUFF
+				//if "email" variable is filled out, send email
+				if (isset($_REQUEST['email']))  {
+				//Email information
+					$admin_email = $userRow['email'];
+					$email = $_REQUEST['email'];
+					$subject = $_REQUEST['subject'];
+					$comment = $_REQUEST['comment'];
+				//send email
+				mail($admin_email, "$subject", $comment, "From:" . $email);
+				
+				//Email response
+				echo "Thank you for contacting us!";
+				}
+				//if "email" variable is not filled out, display the form
+				else  {
+				?>
 
 			<?php
-			} else {
-				// echo "NEKAS NAV chill";
-				die();
 			}
 			?>
-		</table>
-	</div> 
 
-<div id="botDiv"></div>
-</div>
-</body>
+			<div id="box">
+				<table class="table" align="center">
+					<?php
+					
+						$allIndexNames = array('equipment', 'lights', 'interior', 'steering', 'safety', 'mirrors', 'audiosystem', 'seats');
+						$explodeindex = array('Equipment', 'Lights', 'Interior', 'Steering', 'Safety', 'Mirrors', 'Audiosystem', 'Seats');
+						$additional = $row['additional'];
+						$extraStuff = [];
+						//echo $additional;
+						foreach($explodeindex as $index){
+
+							$extraStuffString = explode($index, $additional);
+							$additional = $extraStuffString[1];
+							$extraStuff[$index] = explode(" ", $extraStuffString[0]);
+						}
+					?>
+
+					<?php 
+						if (isset($additional)) {
+							foreach($explodeindex as $value){
+								$save_values[$value]=array();
+					?>
+								<?php foreach($extraStuff[$value] as $extra){
+									array_push($save_values[$value],$extra);
+								?>
+								<?php }
+							}
+						} else {
+							// echo "NEKAS NAV chill";
+							die();
+						}
+					?>
+					
+					<?php	
+						$explodeindexname = array('Equipment', 'Interior', 'Steering', 'Seats', 'Lights', 'Mirrors', 'Safety', 'Audiosystem');
+
+						if (isset($additional)) {?>
+
+					<tr> <?php
+						foreach($explodeindexname as $value){ ?> 
+						
+						<th>
+							<h4><?php echo $value ?></h4>
+
+							<?php foreach($extraStuff[$value] as $extra){?>
+								<h3><?php echo $extra;?></h3>
+							<?php } ?>
+						</th>
+
+						<?php } ?>
+					</tr>
+
+					<?php
+					} else {
+						// echo "NEKAS NAV chill";
+						die();
+					}
+					?>
+				</table>
+			</div> 
+
+			<div id="botDiv"></div>
+		</div>
+	</body>
 </html>
