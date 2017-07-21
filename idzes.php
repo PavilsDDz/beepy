@@ -2,8 +2,6 @@
 	include ('assets/connect.php');	
     include 'assets/setup.php';
 
-	$playload["email"] = "";
-
 	$query = "SELECT username, email, password FROM `users` WHERE email = :email";
 	$playload["email"] = $_POST['to'];
 	$result = getAllDataFromDatabase($query, $playload);
@@ -31,12 +29,12 @@
 		'X-Mailer: PHP/' . phpversion();
 
 		mail($to, $subject, $message, $headers);
-
-		echo "Email was send to email:    ".$_POST['to']; 
-
-	}else{
-			echo "e-mail in Beepy system does exist. If you dont have a account please signup!";
 		
+		echo "Yes!";
+		
+	}else{
+		
+		echo "e-mail in Beepy system does exist";
 		
 	}
 
@@ -55,14 +53,3 @@
 		return implode($pass);
 	}
 ?>
-
-<h2>Sveiki, šeit top recovery pass</h2>
-
-<form method="post">
-	<p class="borders"> Jūsu E-pasts:   <input name="to" type="text" value="" /></p></p>
-
-	<div class="submit_button">
-		<a><button type="submit" value="Submit" name="sub">Sūtīt uz E</button></a>
-	</div>
-					
-</form>	
