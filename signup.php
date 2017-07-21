@@ -280,7 +280,6 @@ $fb = new \Facebook\Facebook([
 
        
     
-    }
 
 
 
@@ -297,6 +296,7 @@ $fb = new \Facebook\Facebook([
                     exit;
         }
     }
+    
 
 ?>
 
