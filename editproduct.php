@@ -53,7 +53,7 @@
                 }
             }
         if(isset($_POST['files_del'])){
-            $files_to_del = explode(';', $_POST['files_del'])
+            $files_to_del = explode(';', $_POST['files_del']);
             foreach ($files_to_del as $file_del) {
                 unlink($files_del);
             }
