@@ -20,10 +20,6 @@
 		$to      = $_POST['to'];
 		$subject = 'the subject';
 
-		$pass = $row['password'];
-		$email = $row['email'];
-		$username = $row['username'];
-
 		$message = $newPassword; 
 
 		$headers = 'From: BEEPY' . "\r\n" .
