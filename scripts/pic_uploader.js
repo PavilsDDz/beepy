@@ -44,7 +44,7 @@ $(function(){
 		var filename = $(this).val();
 		new_path = file_input_change(event);
 		console.log(file_input_change(event))
-		$(this).siblings('.fake_i').children('img').attr('src',new_path)
+		$(this).parent().siblings('.fake_i').children('img').attr('src',new_path)
 		
 		if (typeof links_list!=='undefined') {
 

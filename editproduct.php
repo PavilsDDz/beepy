@@ -2,6 +2,7 @@
 
 
     include ('assets/connect.php');
+	include 'assets/setup.php';
 
     if(isset($_SESSION['uid'])){
         $productQuery = "SELECT * FROM products WHERE id = :id";
@@ -118,6 +119,8 @@
 <!doctype html>
 <html>
     <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="css/style.css">
         <?php include 'assets/head.php' ?>
         <script>console.log('GOing')
             var showHint = function (str) {
@@ -149,9 +152,137 @@
 
             launch_req() 
         </script>
+		<style>
+h1{
+	color: #00c6ff;
+    font-size: 2.5vw;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 140px;
+}
+file_input input{
+	background-color: #fff;
+    cursor: pointer;
+    color: #00c6ff;
+    border: solid 1px #00c6ff;
+    font-size: 25px;
+    padding: 6px 20px;
+}
+input[type="file" i]{
+	background-color: #fff;
+    cursor: pointer;
+    color: #00c6ff;
+    border: solid 1px #00c6ff;
+    font-size: 25px;
+    padding: 6px 20px;
+	width: 60%;
+}
+label, .car_info span{
+	font-family: 'Montserrat', sans-serif;
+    color: #00c6ff;
+    font-size: 18px;
+    line-height: 1.8vw;
+    font-weight: 500;
+    text-align: center;
+}
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 13.3333px Arial;
+}
+select, .car_info input{
+	width: 172px;
+}
+.img_edit_block, #add_img_slot{
+	text-align: center;
+}
+#add_img_slot{
+	width: 2vw;
+	height: 8.5vw;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #00c6ff;
+    border: solid 1px #00c6ff;
+}
+.car_info{
+	width: 20%;
+	margin-bottom: 2vw;
+	margin-top: 2vw;
+}
+#additional_checkbox{
+	display: flex;
+    justify-content: center;
+    text-align: left;
+	
+	font-family: 'Montserrat', sans-serif;
+    color: #00c6ff;
+    font-size: 14px;
+    line-height: 1.3vw;
+    font-weight: 500;
+	margin-bottom: 2vw;
+}
+#additional_checkbox label{
+	font-family: 'Montserrat', sans-serif;
+    color: #00c6ff;
+    font-size: 20px;
+	line-height: 1.3vw;
+    font-weight: 600;
+    text-align: left;
+	text-transform: uppercase;
+}
+.additional_checkbox{
+	width: 13%;
+}
+.img_edit_block, #add_img_slot {
+    display: flex;
+    justify-content: center;
+    padding: 0.5vw;
+}
+#btn-update, .btn-update{
+	background-color: #00c6ff;
+    color: rgba(255,255,255,1);
+    border: none;
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: 500;
+    line-height: 0.5vw;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
+    min-width: 70px;
+    min-height: 20px;
+}
+.bottom_borders{
+	margin-bottom:3vw;
+}
+.file-upload input[type="file"]{
+	display: none;
+}
+.file-upload span {
+	border: solid 1px;
+	padding: 5px;
+	border-radius: 20px;
+}
+.img_edit_block img{
+	padding-left: 2vw;
+	padding-right: 2vw;
+}
+		</style>
     </head>
 
     <body>
+	<?php include"assets/header.php"?>
+	<div align="center" style="margin-top: 6vw;">
         <form method="POST" action="editproduct.php?id=<?php echo $_GET['id']; ?>" enctype="multipart/form-data">
             <h1>EDIT</h1>
             <div class="img_edit_block">
@@ -168,10 +299,16 @@
                         ?>
                         <div class="img_i_wrap">
                         <div class="fake_i" >
-                            <img src='<?php echo $oneimg ?>' height='50' width='50'>
+                            <img src='<?php echo $oneimg ?>' height='150' width='150'>
                         </div>
                         
-                        <input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">
+                        <!--<input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">-->
+						
+						 <label class="file-upload">
+							  <input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">
+							  <span>Choose File</span>
+						 </label>
+						
                         </div>
 
 
@@ -186,10 +323,15 @@
 
                          <div class="img_i_wrap">
                         <div class="fake_i" >
-                            <img src='' height='50' width='50'>
+                            <img src='' height='150' width='150'>
                         </div>
                         
-                        <input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">
+                        <!--<input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">-->
+						<label class="file-upload">
+							<input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">
+							<span>Choose File</span>
+						</label>
+						
                         </div>
 
                             <?php
@@ -198,14 +340,17 @@
                         }
 
                 ?>
-                <div id="add_img_slot" style="width: 50px; height: 50px; background-color: #aaa"></div>
+                <div id="add_img_slot">></div>
                 <input  type="hidden" name="files_del" value="" id="files_del">
                 <input  type="hidden" name="files_stay" value="" id="files_stay">
             </div>
                     
-            <label>Car Type:</label>
-            <?php $cartype = array("-", "convertible", "coupe", "hatchback", "minivan", "van", "pickup", "offroad", "sedan", "unversal", "sport", "other");?>
-            <select name="carType" placeholder="cartype" ?>"><br/><br/>
+<table class="car_info">
+<tr>
+	<td><label>Car Type:</label></td>
+    <td>
+	<?php $cartype = array("-", "convertible", "coupe", "hatchback", "minivan", "van", "pickup", "offroad", "sedan", "unversal", "sport", "other");?>
+            <select name="carType" placeholder="cartype" ?>">
                 <?php foreach($cartype as $onecartype){
                     if($onecartype == $productRow['cartype'] ){ ?>
                         <option value="<?php echo $onecartype; ?>" selected><?php echo $onecartype;?></option>
@@ -214,25 +359,30 @@
                         <option value="<?php echo $onecartype; ?>"><?php echo $onecartype;?></option>
                         <?php
                     }
-                } ?>
-
-            </select><br/><br/>
-
-
-            <span>Model:</span>
-
-                <select id="models_list" name="model"><option value="<?php echo $productRow['model']; ?>" selected><?php echo $productRow['model']; ?></option></select><br/><br/>
-
-                <?php
-                    // print_r($productRow['model']);
-                ?>
-            <label>Year:</label>
-            <input type="text" name="year" maxlength="4" size="4" placeholder="year" value="<?php echo $productRow['year']; ?>"><br/><br/>
-
-            <label>Millage:</label><input type="text" name="millage" placeholder="millage" value="<?php echo $productRow['millage']; ?>"><br/><br/>
-
-            <label>Fuel Type:</label>
-            <?php $fueltype = array("-", "petrol", "diesel", "gas", "electricity");?>
+                } ?></select>
+	</td>
+</tr>
+<tr>
+    <td><span>Model:</span></td>
+    <td>
+	<select id="models_list" name="model"><option value="<?php echo $productRow['model']; ?>" selected><?php echo $productRow['model']; ?></option></select>
+	<?php
+         // print_r($productRow['model']);
+    ?>
+	</td>
+</tr>
+<tr>
+    <td><label>Year:</label></td>
+    <td><input type="text" name="year" maxlength="4" size="4" placeholder="year" value="<?php echo $productRow['year']; ?>"></td>
+</tr>
+<tr>
+    <td><label>Millage:</label></td>
+    <td><input type="text" name="millage" placeholder="millage" value="<?php echo $productRow['millage']; ?>"></td>
+</tr>
+<tr>
+    <td><label>Fuel Type:</label></td>
+    <td>
+	<?php $fueltype = array("-", "petrol", "diesel", "gas", "electricity");?>
             <select name="fuelType" placeholder="fueltype" value="<?php echo $productRow['fueltype']; ?>">
                 <?php foreach($fueltype as $onefueltype){
                     if($onefueltype === $productRow['fueltype'] ){ ?>
@@ -244,10 +394,13 @@
                     }
                 } ?>
          
-            </select><br/><br/>
-
-            <label>Color:</label>
-            <?php $color = array("-", "white", "black", "red", "yellow", "green", "gray", "blue", "another", "other");?>
+    </select>
+	</td>
+</tr>
+<tr>
+    <td><label>Color:</label></td>
+    <td>
+	<?php $color = array("-", "white", "black", "red", "yellow", "green", "gray", "blue", "another", "other");?>
             <select name="color" placeholder="color" value="<?php echo $productRow['color']; ?>">
                 <?php foreach($color as $onecolor){
                     if($onecolor === $productRow['color'] ){ ?>
@@ -255,34 +408,49 @@
                         <?php
                     }else{ ?>
                         <option value="<?php echo $onecolor; ?>"><?php echo $onecolor;?></option>
-                        <?php
+                        <?php 
                     }
                 } ?>
-
-            </select><br/><br/>
-
-            <label>Price:</label><input type="text" name="price" placeholder="price" value="<?php echo $productRow['price']; ?>"><br/><br/>
-
-            <label>Engine Capacity:</label>
-            <input type="number" name="engineCapacity"  pattern="[0-9]+([\.,][0-9]+)?" step="0.1" placeholder="enginecapacity" value="<?php echo $productRow['enginecapacity']; ?>"></input><br/><br/>
-
-            <label>Transmission:</label>
-            <?php $transmission = array("-", "manual", "automatic", "semi_automatic_and_dual_clutch");?>
+    </select>
+	</td>
+</tr>
+<tr>
+    <td><label>Price:</label></td>
+    <td><input type="text" name="price" placeholder="price" value="<?php echo $productRow['price']; ?>"></td>
+</tr>
+<tr>
+    <td><label>Engine Capacity:</label></td>
+    <td><input type="number" name="engineCapacity"  pattern="[0-9]+([\.,][0-9]+)?" step="0.1" placeholder="enginecapacity" value="<?php echo $productRow['enginecapacity']; ?>"></input></td>
+</tr>
+<tr>
+    <td><label>Transmission:</label></td>
+    <td>
+	<?php $transmission = array("-", "manual", "automatic", "semi_automatic_and_dual_clutch");?>
             <select name="gearBox" placeholder="gearbox">
-
                     <option value="manual" <?php if($productRow['gearbox']=='manual'){echo 'selected';} ?>>manual</option>
                     <option value="automatic" <?php if($productRow['gearbox']=='automatic'){echo 'selected';} ?>>automatic</option>
                     <option value="semi_automatic_and_dual_clutch" <?php if($productRow['gearbox']=='semi_automatic_and_dual_clutch'){echo 'selected';} ?>>semi_automatic_and_dual_clutch</option>
                     
-            </select><br><br>
-
-            <label>Info:</label><input type="text" name="info" placeholder="info" value="<?php echo $productRow['info']; ?>"><br/><br/>
-            
-            <label>Registration Number:</label><input type="text" name="registrationnumber" placeholder="registrationnumber" value="<?php echo $productRow['registrationnumber']; ?>"><br/><br/>
-
-            <label>Tehnical Inspection:</label><input type="text" name="technicalinspection" placeholder="technicalinspection" value="<?php echo $productRow['technicalinspection']; ?>"><br/><br/>
-
-            <label>additional:</label><input type="text" name="additional" placeholder="additional" value="<?php echo $productRow['additional']; ?> "selected><br/><br/>
+    </select>
+	</td>
+</tr>
+<tr>
+    <td><label>Info:</label></td>
+    <td><input type="text" name="info" placeholder="info" value="<?php echo $productRow['info']; ?>"></td>
+</tr>
+<tr>
+    <td><label>Registration Number:</label></td>
+    <td><input type="text" name="registrationnumber" placeholder="registrationnumber" value="<?php echo $productRow['registrationnumber']; ?>"></td>
+</tr>
+<tr>
+    <td><label>Tehnical Inspection:</label></td>
+    <td><input type="text" name="technicalinspection" placeholder="technicalinspection" value="<?php echo $productRow['technicalinspection']; ?>"></td>
+</tr>
+<tr>
+    <td><label>Additional:</label></td>
+	<td><input type="text" name="additional" placeholder="additional" value="<?php echo $productRow['additional']; ?> "selected></td>
+</tr>
+</table>
 
             <div class="additional_checkbox_inline">
 
@@ -311,8 +479,8 @@
                     // print_r($extrindexarray);
                     // echo "<br>";
                 ?> 
-                
-            <div class="additional_checkbox">
+            <div id="additional_checkbox">    
+				<div class="additional_checkbox">
                     <label>Equipment</label><br>
                         <input type="hidden" name="equipment[]" value=" ">
                         <input type="checkbox" name="equipment[]" value="hydraulic_steerimg_booster" <?php if(in_array('hydraulic_steerimg_booster', $extrindexarray['Equipment'])){echo "checked";} ?>> hydrplic booster<br>
@@ -334,7 +502,7 @@
                         <input type="checkbox" name="lights[]" value="led_braking_lights"<?php if(in_array('led_braking_lights', $extrindexarray['Lights'])){echo "checked";} ?>>led braking lights<br>
                         <input type="checkbox" name="lights[]" value="fog_lights"<?php if(in_array('fog_lights', $extrindexarray['Lights'])){echo "checked";} ?>>fog lights<br>
                         <input type="checkbox" name="lights[]" value="light_cleaners"<?php if(in_array('light_cleaners', $extrindexarray['Lights'])){echo "checked";} ?>>light cleaners<br>
-                </div>
+				</div>
 
                 <div class="additional_checkbox">
                     <label>Interior</label><br>
@@ -406,10 +574,13 @@
                         <input type="checkbox" name="seats[]" value="massage"<?php if(in_array('massage', $extrindexarray['Seats'])){echo "checked";} ?>>massage seats<br>
                 </div>
             </div>
-
-            <input type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Update</strong></input>
-            <a href="product.php"><button type="button" value="button">Cancel</button></a>
+			<div class="bottom_borders">
+            <input type="submit" name="btn-update" id="btn-update" onClick="update()"></input>
+            <a href="product.php"><button class="btn-update" type="button" value="button">Cancel</button></a>
+			</div>
         </form>
+		 <?php include"assets/footer.php" ?>
+		</div>
         </body>
     <!-- Alert for Updating -->
         <script>
