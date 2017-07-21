@@ -253,6 +253,8 @@ if ($success) {
      ?>
 	 
 		
+
+        <div class="container" align="center">
         <div id="error">
            <?php
                 if(isset($error) && !empty($error)) {   
@@ -278,7 +280,6 @@ if ($success) {
                 }
            ?>
         </div>
-        <div class="container" align="center"> 
             <form method="POST" action="addcar.php?newcar=<?php echo isset($_GET['newcar']) && $_GET['newcar'] > 0 ? 1 : 0; ?>" enctype="multipart/form-data" >
 
             <label><?php echo $texts[$lang]['type'] ?></label>
