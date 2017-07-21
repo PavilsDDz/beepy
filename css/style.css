@@ -246,7 +246,7 @@ h4 {
 .groupLabel  {
 	justify-content: center;
 	-webkit-justify-content: center;
-	margin: 21px;
+	margin: 5px;
 }
 .range_select  .middle {
 	width: 19%;
@@ -276,7 +276,10 @@ h4 {
 #submit {
 	width: 100%;
 	justify-content:center;	
-	-webkit-justify-content:center;	
+	-webkit-justify-content:center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
 }
 .signup_submit {
 	background-color: #00c6ff;
