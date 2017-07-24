@@ -32,13 +32,13 @@
 	
 	$texts['ru']['edit'] = 'Редактировать';
 	$texts['ru']['Choose_file'] = 'Выбрать Файл';
-	$texts['ru']['change_pic'] = 'Поминять картину ';
+	$texts['ru']['change_pic'] = 'Поменять изображение ';
     $texts['ru']['fname'] = 'Имя:';
     $texts['ru']['lname'] = 'Фамилия:';
-	$texts['ru']['uname'] = 'Пользователь:';
+	$texts['ru']['uname'] = 'Имя пользователя:';
 	$texts['ru']['phone'] = 'Номер телефона:';
-    $texts['ru']['email'] = 'Злектронойпочтa';
-	$texts['ru']['save'] = 'Сохранит';
+    $texts['ru']['email'] = 'Электронная почта:';
+	$texts['ru']['save'] = 'Сохранить';
 	$texts['ru']['cancel'] = 'Oтмена';
 
 
