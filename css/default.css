@@ -198,12 +198,12 @@ button {
 	font-weight: 300;
 }
 #footer ul li p {
-	width: 70px !important;
-	margin: 0 !important;
-	display: inline-block;
-	color: #eee;
-	font-weight: 600 !important;
-
+	width: auto !important;
+    margin: 0 !important;
+    padding-right: 18px;
+    display: inline-block;
+    color: #eee;
+    font-weight: 600 !important;
 }
 .cp {
 	color: #ddd;
