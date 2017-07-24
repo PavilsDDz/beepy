@@ -315,16 +315,17 @@ $fb = new \Facebook\Facebook([
 #signup{
 	text-align: center;
 }
-#background{
-    padding: 60px 0;
-}
 label{
 	font-family: 'Montserrat', sans-serif;
-	color: #00c6ff;
+	color: white;
 	font-size: 22px;
 	line-height: 1;
 	font-weight:500;
 	text-align: left;
+}
+form {
+	margin-top: 20px;
+    padding-bottom: 20px;
 }
 input{
 	font-family: 'Montserrat', sans-serif;
@@ -351,12 +352,14 @@ input{
     margin-right: 1vw;
 }
 #form input {
-	border: 1px solid #00c6ff;
+	border: none;
     width: 250px;
     height: 27px;
     border-radius: 30px;
     padding: 9px;
-    background-color: transparent;
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 input:focus{
 	outline: none;
@@ -389,7 +392,7 @@ form #submit input{
     font-size: 22px;
     height: 50px;
     width: 100%;
-        padding: 10px 20px;
+    padding: 10px 20px;
     border-radius: 30vw;
     font-weight: 500;
     line-height: 2px;
@@ -398,24 +401,41 @@ form #submit input{
 }
 .fb_link {
     position: relative;
-    top: 0;
+    top: 20px;
     right: 25%;
     color: #00c6ff;
     transition: ease all 0.3s;
-	    font-size: 22px;
+    font-size: 22px;
+    background: white;
+    padding: 10px;
+    border-radius: 30px;
 }
 .fb_link:hover {
     color: #00aacc
 }
 .wraper {
     position: relative;
+	background-image: url(img/background5.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+	margin-top: 83px;
 }
 #submit {
     width: 100%;
     position: relative;
     bottom: 0px;
     left: 0;
-	
+}
+
+@media screen and (max-width: 800px){
+.wraper {
+    margin-top: 0px;
+	padding-top: 80px;
+}
+.fb_link {
+    right: 0;
+}
 }
 </style>
 		
@@ -427,8 +447,7 @@ form #submit input{
     ?>
 
 	<div id="signup">
-	
-	<div id="background"></div>
+	<?php include 'assets/menu_block.php'; ?>
         
         <div class="wraper">
 
@@ -482,6 +501,7 @@ form #submit input{
             </div>
 
         </div>
+	<?php include 'assets/footer.php'; ?> 
 	</div>
     </body>
 </html>
