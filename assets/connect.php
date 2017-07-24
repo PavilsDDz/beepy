@@ -6,7 +6,7 @@ global $db;
     //print_r($_SESSION);
 
 try {
-	$db = new PDO( "mysql:host=127.0.0.1;dbname=beepy;charset=utf8", "root", "" );
+	$db = new PDO( "mysql:host=localhost;dbname=beepy;charset=utf8", "root", "nikita" );
 	$salt = "o78kb6985g6j9hi9=6uj78kh9ikgjoku9kyrj7r";
 	// var_dump($db);
 }
