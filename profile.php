@@ -152,19 +152,19 @@
 			<td class="ul_td">
 				<table class="list1">
 					<tr>
-					<th class="center"><img src="img/profile.png" width="25px"></th>
+					<th class="center"><img src="img/profile.png" width="20px"></th>
 					<th><a><span><?php echo ($userRow['firstname'].' '.$userRow['lastname']); ?></span></a></th>
 					</tr>
 					<tr>
-					<td class="center"><img src="img/mobile.png" width="40px"></td>
+					<td class="center"><img src="img/mobile.png" width="35px"></td>
 					<td><a><?php echo ($userRow['telephone']); ?></a><br></td>
 					</tr>
 					<tr>
-					<td class="center"><img src="img/email.png" width="25px"></td>
+					<td class="center"><img src="img/email.png" width="20px"></td>
 					<td><a><?php echo ($userRow['email']); ?></a><br></td>
 					</tr>
 					<tr>
-					<td class="center"><img src="img/map.png" width="25px"></td>
+					<td class="center"><img src="img/map.png" width="20px"></td>
 					<td><a> <?php echo ($userRow['country']); ?></a></td>
 					</tr>
 				</table>
