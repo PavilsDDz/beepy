@@ -69,41 +69,45 @@
 
         }
         
+
+  
+       if (isset($_FILES['file']['name'])&&count($_FILES['file']['name'])) {
+
+            $fileName = $_FILES['file']['name'];
+            $fileTmpName = $_FILES['file']['tmp_name'];
+
+            $fileSize = $_FILES['file']['size'];
+            $fileError = $_FILES['file']['error'];
+            $fileType = $_FILES['file']['type'];
+
+            $fileExt = explode('.', $fileName);
+            $fileActualyExt = strtolower(end($fileExt));
+
+            $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+                                    
+                if ($fileTmpName != "") {
+                    $fileNameNew = $_SESSION['uid'].'profileImg.'.$fileActualyExt;
+
+                    $fileDestination = 'userimg/'.$fileNameNew;
+                if (move_uploaded_file($fileTmpName, $fileDestination)) {
+                 //   echo "Uploaded";
+                    $fileDestString = $fileDestString.$fileDestination;
+
+                }
+            }
+
+            $sql = "UPDATE users SET image = :image WHERE id = :id";
+            $imagePayload["image"] = $fileDestString;
+            $imagePayload["id"] = $_SESSION['uid'];
+        $row = insertDataInToDataBase($sql,  $imagePayload);
+       }
+
         if(isset($userQuery)){
             header("location: profile.php");
         }
+
     }
-
-    if(isset($_POST["img-update"])){
-       
-        $fileName = $_FILES['file']['name'];
-        $fileTmpName = $_FILES['file']['tmp_name'];
-
-        $fileSize = $_FILES['file']['size'];
-        $fileError = $_FILES['file']['error'];
-        $fileType = $_FILES['file']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualyExt = strtolower(end($fileExt));
-
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-                                
-            if ($fileTmpName != "") {
-                $fileNameNew = $_SESSION['uid'].'profileImg.'.$fileActualyExt;
-
-                $fileDestination = 'userimg/'.$fileNameNew;
-            if (move_uploaded_file($fileTmpName, $fileDestination)) {
-             //   echo "Uploaded";
-                $fileDestString = $fileDestString.$fileDestination;
-
-            }
-        }
-
-        $sql = "UPDATE users SET image = :image WHERE id = :id";
-        $imagePayload["image"] = $fileDestString;
-        $imagePayload["id"] = $_SESSION['uid'];
-        $row = insertDataInToDataBase($sql,  $imagePayload);
-    }
+    
 ?>
 
 <!doctype html>
@@ -118,33 +122,47 @@
 
 </head>
     <body>
-	<?php 
+    <?php 
     include"assets/header.php"
     ?>
 
-	<div align="center">
+    <div align="center">
         <form method="post" enctype="multipart/form-data">
             <h1><?php echo $texts[$lang]['edit'] ?></h1>
-			
-			<table>
+            
+            <table>
             <tr><td class="flex" style="justify-content: center;-webkit-justify-content: center;">
-			<label class="file_upload">
-				<span class="button"><?php echo $texts[$lang]['Choose_file'] ?></span>
-				<input type="file" name="file">
-			</label>
-			</td></tr>
-            <tr><td><div class="change"><input type="submit" name="img-update" value="<?php echo $texts[$lang]['change_pic'] ?>"></div></td></tr>
-			</table>
-			
-			<br/><br/>
-			
-            <img src="<?php if($userRow['image']==''){echo "img/unset.png";}else{ echo $userRow['image'];} ?>" width="15%"><br><br>
-			
-			<table class="table_inputs">
-				<tr>
-					<td><label><?php echo $texts[$lang]['fname'] ?></label></td>
-					<td><input type="text" name="firstname" placeholder="firstname" value="<?php echo $userRow['firstname']; ?>"></td>
-				</tr>
+            <label class="file_upload">
+                <span class="button"><?php echo $texts[$lang]['Choose_file'] ?></span>
+                <input id="img_input" type="file" name="file">
+            </label>
+            </td></tr>
+            
+            </table>
+            
+            <br/><br/>
+            
+            <img id="img" src="<?php if($userRow['image']==''){echo "img/unset.png";}else{ echo $userRow['image'];} ?>" width="15%"><br><br>
+            <script type="text/javascript">
+                $(function(){
+                      
+                        
+                    img = $('#img')
+                    input = $('#img_input')
+                    input.change(function(){
+                        output = URL.createObjectURL(event.target.files[0]);
+                        img.attr('src', output)
+
+                    })
+
+                })
+            </script>
+            
+            <table class="table_inputs">
+                <tr>
+                    <td><label><?php echo $texts[$lang]['fname'] ?></label></td>
+                    <td><input type="text" name="firstname" placeholder="firstname" value="<?php echo $userRow['firstname']; ?>"></td>
+                </tr>
 				<tr>
 					<td><label><?php echo $texts[$lang]['lname'] ?></label></td>
 					<td><input type="text" name="lastname" placeholder="lastname" value="<?php echo $userRow['lastname']; ?>"></td>
