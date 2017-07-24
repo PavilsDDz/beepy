@@ -6,17 +6,15 @@
 }
 h1{
     color: #00c6ff;
-    font-size: 2.5vw;
+    font-size: 50px;
     text-align: center;
-    
-    
     margin-bottom: 20px;
     margin-top: 140px;
 }
 label{
     font-family: 'Montserrat', sans-serif;
     color: #00c6ff;
-    font-size: 1vw;
+    font-size: 20px;
     line-height: 1;
     font-weight:500;
     text-align: left;
@@ -24,7 +22,7 @@ label{
 input{
     font-family: 'Montserrat', sans-serif;
     color: black;
-    font-size: 1vw;
+    font-size:20px;
     line-height: 1;
     font-weight:500;
     text-align: left;
@@ -42,10 +40,9 @@ input{
     font-size: 18px;
     height: 40px;
     width: 120px;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 20px;
     font-weight: 500;
-    line-height: 0.5vw;
     font-family: 'Montserrat', sans-serif;
     opacity: 0.8;
     min-width: 70px;
@@ -61,7 +58,7 @@ input{
     font-size: 18px;
     height: 40px;
     width: 120px;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 20px;
     font-weight: 500;
     line-height: 0.5vw;
@@ -111,11 +108,14 @@ input:focus{
     opacity: 0.8;
     margin-top: 1vw;
 }
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 800px){
     .h1{
         font-size: 40px;
     }
-    .table_inputs label{
-        font-size: 15px;
-    }
+	#img{
+		width: 220px;
+	}
+	form{
+		margin-top: -7em;
+	}
 }
