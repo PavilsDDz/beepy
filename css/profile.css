@@ -8,7 +8,7 @@ body{
 	padding: 0;
 	
 }
-ul, li, dir, menu {
+#second_block ul, li, dir, menu {
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -18,39 +18,34 @@ a {
 	color:inherit;
 }
 
-p{
+#second_block p{
 	font-family: 'Montserrat', sans-serif;
     color: #939393;
-    font-size: 0.9vw;
+    font-size: 15px;
     font-weight: 600;
-	margin-top: 1em;
     margin-bottom: -2em;
 }
 .content_container span{
 	font-weight: 600;
 }
-h1{
-	font-family: 'Montserrat', sans-serif;
-	color: white;
-	font-size: 6vw;
-	font-weight:600;	
-}
 h2{
 	font-family: 'Montserrat', sans-serif;
     color: #00c6ff;
-    font-size: 1.6vw;
+    font-size: 30px;
     font-weight: 500;
 	text-align: left;
+	margin: 0;
+    margin-bottom: 25px;
 }
 h3{
 	font-family: 'Montserrat', sans-serif;
 	color: #424242;
-	font-size: 1vw;
+	font-size: 18px;
 	font-weight:600;
 	margin-top: 7em;
     margin-bottom: -1em;
 }
-.flex {
+.flex_2 {
 	display: -webkit-box; 
 	display: -moz-box;    
 	display: -ms-flexbox; 
@@ -58,7 +53,7 @@ h3{
 	display: flex;
 }
 .content_container {
-	margin-top: 134px;
+    margin-top: 90px;
 }
 input {
     border-right: none;
@@ -115,8 +110,9 @@ input:focus{
 	z-index: 2;
 	position: relative;
 	height: auto;
-	width: 90%;
+	width: 35%;
 	margin: auto;
+	display: -webkit-inline-box;
 }
 #second_block th {
 	
@@ -124,24 +120,28 @@ input:focus{
 #table_cars{	
 	z-index: 2;
 	position: relative;
+	padding: 2.3vw;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	margin-bottom: 30px;
+	width: 170%;
 }
 
 .edit_info{
 	width: 70%;
    }
 .edit_info button{
-	background-color: #00c6ff;
-    color: rgba(255,255,255,1);
-    border: none;
-    font-size: 1.1vw;
-    height: 10%;
-    width: 100%;
-    padding: 1vw 0.2vw;
-    border-radius: 2vw;
+	border: none;
+    font-size: 20px;
+    padding: 10px 20px;
     font-weight: 500;
     line-height: 0.6vw;
     font-family: 'Montserrat', sans-serif;
     opacity: 0.8;
+	background-color: #00c6ff;
+    color: #fff;
+    height: 50px;
+    border-radius: 30px;
+    width: 200px;
    }
 button:focus{
 	outline:none;
@@ -163,7 +163,7 @@ button:focus{
 .list1{
 	font-family: 'Montserrat', sans-serif;
     color: #00c6ff;
-    font-size: 1.1vw;
+    font-size: 20px;
     font-weight: 500;
 	text-align: left;
 }
@@ -180,11 +180,6 @@ button:focus{
 .list2 a{
 	padding-right: 1vw;
 }
-.your_cars{
-	position: relative;
-	left: 7.6vw;
-	top: 1vw;
-}
 .personal_info_style{
 	text-align: center;
 	margin-top: 0em;
@@ -199,17 +194,13 @@ button:focus{
 }
 
 .logo, .logo1 {
-	width:12vw;
-	padding-top:10vw;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: none;
-	opacity: 1;
-	margin: 1%;
-	display: inline-block;
-	transition: all ease 0.3s;
-	margin-bottom: 50px;
-	position: relative;
+	width: 250px;
+    padding-top: 250px;
+    background-size: cover;
+    background-position: center center;
+    opacity: 1;
+    margin-bottom: 70px;
+    position: relative;
 }
 
 .logo h3, .logo1 h3{
@@ -229,14 +220,25 @@ button:focus{
 	width: 100%;
 }
 	
-	
-/*footer*/
-
-@media screen and (max-width: 1400px){
-	.links{
-	font-size: 1.2em;
-	}
-	.selll{
-	font-size: 4em;
-	}
+@media screen and (max-width: 800px){
+#second_block {
+	width: 100%;
+    display: block;
+}
+.flex_2 {
+    flex-direction: row !important;
+}
+.logo_wrap{
+	width: 30%;
+}
+.wrap {
+    justify-content: flex-start;
+}
+.logo, .logo1 {
+    width: 40vw;
+    padding-top: 40vw;
+}
+.content_container {
+    margin-top: 20px;
+}
 }

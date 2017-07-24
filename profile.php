@@ -122,209 +122,77 @@
                 }
        */ ?>
 
-
 <html>
 <head>
 <meta charset="utf-8">
-    <?php include"assets/head.php" ?>
-
+<?php include"assets/head.php" ?>
 <link rel="stylesheet" type="text/css" href="css/profile.css">
-
-
 </head>
 
 <body>
 <?php include"assets/header.php" ?>
 <div id="fixed" class="content_container">
 
-			
-
-			<div id="second_block">
-				<table><tr>
-					<th class="personal_info">
-						
-					<table align="center" width="70%">
-					<tr>
-						<th><h2 class="personal_info_style"><?php echo $texts[$lang]['Personal_info'] ?></h2></th>
-						<th style="vertical-align: top;">
-							<div class="edit_info">
-							<a href='editprofile.php'><button type="button"><?php echo $texts[$lang]['Edit_info'] ?></button></a>
-							</div>
-						</th>
-					</tr>
-					<tr>
-						<td class="photo_td">
-						<div id="user_img">				
-							<img src="<?php if ($userRow['image']=='') {echo "img/unset.png";}else{echo $userRow['image'];} ?>" width="100%">
-						</div>
-						</td>
-						<td class="ul_td">
-						  <table class="list1">
-						   <tr>
-							<th class="center"><img src="img/profile.png" width="45%"></th>
-							<th><a><span><?php echo ($userRow['firstname'].' '.$userRow['lastname']); ?></span></a></th>
-						   </tr>
-						   <tr>
-							<td class="center"><img src="img/mobile.png" width="60%"></td>
-							<td><a><?php echo ($userRow['telephone']); ?></a><br></td>
-						  </tr>
-							<tr>
-							<td class="center"><img src="img/email.png" width="45%"></td>
-							<td><a><?php echo ($userRow['email']); ?></a><br></td>
-						  </tr>
-							<tr>
-							<td class="center"><img src="img/map.png" width="40%"></td>
-							<td><a> <?php echo ($userRow['country']); ?></a></td>
-						  </tr>
-						 </table>
-						</td>
-					</tr>
-					</table>
-				</th></tr></table>	
-					
-					
-					
-					<div class="your_cars"><h2><?php echo $texts[$lang]['Your_cars'] ?></h2></div>
-					<div id="table_cars">
-						<div class="wrap flex">
-
-						 <?php foreach ($result as $row){
-						 		$imgLinks = explode(';', $row['photoId'])
-						 		?>
-
-
-
-							  
-
-
-						 				<a class="logo_wrap" href="product.php?id=<?php echo $row['id'] ?>">
-	                                        <div class="logo1 " style="background-image: url(<?php echo $imgLinks[0] ?>);">
-												<div class="text">
-													<h3><?php echo $row['brand'].' '.$row['model'].' '.$row['engineCapacity'].' '.$row['year']?></h3>
-													<p><?php echo $row['price']; ?></p>
-												</div>
-											</div>
-										</a>
-
-
-
-
-					        
-					        <?php
-					            echo "<br>";
-					            echo "<br>";
-					        } ?>
-
-							
-						</div>
-					</div>
-					
-					
-					
-				<!--	<th class="table_cars_th">
-					
-						<table>
-						<tr>
-							<th><h2>Favourites</h2></th>
-						    </tr>
-						    <tr>
-							<td>
-								<ul>
-									<li class="list2">
-										<a><img src="img/delete.png" width="2.3%">Delete</a>
-										<a><img src="img/compare.png" width="2.5%">Compare</a>
-										<a> <img src="img/share.png" width="1.8%">Share</a>
-									</li>
-								</ul>
-							</td>
-						    </tr>
-						    <tr>
-							<td>
-					
-					<div id="table_cars">
-				
-					<div class="wrap">
-					<div class="logo car_1">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_2">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_3">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_1">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_2">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_3">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_1">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_2">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_3">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_1">
-					
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_2">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					<div class="logo car_3">
-						<div class="text">
-							<br><h3>Audi A7 3.0 | 2013</h3>
-							<p>20 000$</p>
-						</div>
-					</div>
-					</div>
-					</div>
-					
-					</td></tr></table>
-					
-					</th>
-				</tr></table>-->
+	<div id="second_block">
+		<table style="padding: 2vw" align="center" width="100%">
+			<tr>
+			<th><h2 class="personal_info_style"><?php echo $texts[$lang]['Personal_info'] ?></h2></th>
+			<th style="vertical-align: top;">
+			<div class="edit_info">
+			<a href='editprofile.php'><button type="button"><?php echo $texts[$lang]['Edit_info'] ?></button></a>
 			</div>
+			</th>
+			</tr>
+			<tr>
+			<td class="photo_td">
+			<div id="user_img">				
+			<img src="<?php if ($userRow['image']=='') {echo "img/unset.png";}else{echo $userRow['image'];} ?>" width="100%">
+			</div>
+			</td>
+			<td class="ul_td">
+				<table class="list1">
+					<tr>
+					<th class="center"><img src="img/profile.png" width="25px"></th>
+					<th><a><span><?php echo ($userRow['firstname'].' '.$userRow['lastname']); ?></span></a></th>
+					</tr>
+					<tr>
+					<td class="center"><img src="img/mobile.png" width="40px"></td>
+					<td><a><?php echo ($userRow['telephone']); ?></a><br></td>
+					</tr>
+					<tr>
+					<td class="center"><img src="img/email.png" width="25px"></td>
+					<td><a><?php echo ($userRow['email']); ?></a><br></td>
+					</tr>
+					<tr>
+					<td class="center"><img src="img/map.png" width="25px"></td>
+					<td><a> <?php echo ($userRow['country']); ?></a></td>
+					</tr>
+				</table>
+			</td>
+			</tr>
+		</table>
+		<div id="table_cars">
+			<div class="your_cars"><h2><?php echo $texts[$lang]['Your_cars'] ?></h2></div>
+				<div class="wrap flex_2">
+					<?php foreach ($result as $row){
+					$imgLinks = explode(';', $row['photoId'])
+					?>
+					<a class="logo_wrap" href="product.php?id=<?php echo $row['id'] ?>">
+	                    <div class="logo1 " style="background-image: url(<?php echo $imgLinks[0] ?>);">
+						<div class="text">
+						<h3><?php echo $row['brand'].' '.$row['model'].' '.$row['engineCapacity'].' '.$row['year']?></h3>
+						<p><?php echo $row['price']; ?></p>
+						</div>
+						</div>
+					</a>
+					<?php
+					echo "<br>";
+					echo "<br>";
+					} ?>
+				</div>
+		</div>
+					
+	</div>
 			
 </div>
 <?php include'assets/footer.php' ?>
