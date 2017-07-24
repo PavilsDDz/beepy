@@ -38,7 +38,7 @@ h3{
 #header{ 
     background-image: url(../img/background1.jpg);
     background-size: cover;
-    background-position: center center;
+    background-position: 10% 65%;
     background-repeat: no-repeat;
     height: 30vw;
     position: relative;
