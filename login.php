@@ -121,8 +121,7 @@ function dumpAndDie($data) {
 <style>
 html {
     overflow: hidden;
-      height: 100%;
-    width:100%;
+    height: 100%;
 }
 body{
     background-color: white;
@@ -137,7 +136,7 @@ body{
     height: 100%;
     width:100%;
 }
-ul, li{
+#header ul, li{
     list-style: none;
     margin: 0;
     padding: 0;
@@ -149,18 +148,16 @@ a {
 p{
     font-family: 'Montserrat', sans-serif;
     color: #939393;
-    font-size: 0.9vw;
+    font-size: 20px;
     font-weight: 600;
-  
- 
 }
-span{
+#header span{
     font-weight: 600;
 }
 h1{
     font-family: 'Montserrat', sans-serif;
     color: white;
-    font-size: 6vw;
+    font-size: 120px;
     font-weight:600;    
 }
 input {
@@ -171,6 +168,8 @@ input {
     font-size: 1vw;
     background-color: rgba(255,255,255,0) !important;
 	color: white;
+	margin-left: 25px;
+    text-align: center;
 }
 input:focus{
     outline: none;
@@ -182,41 +181,46 @@ input:focus{
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 101.5%;
     width: 100%;
     position: relative;
-    padding-top: 30px;
     display: flex;
     flex-direction: column;
 }
 .hello_style{
     position: relative;
     left: 18vw;
+	top: 10vw;
 }
 .borders{
     line-height: 1vw;
     color: white;
-    font-size: 1vw;
     font-weight:300; 
     margin: 5px;
+}
+.login_forms{
+	margin-top: 5vw;
 }
 .forms{
     text-align: right;
     position: relative;
-    top: -7vw;
+    top: 0vw;
     right: 42vw;
 }
 .forms button {
     background-color: #00c6ff;
-    border: none;
+    padding: 5px 15px;
+    border-radius: 40px;
+    font-size: 1em;
     color: #fff;
-    height: 30px;
-    width: 75px;
-    border-radius: 15px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    width: 90px;
 }
 .links_under_forms{
     position: relative;
-    top: -4vw;
+    top: 2vw;
     left: 46vw;
 }
 .sign_in{
@@ -224,38 +228,19 @@ input:focus{
 }
 .sign_in button{
     background-color: #00c6ff;
-    color: rgba(255,255,255,1);
+    padding: 5px 15px;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
     border: none;
-    font-size: 1vw;
-    padding: 0 19px;
-    height: 30px;
-    border-radius: 15px;
     font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    width: 90px;
 }
 button:focus{
     outline:none;
 }
 
-@media screen and (max-width: 1400px){
-    .links{
-    font-size: 1.2em;
-    }
-    .hello_style h1{
-    font-size: 4em;
-    }
-    .forms p{
-    font-size: 1em;
-    padding: 1em;
-    }
-    .borders{
-    font-size: 1em;
-    }
-    .sign_in button{
-    font-size: 1em;
-    height: 23px;
-    width: 78px;
-    }
-}
 .menu{display: none;}
 @media screen and (max-width: 800px){
 body{
@@ -285,7 +270,9 @@ body{
 }
 .forms p {
     font-size: 23px;
-    padding: 3px;
+    padding: 6px;
+    justify-content: center;
+    display: flex;
 }
 input {
     font-size: 20px;
@@ -311,43 +298,43 @@ input {
     font-size: 22px;
 	margin-top: 20px;
 }
+.borders{
+	line-height: 22px;
+}
 }
 </style>
 </head>
 
 <body class="login_page">
 <div id="fixed" class="content_container">
-
-        <div id="header">
             <?php include"assets/header.php" ?>
 			<?php include 'assets/menu_block.php'; ?>
+        <div id="header">
+
             
                 <div class="hello_style">
                     <h1><?php echo $texts[$lang]['hello'] ?></h1>
                 </div>
                 
                 
-                
+            <div class="login_forms">    
                 <form class="forms" action="login.php<?php if (isset($_GET['dir'])&&$_GET['dir']=='sell') {echo"?dir=sell";} ?>" method="POST">
                 <p class="borders"><?php echo $texts[$lang]['uname'] ?><input type="text" name="username" class="inputs_style"/></p><br>
                 <p class="borders" ><?php echo $texts[$lang]['pass'] ?><input type="password" name="password" class="inputs_style"/></p>
                 <button class="button_two"><?php echo $texts[$lang]['lgin'] ?></button>
-
                 </form>
-
-
-                
+   
                 <div class="links_under_forms">
-                <ul>
+					<ul>
                     <li class="borders">
-                       <script type="text/javascript">
-            var couter = 0;
-                function fbclick(){if(couter==0){
-                    window.location = '<?php echo $loginUrl ?>';
-                    couter++;
-                }}
-                
-            </script>
+                    <script type="text/javascript">
+					var couter = 0;
+						function fbclick(){if(couter==0){
+							window.location = '<?php echo $loginUrl ?>';
+							couter++;
+						}}
+						
+					</script>
                         
                          <a class="fb_link" onclick="fbclick()"><?php echo $texts[$lang]['signup_f'] ?></a>
                     </li>
@@ -358,7 +345,7 @@ input {
                     </li>
                     </ul>
                 </div>
-            
+            </div>
         </div>
 
 </div>

@@ -63,6 +63,7 @@
 .table_maps{
 	width: 70%;
 	margin-top: 10vw;
+	margin-left: 14%;
 }
 .table_maps td{
 	width: 50%;
@@ -221,7 +222,7 @@ iframe {
 	
 	<div class="hidden_h1"><h1><?php echo $texts[$lang]['h1']; ?></h1></div>
 	
-		<table align="center" class="table_maps">
+		<table class="table_maps">
 		<tr>
 			<td class="maps_td">
 			
