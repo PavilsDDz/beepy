@@ -16,9 +16,9 @@
 	$texts['en']['Edit_info'] = 'Edit info';
 	$texts['en']['Your_cars'] = 'Your cars';
 	
-	$texts['ru']['Personal_info'] = 'Про Меня';
+	$texts['ru']['Personal_info'] = 'Обо мне';
 	$texts['ru']['Edit_info'] = 'Редактировать профиль';
-	$texts['ru']['Your_cars'] = 'Мойи Машини';
+	$texts['ru']['Your_cars'] = 'Мои машины';
 
     if(isset($_SESSION['uid']) && $_SESSION['uid'] > 0){
         $id = $_SESSION['uid'];

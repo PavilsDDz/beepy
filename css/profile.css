@@ -132,9 +132,8 @@ input:focus{
 .edit_info button{
 	border: none;
     font-size: 20px;
-    padding: 10px 20px;
+    line-height: 20px;
     font-weight: 500;
-    line-height: 0.6vw;
     font-family: 'Montserrat', sans-serif;
     opacity: 0.8;
 	background-color: #00c6ff;
