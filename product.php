@@ -184,13 +184,8 @@
 </head>
 
 	<body>
-
+<?php include ('assets/header.php'); ?>
 		<div id="class_container">
-
-			<?php 
-				include ('assets/header.php');
-				
-			?>
 
 			<div id="header">
 
@@ -231,11 +226,6 @@
 
 				<div id="information_block">
 
-						<!--edit button-->
-						<div class="edit_info">
-							<a href='editproduct.php?id=<?php echo $_GET['id']; ?>'><button type="button">Product Edit</button></a>
-						</div>	
-						<!--edit button ends-->	
 					<table class="information_table">
 					
 					<tr>
@@ -259,6 +249,11 @@
 							<div class="tech_spec">
 								<a href='#' id='trigger'><button type="button"><?php echo $texts[$lang]['techspech'] ?></button></a>
 							</div>
+						<!--edit button-->
+						<div class="edit_info">
+							<a href='editproduct.php?id=<?php echo $_GET['id']; ?>'><button type="button">Product Edit</button></a>
+						</div>	
+						<!--edit button ends-->	
 						</th>
 
 						<th>						
@@ -292,9 +287,9 @@
 						<td>
 							<ul class="list1">
 								<li>
-									<a><img src="img/mobile.png" width="2.8%"><?php echo  $sellerResult[0]["telephone"];?></a>
-									<a><img src="img/map.png" width="1.8%"><?php// echo $row['placewherecarat']?></a>
-									<a><img src="img/share.png" width="2%">Share</a>
+									<a><img src="img/mobile.png" width="23px"><?php echo  $sellerResult[0]["telephone"];?></a>
+									<a><img src="img/map.png" width="15px%"><?php// echo $row['placewherecarat']?></a>
+									<a><img src="img/share.png" width="20px">Share</a>
 								</li>
 							</ul>
 
@@ -411,6 +406,8 @@
 			</div> 
 
 			<div id="botDiv"></div>
+			
+			<?php include 'assets/footer.php'; ?>  
 		</div>
 	</body>
 </html>

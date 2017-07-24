@@ -8,8 +8,10 @@ body{
 }
 ul, li {
 	list-style: none;
-	margin: 0;
-	padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #00c6ff !important;
 }
 p{
 	font-family: 'Montserrat', sans-serif;
@@ -92,8 +94,8 @@ h4{
 	height: auto;
 	display:none;
 	position:relative;
-	top:3vw;
-	left:6vw;	
+	left:6vw;
+	margin-top: 64px;
 }
 .photos_wrap img:first-child {
 	display:block;
@@ -162,6 +164,7 @@ button:focus{
 }
 .tech_spec{
 	width: 45%;
+	float: left;
    }
 .tech_spec button{
 	background-color: #00c6ff;
@@ -169,7 +172,7 @@ button:focus{
 	border: none;
 	font-size: 1.2vw;
 	height: 45px;
-	width: 100%;
+	width: 150px;
 	padding: 8px 10px;
 	border-radius: 23px;
 	font-weight: 600;
@@ -244,7 +247,6 @@ input {
 	border-top:none;
 	border-bottom: 1px solid rgb(203,210,223);
 	font-size:1vw;
-	font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*hided block*/
@@ -256,12 +258,30 @@ input {
 	top: 5vw;
 	left: 5vw;
 	right: 10vw;
+	margin-bottom: 5vw;
 }
 .table th{
 	width: 24%;
 	position: relative;
 	vertical-align: top;
 	display: inline-block;
+}
+
+
+
+.edit_info button{
+	background-color: #00c6ff;
+    color: rgba(255,255,255,1);
+    border: none;
+    font-size: 1.2vw;
+    height: 45px;
+    width: 150px;
+    padding: 8px 10px;
+    border-radius: 23px;
+    font-weight: 600;
+    line-height: 0.8em;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.9;
 }
 @media screen and (max-width: 1400px){
 	.text_block {
