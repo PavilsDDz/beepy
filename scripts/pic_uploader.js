@@ -1,5 +1,5 @@
 $(function(){
-
+	/*Hides all img elements whitch dose not have src*/
 	function hide_imgs(h,l){
 		console.log('hide_imgs call')
 		while(h<l){
@@ -9,6 +9,7 @@ $(function(){
 			h++;
 		}
 	}
+	/*gets temp file location*/
 	file_input_change = function (event){
 	    output = URL.createObjectURL(event.target.files[0]);
 	    //console.log(output)
@@ -23,6 +24,8 @@ $(function(){
 	var links_list_str;
 	//var links_list
 
+
+	/*determines if post have imgs and how much and calls hide_imgs*/
 
 	if(typeof have_imgs!=='undefined'){
 		console.log("have "+have_imgs+" imgs from "+limit)
@@ -39,6 +42,19 @@ $(function(){
 		hide_imgs(Himgs,Limgs);
 
 	}
+
+	/*
+
+
+	actions on file input change
+	-gets temp path "new_path"
+	-asigns temp path to sibling img
+	-if link list exists, removes img src, by this index, frmo list (gets replacet on submit with php)
+	-adds removed img do delet queue
+	-stores imgs to delet and imgs to stay in inputs
+
+	*/
+	console.log(links_list)
 	$('.file_input').change(function(){
 		
 		var filename = $(this).val();
@@ -48,9 +64,13 @@ $(function(){
 		
 		if (typeof links_list!=='undefined') {
 
-			index =  $(this).parent().index()
-			files_del.push(links_list[index])
-			links_list.splice(index,1)
+			console.log(links_list/* + "THIS IS LIST OF LINKS THAT STAY"*/)
+
+			index =  $(this).parent().index() //
+			//console.log(index + "index")
+
+			files_del.push(links_list[index-1])
+			links_list.splice(index-1,1)
 
 			links_list_str = '';
 			files_del_str = '';
@@ -63,13 +83,15 @@ $(function(){
 				links_list_str += links_list[i]+";"
 			}
 
-			console.log(links_list_str)
-			console.log(files_del_str)
+			console.log(links_list_str+" STAY")
+			console.log(files_del_str+" DELET")
 			$('#files_stay').attr('value',links_list_str);
-			$('#files_del').attr('value',links_list_str);
+			$('#files_del').attr('value',files_del_str);
 		}
 
 	})
+
+	/* reveles hiden img inputs*/
 
 	$('#add_img_slot').click(function(){
 		if (counter<Limgs-1) {
@@ -84,9 +106,15 @@ $(function(){
 		}
 	})
 
+	/*makes img as input*/
+	
 	$('.fake_i').click(function(){
+		//alert('go')
 		that = $(this)
-		that.siblings('.file_input').click()
+		//console.log(that.siblings('.file-upload').children(".file_input"))
+		//console.log(that)
+
+		that.siblings('.file-upload').children(".file_input").click()
 	})
 
 

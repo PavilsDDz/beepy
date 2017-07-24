@@ -15,7 +15,6 @@
     }
 
        // print_r($_POST);
-       // echo "<br><br><br>";
 
 
     if (isset($_POST['files_stay'])) {
@@ -27,7 +26,9 @@
 
     if(isset($_POST['btn-update'])){
 
-        //print_r($_FILES);
+       // echo "<br><br><br>";
+       // echo "<br><br><br>";
+       // print_r($_FILES);
 
         for ($i=0; $i < count($_FILES['img']['name']); $i  ++) { 
 
@@ -56,7 +57,8 @@
         if(isset($_POST['files_del'])){
             $files_to_del = explode(';', $_POST['files_del']);
             foreach ($files_to_del as $file_del) {
-                unlink($files_del);
+             //   echo '<br>'.$file_del;
+                unlink($file_del);
             }
         }
 
@@ -109,7 +111,7 @@
         //echo insertDataInToDataBase($update, $payload);
 
         if(insertDataInToDataBase($update, $payload)){
-           header("location: product.php?id=".$_GET['id']);
+          header("location: product.php?id=".$_GET['id']);
         }
     }
 
@@ -246,6 +248,10 @@ select, .car_info input{
     justify-content: center;
     padding: 0.5vw;
 }
+.img_edit_block{
+width: 100%;
+    flex-wrap: wrap;
+    }
 #btn-update, .btn-update{
 	background-color: #00c6ff;
     color: rgba(255,255,255,1);
@@ -281,13 +287,13 @@ select, .car_info input{
     </head>
 
     <body>
-	<?php include"assets/header.php"?>
+	<?php include"assets/header.php" ?>
 	<div align="center" style="margin-top: 6vw;">
         <form method="POST" action="editproduct.php?id=<?php echo $_GET['id']; ?>" enctype="multipart/form-data">
             <h1>EDIT</h1>
             <div class="img_edit_block">
                 
-                <?php $imgLinks = explode(";", substr($productResult[0]['photoid'], 0, -1)); ?>
+                <?php $imgLinks = explode(";", substr($productResult[0]['photoid'], 0, -1));print_r($imgLinks) ?>
                 
 
                 
