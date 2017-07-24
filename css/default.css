@@ -198,11 +198,11 @@ button {
 	font-weight: 300;
 }
 #footer ul li p {
-	width: 70px;
-	margin: 0;
+	width: 70px !important;
+	margin: 0 !important;
 	display: inline-block;
 	color: #eee;
-	font-weight: 600;
+	font-weight: 600 !important;
 
 }
 .cp {
@@ -218,7 +218,7 @@ button {
 .tablefooter{
 	padding-top: 3vw;
     padding-bottom: 3vw;
-	width: 100%;
+	width: 80%;
 }
 .bottom_text_style{
     font-family: 'Montserrat', sans-serif;
@@ -266,6 +266,7 @@ button {
 }
 @media screen and (max-width: 800px){
 	/*FOOTER*/
+.top_wrap{display:none;}
 .flex {
     flex-direction: column;
 }

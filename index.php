@@ -486,17 +486,17 @@ $fb = new \Facebook\Facebook([
     
             <div class="second_tablecars flex3">
 			<table class="img_wrap2" id="columns_wrapping">
-				<tr><th><div class="img_cont2"><img src="img/4car.png" width="90%"></div></th></tr>
+				<tr><th><div class="img_cont2"><img src="img/4car.png" width="100%"></div></th></tr>
 				<tr><th><h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text4name'] ?><br></h3></th></tr>
 				<tr><th><p class="text_under_cars2"><?php echo $texts[$lang]['text1'] ?></p></th></tr>
 			</table>
 			 <table class="text_wrap2" id="columns_wrapping">
-				<tr><th><div class="img_cont2"><img src="img/5car.png" width="90%" ></div></th></tr>
+				<tr><th><div class="img_cont2"><img src="img/5car.png" width="100%" ></div></th></tr>
 				<tr><th><h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text5name'] ?><br></h3></th></tr>
 				<tr><th><p class="text_under_cars2"><?php echo $texts[$lang]['text2'] ?></p></th></tr>
 			</table>			
 			<table class="text_wrap2" id="columns_wrapping">
-				<tr><th><div class="img_cont2"><img src="img/6car.png" width="90%"></div></th></tr>
+				<tr><th><div class="img_cont2"><img src="img/6car.png" width="100%"></div></th></tr>
 				<tr><th><h3 class="text_under_cars_caption2"><?php echo $texts[$lang]['text6name'] ?><br></h3></th></tr>
 				<tr><th><p class="text_under_cars2"><?php echo $texts[$lang]['text3'] ?></p></th></tr>
 			</table>				

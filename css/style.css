@@ -44,9 +44,6 @@ h4 {
 	display: flex;
 	justify-content: center;
 }
-#fixed{
-	position:absolut;
-}
 
 /*id*/
 #header{ 
@@ -341,7 +338,7 @@ h4 {
 	justify-content: center;
 }
 #columns_wrapping{
-	width: 25%;
+	width: 24.5%;
 }
 .first_tablecars .text_wrap th, .first_tablecars .img_wrap th {
 	box-sizing: border-box;
@@ -369,8 +366,8 @@ h4 {
 	}
     .findcarlogo{
 		text-align: left;
-		bottom: -55%;
-		right: -28%;
+		bottom: -67%;
+		right: -17.5%;
 		position: relative;
    }
     .findcarlogo {
@@ -388,7 +385,7 @@ h4 {
     .beepylogo{
 		text-align: right;
 		position: relative;
-		right: 10%;
+		right: 14%;
 		bottom: -75%;	
    }
    .beepylogo p {

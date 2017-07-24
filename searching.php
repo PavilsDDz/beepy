@@ -287,10 +287,8 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
     
 <body>
 <div id="fixed" class="content_container">
-<?php 
-    include"assets/header.php"
-     ?>
-
+<?php include"assets/header.php"?>
+<?php include 'assets/menu_block.php'; ?>
     <div class="compare_box">
         <div class="compare_toggle">
             <a><?php echo $searchL[$lang]['compare'] ?></a>
@@ -309,7 +307,7 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
             
        <div class="header_content">
            <div class="usedcars">
-               <img src="img/findacar.png" width="34%">
+               <h2>Find a car.</h2>
            </div>
 
            <!--<form style="text-align: center" class="header_form">
@@ -490,12 +488,12 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
             </br>
 
             <div class="selected_filters">
-                <h2><?php echo $searchL[$lang]['selectf'] ?></h2>
+                <h3><?php echo $searchL[$lang]['selectf'] ?></h3>
                 
                 <?php include"assets/filters.php"; ?>
             </div>
 
-            <input name="search" type="submit" value="<?php echo $searchL[$lang]['search'] ?>" >
+            <div class="searchlabel"><input name="search" type="submit" value="<?php echo $searchL[$lang]['search'] ?>" ></div>
 
         </form>
     </div>
