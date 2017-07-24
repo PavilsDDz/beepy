@@ -1,3 +1,14 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+	margin:0;
+}
+ul, li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color:inherit;
+}
 .compare_view{
 	width: 90%;
 	position: relative;
@@ -11,9 +22,6 @@
 .back {
 	padding-top: 15vw;
 	border-bottom: solid #fff 2px; 
-
-
-
 }
 .properites p {
 	text-align: right;
