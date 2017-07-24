@@ -12,15 +12,15 @@ include("assets/addcarLang.php");
 
 //search data by submited values
 
-if (isset($_POST['search']) OR isset($_POST['brand'])) {
+if (isset($_GET['search']) OR isset($_GET['brand'])) {
     $query = "SELECT * FROM products WHERE";
     $playload = array();
     
     // CAR TYPE
-    if (notEmpty("carType")) {
+    if (notEmptyGET("carType")) {
         //$query = $query . " cartype = :carType AND";
-        //$playload["carType"] = $_POST['carType'];
-        $carType = $_POST['carType'];
+        //$playload["carType"] = $_GET['carType'];
+        $carType = $_GET['carType'];
         $carType_count = count($carType);
 
             $c = 0;
@@ -44,9 +44,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
     }
 
     // BRAND
-    if (notEmpty("brand")) {
+    if (notEmptyGET("brand")) {
 
-        $brand = $_POST['brand'];
+        $brand = $_GET['brand'];
         $brand_conut = count($brand);
         $b = 0;
 
@@ -82,9 +82,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
     }
 
     // MODEL
-    if (notEmpty("model")) {
+    if (notEmptyGET("model")) {
 
-        $model = $_POST['model'];
+        $model = $_GET['model'];
         $model_count = count($model);
         $m = 0;
 
@@ -109,94 +109,94 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
     }
 
     // YEAR
-    if (notEmpty("year_from")) {
+    if (notEmptyGET("year_from")) {
         $query = $query . " year >= :year_from AND";
-        $playload["year_from"] = $_POST['year_from'];
+        $playload["year_from"] = $_GET['year_from'];
     }
 
-    if (notEmpty("year_to")) {
+    if (notEmptyGET("year_to")) {
         $query = $query . " year <= :year_to AND";
-        $playload["year_to"] = $_POST['year_to'];
+        $playload["year_to"] = $_GET['year_to'];
     }
 
     // MILLAGE
-    if (notEmpty("millage_from")) {
+    if (notEmptyGET("millage_from")) {
         $query = $query . " millage <= :millage_from AND";
-        $playload["millage_from"] = $_POST['millage_from'];
+        $playload["millage_from"] = $_GET['millage_from'];
     }
 
-    if (notEmpty("millage_to")) {
+    if (notEmptyGET("millage_to")) {
         $query = $query . " millage >= :millage_to AND";
-        $playload["millage_to"] = $_POST['millage_to'];
+        $playload["millage_to"] = $_GET['millage_to'];
     }
 
 // FUEL TYPE
 
-    if (notEmpty("fuelType")) {
+    if (notEmptyGET("fuelType")) {
         $query = $query . " fuelType = :fueltype AND";
-        $playload["fueltype"] = $_POST['fuelType'];
+        $playload["fueltype"] = $_GET['fuelType'];
     }
 
 // COLOR
 
-    if (notEmpty("color")) {
+    if (notEmptyGET("color")) {
         $query = $query . " color = :color AND";
-        $playload["color"] = $_POST['color'];
+        $playload["color"] = $_GET['color'];
     }
 
     
     // PRICE FROM
-    if (notEmpty("price_from") ) {
+    if (notEmptyGET("price_from") ) {
         $query = $query . " price >= :price_from AND";
-        $playload["price_from"] = $_POST['price_from'];
+        $playload["price_from"] = $_GET['price_from'];
     }
     
     // PRICE TO
-    if (notEmpty("price_to")) {
+    if (notEmptyGET("price_to")) {
         $query = $query . " price <= :price_to AND";
-        $playload["price_to"] = $_POST['price_to'];
+        $playload["price_to"] = $_GET['price_to'];
     }
 
     // ENGINE CAPACITY
 
-    if (notEmpty("engineCapacity_from")) {
+    if (notEmptyGET("engineCapacity_from")) {
         $query = $query . " enginecapacity >= :engineCapacity_from AND";
-        $playload["engineCapacity_from"] = $_POST['engineCapacity_from'];
+        $playload["engineCapacity_from"] = $_GET['engineCapacity_from'];
     }
 
-    if (notEmpty("engineCapacity_to")) {
+    if (notEmptyGET("engineCapacity_to")) {
         $query = $query . " enginecapacity <= :engineCapacity_to AND";
-        $playload["engineCapacity_to"] = $_POST['engineCapacity_to'];
+        $playload["engineCapacity_to"] = $_GET['engineCapacity_to'];
     }
 
     // GEAR GEAR
 
-    if (notEmpty("gearBox")) {
+    if (notEmptyGET("gearBox")) {
         $query = $query . " gearbox = :gearbox AND";
-        $playload["gearbox"] = $_POST['gearBox'];
+        $playload["gearbox"] = $_GET['gearBox'];
     }
 
 // ORDER
 
-    if (notEmpty("sort")) {
+    if (notEmptyGET("sort")) {
         $query = substr($query, 0, -4);
-        $query .= " ORDER BY ".$_POST['sort'];
+        $query .= " ORDER BY ".$_GET['sort'];
     }else{
         $query = substr($query, 0, -4);
         $query .= " ORDER BY price";
     }
    
-    if (notEmpty("order")) {
-        $query .= " ".$_POST['order'];
+    if (notEmptyGET("order")) {
+        $query .= " ".$_GET['order'];
         
     }else{
          $query .= " ASC";
     }
 
     $searchStmt = getAllDataFromDatabase($query, $playload);
-    // print_r($_POST);
-    // echo'<br>';
-    // echo $query.'<br>';
+     echo'<br><br><br><br><br>';
+    print_r($_GET);
+     echo $query.'<br>';
     // print_r($playload);
 }
 
@@ -247,7 +247,7 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                 var brand_select = document.getElementsByName("brand[]");
                 var brands = [];
                 var brands_str = '';
-                var models_selected<?php if (isset($_POST['model'])) { echo ' = '.json_encode($_POST['model']);}else echo' = []' ?>;
+                var models_selected<?php if (isset($_GET['model'])) { echo ' = '.json_encode($_GET['model']);}else echo' = []' ?>;
 
 
                 for(var i = 0; i<brand_select.length;i++){
@@ -287,16 +287,16 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
     
 <body>
 <div id="fixed" class="content_container">
-<?php include"assets/header.php"?>
+<?php include"assets/header.php"; ?>
 <?php include 'assets/menu_block.php'; ?>
     <div class="compare_box">
         <div class="compare_toggle">
             <a><?php echo $searchL[$lang]['compare'] ?></a>
         </div>
         <div class="compare_content">
-            <div class="car flex"><div class="comp_icon"> </div></div>
-            <div class="car flex"><div class="comp_icon"> </div></div>
-            <div class="car flex"><div class="comp_icon"> </div></div>
+            <div class="carEmpty flex"><div class="comp_icon"> </div></div>
+            <div class="carEmpty flex"><div class="comp_icon"> </div></div>
+            <div class="carEmpty flex"><div class="comp_icon"> </div></div>
             <div class="compare_link">
                 <a id="compare_link" href="">comp</a>
             </div>
@@ -324,7 +324,7 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
     </div>
     <div class="search_ext">
 
-        <form action="searching.php" method="POST">
+        <form action="searching.php" method="GET">
         <div class="large_filters">
             <!--Car TYPE-->
 
@@ -338,7 +338,7 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                         ?>
 
 
-                    <input type="checkbox" id="input_<?php echo $type;?>" name="carType[]" value="<?php echo $type;?>"<?php if(isset($_POST['carType'])){if (in_array($type,$_POST['carType'])) {echo 'checked="checked"';}} ?>><label class="label2" for="input_<?php echo $type;?>" id="label_<?php echo $type;?>"><?php echo $texts[$lang][$type];?></label>
+                    <input type="checkbox" id="input_<?php echo $type;?>" name="carType[]" value="<?php echo $type;?>"<?php if(isset($_GET['carType'])){if (in_array($type,$_GET['carType'])) {echo 'checked="checked"';}} ?>><label class="label2" for="input_<?php echo $type;?>" id="label_<?php echo $type;?>"><?php echo $texts[$lang][$type];?></label>
 
                     <?php
                     }
@@ -346,7 +346,7 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
              
                 </div>
 
-    <!-- līdz šij vietai strādā ideāli-->
+   
 
                 <!--BRANDS--> 
                 <div class="groupLabel flex"><label> <?php echo $texts[$lang]['brands'] ?> </label></div>
@@ -362,9 +362,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                         $selected = '';
                         $c = 1;
                         foreach ($cars as $brand) {
-                            $select = getData("brand") == $brand ? "selected" : "";
+                            $select = getDataGET("brand") == $brand ? "selected" : "";
 
-                            if(isset( $_POST['brand'])&&in_array($brand, $_POST['brand'])){
+                            if(isset( $_GET['brand'])&&in_array($brand, $_GET['brand'])){
                                 echo "<input class='checkbox1' type='checkbox' id='input_".$brand."' name='brand[]' value='".$brand."' checked='checked' onchange='launch_req()'><label class='lable1' id='labe_".$brand."' for='input_".$brand."' style='background-image:url(logos/".strtolower($brand).".png)' brand='".strtolower($brand).")'></label>";
                             }else{
                                 echo "<input class='checkbox1' type='checkbox' id='input_".$brand."' name='brand[]' value='".$brand."' onchange='launch_req()'><label class='label1' id='labe_".$brand."' for='input_".$brand."' style='background-image:url(logos/".strtolower($brand)."_g.png)' 
@@ -388,9 +388,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
             <div class="small_filters flex">
                 <div class="range_select year_select line_select">
                     <label class="groupLabel flex"> <?php echo $texts[$lang]['year'] ?> </label>
-                    <input type="text" name="year_from" id="year_from" placeholder="1970" value="<?php echo getData("year_from"); ?>" >
+                    <input type="text" name="year_from" id="year_from" placeholder="1970" value="<?php echo getDataGET("year_from"); ?>" >
                     <label>-</label>
-                    <input type="text" name="year_to" id="year_to" placeholder="2017" value="<?php echo getData("year_to"); ?>" >
+                    <input type="text" name="year_to" id="year_to" placeholder="2017" value="<?php echo getDataGET("year_to"); ?>" >
                     <div id="year-range"></div>
                 </div>
 
@@ -399,9 +399,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                 <div class="range_select millage_select line_select">   
                     <div class="groupLabel flex"><label ><?php echo $texts[$lang]['millage'] ?></label></div>
                     <div>
-                        <label><?php echo $texts[$lang]['from'] ?></label><input type="text" name="millage_from" id="millage_from" placeholder="0" value="<?php echo getData("millage_from"); ?>" ><label style="margin-right: 5px;"><?php echo $texts[$lang]['km'] ?></label>
+                        <label><?php echo $texts[$lang]['from'] ?></label><input type="text" name="millage_from" id="millage_from" placeholder="0" value="<?php echo getDataGET("millage_from"); ?>" ><label style="margin-right: 5px;"><?php echo $texts[$lang]['km'] ?></label>
                         <label><?php echo $texts[$lang]['to'] ?></label>
-                        <input type="text" name="millage_to" placeholder="300000" id="millage_to" value="<?php echo getData("millage_to"); ?>" ><label><?php echo $texts[$lang]['km'] ?></label>
+                        <input type="text" name="millage_to" placeholder="300000" id="millage_to" value="<?php echo getDataGET("millage_to"); ?>" ><label><?php echo $texts[$lang]['km'] ?></label>
                     </div>
                     <div id="millage-range"></div>
                 </div>
@@ -410,10 +410,10 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                     <div class="groupLabel flex"><label ><?php echo $texts[$lang]['fuel_type'] ?></label></div>
                     <select name="fuelType" id="fuelType">
                         <option value="" >-</option>
-                        <option value="petrol" <?php echo getData("fuelType") == "petrol" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['petrol'] ?> </option>
-                        <option value="diesel" <?php echo getData("fuelType") == "diesel" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['diesel'] ?> </option>
-                        <option value="gas" <?php echo getData("fuelType") == "gas" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['gas'] ?> </option>
-                        <option value="electricity" <?php echo getData("fuelType") == "electricity" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['electric'] ?> </option>
+                        <option value="petrol" <?php echo getDataGET("fuelType") == "petrol" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['petrol'] ?> </option>
+                        <option value="diesel" <?php echo getDataGET("fuelType") == "diesel" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['diesel'] ?> </option>
+                        <option value="gas" <?php echo getDataGET("fuelType") == "gas" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['gas'] ?> </option>
+                        <option value="electricity" <?php echo getDataGET("fuelType") == "electricity" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['electric'] ?> </option>
                     </select>
                 </div>
 
@@ -422,13 +422,13 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                     <div class="groupLabel flex"><label > <?php echo $texts[$lang]['color'] ?> </label></div>
                     <select name="color" id="color">
                         <option value="">-</option>
-                        <option value="white" <?php echo getData("color") == "white" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['white'] ?> </option>
-                        <option value="black" <?php echo getData("color") == "black" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['black'] ?> </option>
-                        <option value="red" <?php echo getData("color") == "red" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['red'] ?> </option>
-                        <option value="yellow" <?php echo getData("color") == "yellow" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['yellow'] ?> </option>
-                        <option value="green" <?php echo getData("color") == "green" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['green'] ?> </option>
-                        <option value="Gray" <?php echo getData("color") == "Gray" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['gray'] ?> </option>
-                        <option value="Blue" <?php echo getData("color") == "Blue" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['blue'] ?> </option>
+                        <option value="white" <?php echo getDataGET("color") == "white" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['white'] ?> </option>
+                        <option value="black" <?php echo getDataGET("color") == "black" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['black'] ?> </option>
+                        <option value="red" <?php echo getDataGET("color") == "red" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['red'] ?> </option>
+                        <option value="yellow" <?php echo getDataGET("color") == "yellow" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['yellow'] ?> </option>
+                        <option value="green" <?php echo getDataGET("color") == "green" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['green'] ?> </option>
+                        <option value="Gray" <?php echo getDataGET("color") == "Gray" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['gray'] ?> </option>
+                        <option value="Blue" <?php echo getDataGET("color") == "Blue" ? "selected='selected'" : ""; ?> > <?php echo $texts[$lang]['blue'] ?> </option>
                     </select>
                 </div>
 
@@ -437,9 +437,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                     <div class="groupLabel flex"><label ><?php echo $texts[$lang]['price'] ?></label></div>
                     <div>
                         <label><?php echo $texts[$lang]['from'] ?></label>
-                        <input type="text" name="price_from" id="price_from" value="<?php echo getData("price_from"); ?>" >
+                        <input type="text" name="price_from" id="price_from" value="<?php echo getDataGET("price_from"); ?>" >
                         <label style="margin-right: 5px;">€</label><label><?php echo $texts[$lang]['to'] ?></label>
-                        <input type="text" name="price_to" id="price_to" value="<?php echo getData("price_to"); ?>" >€</label>
+                        <input type="text" name="price_to" id="price_to" value="<?php echo getDataGET("price_to"); ?>" >€</label>
                     </div>
                     <div id="price-range"></div>
 
@@ -448,9 +448,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                 <!--ENIGNE CAPACITY-->
                 <div class="range_select engineCapacity_select line_select">
                     <div class="groupLabel flex"><label > <?php echo $texts[$lang]['engine_capacity'] ?> </label></div>
-                    <input type="number" id="engineCapacity_from" name="engineCapacity_from"  pattern="[0-9]+([\.,][0-9]+)?" step="0.1" value="<?php echo getData('engineCapacity_from') ?>"></input>
+                    <input type="number" id="engineCapacity_from" name="engineCapacity_from"  pattern="[0-9]+([\.,][0-9]+)?" step="0.1" value="<?php echo getDataGET('engineCapacity_from') ?>"></input>
                     <label>-</label>
-                    <input type="number" id="engineCapacity_to" name="engineCapacity_to"  pattern="[0-9]+([\.,][0-9]+)?" step="0.1" value="<?php echo getData('engineCapacity_to') ?>"> </input>
+                    <input type="number" id="engineCapacity_to" name="engineCapacity_to"  pattern="[0-9]+([\.,][0-9]+)?" step="0.1" value="<?php echo getDataGET('engineCapacity_to') ?>"> </input>
                     <div id="engineCapacity-range"></div>
 
                 </div>
@@ -461,9 +461,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                         <div class="groupLabel flex"><label ><?php echo $texts[$lang]['transmission'] ?></label></div>
                         <select name="gearBox" id="gearBox">
                             <option value="">-</option>
-                            <option value="manual" <?php echo getData("gearBox") == "manual" ? "selected='selected'" : ""; ?> ><?php echo $texts[$lang]['manual'] ?></option>
-                            <option value="automatic" <?php echo getData("gearBox") == "automatic" ? "selected='selected'" : ""; ?> ><?php echo $texts[$lang]['automatic'] ?></option>
-                            <option value="semi_automatic_and_dual_clutch" <?php echo getData("gearBox") == "semi_automatic_and_dual_clutch" ? "selected='selected'" : ""; ?> ><?php echo $texts[$lang]['semi'] ?></option>
+                            <option value="manual" <?php echo getDataGET("gearBox") == "manual" ? "selected='selected'" : ""; ?> ><?php echo $texts[$lang]['manual'] ?></option>
+                            <option value="automatic" <?php echo getDataGET("gearBox") == "automatic" ? "selected='selected'" : ""; ?> ><?php echo $texts[$lang]['automatic'] ?></option>
+                            <option value="semi_automatic_and_dual_clutch" <?php echo getDataGET("gearBox") == "semi_automatic_and_dual_clutch" ? "selected='selected'" : ""; ?> ><?php echo $texts[$lang]['semi'] ?></option>
                         </select>
                     </div>
                 </div>
@@ -544,7 +544,6 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
                 $('.compare_butt').css('display','none');
                 visable = 0
                 $('.compare_content').slideToggle()
-
             }
         })
         var counter = []
@@ -564,6 +563,9 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
             that = $(this)
 
             if (counter.length<3) {
+                for (var i = 0; i < Things.length; i++) {
+                    Things[i]
+                }
 
                 id = that.attr('info')
                 millage = that.attr('infomillage')
@@ -575,8 +577,8 @@ if (isset($_POST['search']) OR isset($_POST['brand'])) {
 
                 upadet_link();
                 //alert(linkStr)
-
-                $('.compare_box .car:eq('+(counter.length-1)+')').append('<div class="comp_icon" style="background-image:url('+img+')"></div><div class="comp_info"></div><div class="remove_comp"></div>')
+                $('.compare_box .carEmpty:eq(0)').
+                $('.compare_box').append('<div class="car"><div class="comp_icon" style="background-image:url('+img+')"></div><div class="comp_info"><h5>'+brand+' '+model+'</h5><p>'+millage+'km '+price+'</p></div><div class="remove_comp"></div></div>')
 
 
             }

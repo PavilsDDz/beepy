@@ -1,13 +1,13 @@
 <?php 
 	include 'brandsandmodels.php';
-	if(isset($_POST['carType'])&&!empty($_POST['carType'][0])){
+	if(isset($_GET['carType'])&&!empty($_GET['carType'][0])){
 		?>
 
 
 		<div class="filter_group">
 			<span>car types:</span>
 			<div class="filter_items flex">
-				<?php foreach ($_POST['carType'] as $value) {
+				<?php foreach ($_GET['carType'] as $value) {
 					?>
 					<div class="filter_item">
 						<span><?php echo $value; ?></span>
@@ -22,14 +22,14 @@
 		<?php
 	}
 
-	if(isset($_POST['brand'])){
+	if(isset($_GET['brand'])){
 		?>
 
 
 		<div class="filter_group">
 			<span>brands:</span>
 			<div class="filter_items flex">
-				<?php foreach ($_POST['brand'] as $value) {
+				<?php foreach ($_GET['brand'] as $value) {
 
 					?>
 
@@ -39,7 +39,7 @@
 						<div class="models_selected">
 					<?php
 					foreach ($models[$value]as$model) {
-						if (isset($_POST['model'])&&in_array($model, $_POST['model'])) {
+						if (isset($_GET['model'])&&in_array($model, $_GET['model'])) {
 							?>
 							<div class="model_wrap"><span><?php echo $model ?></span><span class="remove" remove="<?php echo $value.'_'.str_replace(' ', '', $model)?>"></span></div>
 
@@ -57,29 +57,29 @@
 		 <?php
 		}
 
-	if(isset($_POST['model'])){
+	if(isset($_GET['model'])){
 		?>
 
 		<?php
 	}
-	if ((isset($_POST['year_from'])||isset($_POST['year_to']))&&($_POST['year_from']!=''||$_POST['year_to']!='')) {
+	if ((isset($_GET['year_from'])||isset($_GET['year_to']))&&($_GET['year_from']!=''||$_GET['year_to']!='')) {
 		?>
 
 
 		<div class="filter_group">
 			<span>year:</span>
 			<div class="filter_items flex">
-				<?php if(isset($_POST['year_from'])) {
+				<?php if(isset($_GET['year_from'])) {
 					?>
 					<div class="filter_item">
-						<label>from</label>	<span><?php echo $_POST['year_from']; ?></span>
+						<label>from</label>	<span><?php echo $_GET['year_from']; ?></span>
 						<div class="clear" clear="year_from"></div>
 					</div>
 				<?php } ?>
-				<?php if(isset($_POST['year_to'])) {
+				<?php if(isset($_GET['year_to'])) {
 					?>
 					<div class="filter_item">
-						<label>to</label><span><?php echo $_POST['year_to']; ?></span>
+						<label>to</label><span><?php echo $_GET['year_to']; ?></span>
 						<div class="clear" clear="year_to"></div>
 					</div>
 				<?php } ?>	
@@ -89,22 +89,22 @@
 
 		<?php
 	}
-	if((isset($_POST['millage_from'])||isset($_POST['millage_to']))&&($_POST['millage_from']!=''||$_POST['millage_to']!='')) {
+	if((isset($_GET['millage_from'])||isset($_GET['millage_to']))&&($_GET['millage_from']!=''||$_GET['millage_to']!='')) {
 		?>
 		<div class="filter_group">
 			<span>millage:</span>
 			<div class="filter_items flex">
-				<?php if(isset($_POST['millage_from'])) {
+				<?php if(isset($_GET['millage_from'])) {
 					?>
 					<div class="filter_item">
-						<label>from</label><span><?php echo $_POST['millage_from'].'km'; ?></span>
+						<label>from</label><span><?php echo $_GET['millage_from'].'km'; ?></span>
 						<div class="clear" clear="millage_from"></div>
 					</div>
 				<?php } ?>
-				<?php if(isset($_POST['millage_to'])) {
+				<?php if(isset($_GET['millage_to'])) {
 					?>
 					<div class="filter_item">
-						<label>to</label><span><?php echo $_POST['millage_to'].'km'; ?></span>
+						<label>to</label><span><?php echo $_GET['millage_to'].'km'; ?></span>
 						<div class="clear" clear="millage_to"></div>
 					</div>
 				<?php } ?>	
@@ -113,22 +113,22 @@
 		</div>
 		<?php
 	}
-	if((isset($_POST['price_from'])||isset($_POST['price_to']))&&($_POST['price_from']!=''||$_POST['price_to']!='')) {
+	if((isset($_GET['price_from'])||isset($_GET['price_to']))&&($_GET['price_from']!=''||$_GET['price_to']!='')) {
 		?>
 		<div class="filter_group">
 			<span>Price:</span>
 			<div class="filter_items flex">
-				<?php if(isset($_POST['price_from'])) {
+				<?php if(isset($_GET['price_from'])) {
 					?>
 					<div class="filter_item">
-						<label>from</label><span><?php echo $_POST['price_from'].'€'; ?></span>
+						<label>from</label><span><?php echo $_GET['price_from'].'€'; ?></span>
 						<div class="clear" clear="price_from"></div>
 					</div>
 				<?php } ?>
-				<?php if(isset($_POST['millage_to'])) {
+				<?php if(isset($_GET['millage_to'])) {
 					?>
 					<div class="filter_item">
-						<label>to</label><span><?php echo $_POST['price_to'].'€'; ?></span>
+						<label>to</label><span><?php echo $_GET['price_to'].'€'; ?></span>
 						<div class="clear" clear="price_to"></div>
 					</div>
 				<?php } ?>	
@@ -138,23 +138,23 @@
 
 		<?php
 	}
-	if((isset($_POST['engineCapacity_from'])||isset($_POST['engineCapacity_to']))&&($_POST['engineCapacity_from']!=''||$_POST['engineCapacity_to']!='')) {
+	if((isset($_GET['engineCapacity_from'])||isset($_GET['engineCapacity_to']))&&($_GET['engineCapacity_from']!=''||$_GET['engineCapacity_to']!='')) {
 		?>
 
 		<div class="filter_group">
 			<span>Engine:</span>
 			<div class="filter_items flex">
-				<?php if(isset($_POST['engineCapacity_from'])) {
+				<?php if(isset($_GET['engineCapacity_from'])) {
 					?>
 					<div class="filter_item">
-						<label>from</label><span><?php echo $_POST['engineCapacity_from'].'l'; ?></span>
+						<label>from</label><span><?php echo $_GET['engineCapacity_from'].'l'; ?></span>
 						<div class="clear" clear="engineCapacity_from"></div>
 					</div>
 				<?php } ?>
-				<?php if(isset($_POST['engineCapacity_to'])) {
+				<?php if(isset($_GET['engineCapacity_to'])) {
 					?>
 					<div class="filter_item">
-						<label>to</label><span><?php echo $_POST['engineCapacity_to'].'l'; ?></span>
+						<label>to</label><span><?php echo $_GET['engineCapacity_to'].'l'; ?></span>
 						<div class="clear" clear="engineCapacity_to"></div>
 					</div>
 				<?php } ?>	
@@ -165,7 +165,7 @@
 
 		<?php
 	}
-	if (isset($_POST['gearBox'])&&$_POST['gearBox']!='') {
+	if (isset($_GET['gearBox'])&&$_GET['gearBox']!='') {
 		?> 
 
 		<div class="filter_group">
@@ -173,7 +173,7 @@
 			<div class="filter_items flex">
 				
 					
-						<span><?php echo $_POST['gearBox'] ; ?></span>
+						<span><?php echo $_GET['gearBox'] ; ?></span>
 
 					
 				
@@ -183,7 +183,7 @@
 
 		<?php
 	}
-	if(isset($_POST['color'])&&$_POST['color']!=''){
+	if(isset($_GET['color'])&&$_GET['color']!=''){
 		?>
 
 
@@ -192,7 +192,7 @@
 			<div class="filter_items flex">
 				
 					
-						<span><?php echo $_POST['color'] ; ?></span>
+						<span><?php echo $_GET['color'] ; ?></span>
 
 					
 				
@@ -202,14 +202,14 @@
 
 		<?php
 	}
-	if(isset($_POST['fuelType'])&&$_POST['fuelType']!=''){
+	if(isset($_GET['fuelType'])&&$_GET['fuelType']!=''){
 		?>
 		<div class="filter_group">
 			<span>Fuel type:</span>
 			<div class="filter_items flex">
 				
 					
-						<span><?php echo $_POST['fuelType'] ; ?></span>
+						<span><?php echo $_GET['fuelType'] ; ?></span>
 
 					
 				
