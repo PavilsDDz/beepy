@@ -194,9 +194,9 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
     }
 
     $searchStmt = getAllDataFromDatabase($query, $playload);
-     echo'<br><br><br><br><br>';
-    print_r($_GET);
-     echo $query.'<br>';
+    // echo'<br><br><br><br><br>';
+   // print_r($_GET);
+   //  echo $query.'<br>';
     // print_r($playload);
 }
 
@@ -294,11 +294,11 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
             <a><?php echo $searchL[$lang]['compare'] ?></a>
         </div>
         <div class="compare_content">
-            <div class="carEmpty flex"><div class="comp_icon"> </div></div>
-            <div class="carEmpty flex"><div class="comp_icon"> </div></div>
-            <div class="carEmpty flex"><div class="comp_icon"> </div></div>
+            <div class="car flex"><p>Select cars</p> </div>
+            <div class="car flex"> </div>
+            <div class="car flex"> </div>
             <div class="compare_link">
-                <a id="compare_link" href="">comp</a>
+                <a id="compare_link" href=""><div>comp</div></a>
             </div>
         </div>
     </div>
@@ -544,28 +544,37 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
                 $('.compare_butt').css('display','none');
                 visable = 0
                 $('.compare_content').slideToggle()
+
             }
         })
         var counter = []
+
         function upadet_link(){
               var linkStr= "compare.php?"
                 for (var i = 0; i < counter.length; i++) {
                     if (i==counter.length-1) {
-                        linkStr = linkStr+"idc[]="+counter[i]
+                        linkStr = linkStr+"idc[]="+counter[i].id
                     }else{
-                        linkStr = linkStr+"idc[]="+counter[i]+'&'
+                        linkStr = linkStr+"idc[]="+counter[i].id+'&'
                     }
                 }
                 $('#compare_link').attr('href',linkStr)
+        }
+        function upadet_compare(){
+            for (var i = 0; i < $('.compare_box .car').length; i++) {
+                 $('.compare_box .car:eq('+i+')').html('')
+            }
+            for (var i = 0; i < counter.length; i++) {
+
+               $('.compare_box .car:eq('+i+')').append('<div class="comp_icon" style="background-image:url('+counter[i].img+')"></div><div class="comp_info"><h5>'+counter[i].brand+' '+counter[i].model+'</h5><p>'+counter[i].millage+'km '+counter[i].price+'</p></div><div class="remove_comp"></div>')
+            }
+
         }
 
         $('.compare_butt').click(function(){
             that = $(this)
 
             if (counter.length<3) {
-                for (var i = 0; i < Things.length; i++) {
-                    Things[i]
-                }
 
                 id = that.attr('info')
                 millage = that.attr('infomillage')
@@ -573,12 +582,14 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
                 model = that.attr('infomodel')
                 price = that.attr('infoprice')
                 img = that.attr('infopic')
-                counter.push(id)
+                counter.push({id:id,millage:millage,brand:brand,model:model,price:price,img:img})
 
                 upadet_link();
                 //alert(linkStr)
-                $('.compare_box .carEmpty:eq(0)').
-                $('.compare_box').append('<div class="car"><div class="comp_icon" style="background-image:url('+img+')"></div><div class="comp_info"><h5>'+brand+' '+model+'</h5><p>'+millage+'km '+price+'</p></div><div class="remove_comp"></div></div>')
+                upadet_compare();
+
+             
+            console.log(counter)
 
 
             }
@@ -591,9 +602,10 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
             that.html('')
             index = that.index()
 
-            counter.splice(index-1,1)
+            counter.splice(index,1)
 
             upadet_link()
+            upadet_compare()
 
             console.log(counter)
 
