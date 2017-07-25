@@ -1,12 +1,12 @@
 <?php
 
-    include ('assets/connect.php');
-    include ('assets/setup.php');
-    include ('assets/brandsandmodels.php');
-    include ('assets/functions.php');
+include (__DIR__.'/assets/connect.php');
+    include (__DIR__.'/assets/setup.php');
+    include (__DIR__.'/assets/brandsandmodels.php');
+    include (__DIR__.'/assets/functions.php');
 
 
-    include ('assets/searchingLang.php');
+    include (__DIR__.'/assets/searchingLang.php');
 
 
 
