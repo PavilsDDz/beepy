@@ -1,6 +1,6 @@
 <?php
 
-include (__DIR__.'/assets/connect.php');
+    include (__DIR__.'/assets/connect.php');
     include (__DIR__.'/assets/setup.php');
     include (__DIR__.'/assets/brandsandmodels.php');
     include (__DIR__.'/assets/functions.php');
