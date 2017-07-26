@@ -27,7 +27,7 @@
 	$texts_haeder['ru']['contacts'] = 'контакты';
 	$texts_haeder['ru']['hello'] = 'Привет';
 	$texts_haeder['ru']['logout'] = 'выйти';
-	$texts_haeder['ru']['signup'] = 'зарегистрироться';
+	$texts_haeder['ru']['signup'] = 'зарегистрироваться';
 	$texts_haeder['ru']['login'] = 'войти';
 
  ?>
