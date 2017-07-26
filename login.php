@@ -235,7 +235,7 @@ input:focus{
     border: none;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
-    width: 90px;
+    width: auto;
 }
 button:focus{
     outline:none;
