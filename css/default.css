@@ -181,6 +181,7 @@ button {
 	font-size: 1.3vw;
 	font-weight: 600;
 	opacity: 0.8;
+	padding-right: 0;
    }
 #footer{
 	z-index: 2;
@@ -206,6 +207,8 @@ button {
     display: inline-block;
     color: #eee;
     font-weight: 600 !important;
+	line-height: 0;
+    font-size: 16px;
 }
 .cp {
 	color: #ddd;
@@ -330,6 +333,10 @@ button {
 #footer a { 
 	font-size: 4vw;
     line-height: 6vw;
+}
+#footer ul li p {
+	line-height: 2;
+    font-size: 20px;
 }
 .socials {
     width: 50% !important;

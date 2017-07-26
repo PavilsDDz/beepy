@@ -147,7 +147,7 @@ button:focus{
 
 /*2*/
 .information_table{
-	top: 200px;
+	top: 95px;
 	left: 57vw;
 	position: fixed;
 	z-index: 1;
@@ -172,8 +172,7 @@ button:focus{
 	border: none;
 	font-size: 1.2vw;
 	height: 45px;
-	width: 150px;
-	padding: 8px 10px;
+	width: 200px;
 	border-radius: 23px;
 	font-weight: 600;
 	line-height: 0.8em;
@@ -254,11 +253,11 @@ input {
 	display: none;
  }
 .table{
-	position:relative;
+	/*position:relative;
 	top: 5vw;
 	left: 5vw;
 	right: 10vw;
-	margin-bottom: 5vw;
+	margin-bottom: 5vw;*/
 }
 .table th{
 	width: 24%;
@@ -268,15 +267,18 @@ input {
 }
 
 
-
+.edit_info{
+	display: -webkit-box;
+    position: relative;
+    left: 20px;
+}
 .edit_info button{
 	background-color: #00c6ff;
     color: rgba(255,255,255,1);
     border: none;
     font-size: 1.2vw;
     height: 45px;
-    width: 150px;
-    padding: 8px 10px;
+    width: 200px;
     border-radius: 23px;
     font-weight: 600;
     line-height: 0.8em;
