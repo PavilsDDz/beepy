@@ -106,6 +106,8 @@ button {
 	margin-left: 5px;
 	padding: 3px 7px;
 	font-size: 1em;
+	width: 85px;
+    text-align: center;
 }
 .signup {
 	color: #fff;

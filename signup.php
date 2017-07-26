@@ -324,7 +324,6 @@ label{
 	text-align: left;
 }
 form {
-	margin-top: 20px;
     padding-bottom: 20px;
 }
 input{
