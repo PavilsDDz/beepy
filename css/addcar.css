@@ -199,7 +199,7 @@ input[type="date" i]{
     border: none;
     font-size: 18px;
     height: 40px;
-    width: 120px;
+    width: auto;
     padding: 10px 30px;
     border-radius: 20px;
     font-weight: 500;
