@@ -325,9 +325,9 @@ input {
                     <button class="button_two"><?php echo $texts[$lang]['lgin'] ?></button>
                 </form>
 
-                    <li class="borders">
-                        <a href="forgetpass.php">Forget Password??</a>
-                    </li>
+                <li class="borders">
+                    <a href="forgetpass.php">Forget Password??</a>
+                </li>
                 
 
                 <div class="links_under_forms">
