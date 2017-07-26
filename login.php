@@ -306,48 +306,56 @@ input {
 </head>
 
 <body class="login_page">
-<div id="fixed" class="content_container">
+    <div id="fixed" class="content_container">
             <?php include"assets/header.php" ?>
-			<?php include 'assets/menu_block.php'; ?>
+            <?php include 'assets/menu_block.php'; ?>
+
         <div id="header">
 
             
-                <div class="hello_style">
-                    <h1><?php echo $texts[$lang]['hello'] ?></h1>
-                </div>
+            <div class="hello_style">
+                <h1><?php echo $texts[$lang]['hello'] ?></h1>
+            </div>
                 
                 
             <div class="login_forms">    
                 <form class="forms" action="login.php<?php if (isset($_GET['dir'])&&$_GET['dir']=='sell') {echo"?dir=sell";} ?>" method="POST">
-                <p class="borders"><?php echo $texts[$lang]['uname'] ?><input type="text" name="username" class="inputs_style"/></p><br>
-                <p class="borders" ><?php echo $texts[$lang]['pass'] ?><input type="password" name="password" class="inputs_style"/></p>
-                <button class="button_two"><?php echo $texts[$lang]['lgin'] ?></button>
+                    <p class="borders"><?php echo $texts[$lang]['uname'] ?><input type="text" name="username" class="inputs_style"/></p><br>
+                    <p class="borders" ><?php echo $texts[$lang]['pass'] ?><input type="password" name="password" class="inputs_style"/></p>
+                    <button class="button_two"><?php echo $texts[$lang]['lgin'] ?></button>
                 </form>
-   
+
+                    <li class="borders">
+                        <a href="forgetpass.php">Forget Password??</a>
+                    </li>
+                
+
                 <div class="links_under_forms">
-					<ul>
-                    <li class="borders">
-                    <script type="text/javascript">
-					var couter = 0;
-						function fbclick(){if(couter==0){
-							window.location = '<?php echo $loginUrl ?>';
-							couter++;
-						}}
-						
-					</script>
+                    <ul>
+                        <li class="borders">
+                            <script type="text/javascript">
+                                var couter = 0;
+                                    function fbclick(){if(couter==0){
+                                        window.location = '<?php echo $loginUrl ?>';
+                                        couter++;
+                                    }}
+                                    
+                            </script>
+                                
+                            <a class="fb_link" onclick="fbclick()"><?php echo $texts[$lang]['signup_f'] ?></a>
+                        </li>
+
+                        <li class="borders">
                         
-                         <a class="fb_link" onclick="fbclick()"><?php echo $texts[$lang]['signup_f'] ?></a>
-                    </li>
-                    <li class="borders">
-                        <span href=""><?php echo $texts[$lang]['mem'] ?></span>
-                        <a href="signup.php" class="sign_in"><button type="button"><?php echo $texts[$lang]['reg'] ?></button></a>
-                        
-                    </li>
+                            <span href=""><?php echo $texts[$lang]['mem'] ?></span>
+                            <a href="signup.php" class="sign_in"><button type="button"><?php echo $texts[$lang]['reg'] ?></button></a>
+                            
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-</div>
+    </div>
 </body>
 </html>
