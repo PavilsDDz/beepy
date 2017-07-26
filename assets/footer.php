@@ -25,10 +25,10 @@
     $texts_footer['en']['contacts'] = 'Contacts';
     $texts_footer['en']['account'] = 'My Account';
 
-    $texts_footer['ru']['adress'] = 'Адрес';
-    $texts_footer['ru']['call'] = 'Званите';
-    $texts_footer['ru']['email'] = 'Злектронойпочтa';
-    $texts_footer['ru']['adress_'] = 'Улица Уденс 13,Рига,Латвия';
+    $texts_footer['ru']['adress'] = 'Адрес:';
+    $texts_footer['ru']['call'] = 'Звоните:';
+    $texts_footer['ru']['email'] = 'Эл. почта:';
+    $texts_footer['ru']['adress_'] = 'Улица Уденс 12, Рига, Латвия';
     $texts_footer['ru']['home'] = 'Главная';
     $texts_footer['ru']['buy'] = 'Купить';
     $texts_footer['ru']['sell'] = 'Продать';
