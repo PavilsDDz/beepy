@@ -126,13 +126,13 @@ button {
 	color: #00c6ff;
 	border-radius: 20px;
 	height: 20px;
-	
 	z-index: 10;
 	background-color: #fff;
 	position: relative;
 	cursor: pointer;
 	border: solid #92e7ff 1px;
-
+    width: 85px;
+    text-align: center;
 }
 .lang_select {
 	position: absolute;

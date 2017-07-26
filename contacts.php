@@ -26,10 +26,10 @@
 
 
 	$texts['ru']['h1'] = 'Свяжитесь с нами';
-	$texts['ru']['subscribe_h2'] = 'Подписывайтесь на электронную почту и получайте новинки';
-	$texts['ru']['placeholder'] = 'ваш адрес электронойпочты';
-	$texts['ru']['subscribe'] = 'подписываться';
-	$texts['ru']['adress'] = 'Улица Уденс 13,Рига,Латвия';
+	$texts['ru']['subscribe_h2'] = 'Подписывайтесь на электронную почту и получайте новости';
+	$texts['ru']['placeholder'] = 'ваш адрес электроной почты';
+	$texts['ru']['subscribe'] = 'подписаться';
+	$texts['ru']['adress'] = 'Улица Уденс 12, Рига, Латвия';
 	
 
 //nothing
@@ -98,6 +98,8 @@ input {
     color: #00fcff;
     background-color: transparent;
 	font-family: 'Montserrat', sans-serif;
+	width: 100%;
+    text-align: center;
 }
 input [type="text"]::-webkit-input-placeholder {color:#03b5bf;}
 input [type="text"]::-moz-placeholder          {color:#03b5bf;}/* Firefox 19+ */
@@ -118,7 +120,7 @@ input:focus{
     border: none;
     font-size: 1.3vw;
     height: 5%;
-    width: 10vw;
+    width: auto;
     padding: 1vw 2vw;
     border-radius: 2vw;
     font-weight: 500;

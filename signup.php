@@ -72,11 +72,11 @@
 
     $texts['en']['succErr'] = 'You are successfully registered!';
 // --------------------------------------------------------->
-    $texts['ru']['signup_f'] = 'Вход чериз FACEBOOK';
+    $texts['ru']['signup_f'] = 'Вход через FACEBOOK';
     $texts['ru']['fname'] = 'Имя';
     $texts['ru']['lname'] = 'Фамилия';
-    $texts['ru']['uname'] = 'Пользователь';
-    $texts['ru']['email'] = 'Злектронойпочтa';
+    $texts['ru']['uname'] = 'Имя пользователя';
+    $texts['ru']['email'] = 'Электронная почта';
     $texts['ru']['phone'] = 'Номер телефона';
     $texts['ru']['country'] = 'Страна';
     $texts['ru']['pass'] = 'Пароль';
@@ -92,10 +92,10 @@
     $texts['ru']['lNameErrorC'] = 'ФАМИЛИЯ должно содержать буквы и пробел.';
 
     $texts['ru']['uNameErrorA'] = 'Пожалуйста, введите Ваш логин.';  
-    $texts['ru']['uNameErrorB'] = 'Имя должно иметь 3 символа.';
+    $texts['ru']['uNameErrorB'] = 'Имя должно содержать не менее 3 символов.';
     $texts['ru']['uNameErrorC'] = 'К сожалению, такое имя пользователя уже занято!';
 
-    $texts['ru']['emailErr'] = 'Извините электронная уже занята!';
+    $texts['ru']['emailErr'] = 'Извините, электронная уже занята!';
 
     $texts['ru']['passErrorA'] = 'Пожалуйста введите пароль.';
     $texts['ru']['passErrorB'] = 'Пароль должен содержать не менее 6 символов.';

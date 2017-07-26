@@ -9,7 +9,7 @@
 	$texts['ru'] = [];
 
 	$texts['lv']['edit'] = 'Rediģēt';
-	$texts['lv']['Choose_file'] = 'Izvēlēties Failu';
+	$texts['lv']['Choose_file'] = 'Izvēlēties Failu...';
 	$texts['lv']['change_pic'] = 'Mainīt Bildi';
     $texts['lv']['fname'] = 'Vārds:';
 	$texts['lv']['lname'] = 'Uzvārds:';
@@ -20,7 +20,7 @@
 	$texts['lv']['cancel'] = 'Atcelt';
 
 	$texts['en']['edit'] = 'Personal Info';
-	$texts['en']['Choose_file'] = 'Choose File';
+	$texts['en']['Choose_file'] = 'Choose File...';
 	$texts['en']['change_pic'] = 'Change Picture';
     $texts['en']['fname'] = 'First Name:';
     $texts['lv']['lname'] = 'Uzvārds:';
@@ -31,7 +31,7 @@
 	$texts['lv']['cancel'] = 'Cancel';
 	
 	$texts['ru']['edit'] = 'Редактировать';
-	$texts['ru']['Choose_file'] = 'Выбрать Файл';
+	$texts['ru']['Choose_file'] = 'Выбрать Файл...';
 	$texts['ru']['change_pic'] = 'Поменять изображение ';
     $texts['ru']['fname'] = 'Имя:';
     $texts['ru']['lname'] = 'Фамилия:';

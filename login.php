@@ -43,11 +43,11 @@ include('assets/setup.php');
 // --------------------------------------------------------->
     $texts['ru']['hello'] = 'Привет.';
 
-    $texts['ru']['signup_f'] = 'Вход чериз FACEBOOK';
+    $texts['ru']['signup_f'] = 'Вход через FACEBOOK';
     $texts['ru']['uname'] = 'Пользователь';
     $texts['ru']['pass'] = 'Пароль';
 
-    $texts['ru']['reg'] = 'Зарегистрироватся';
+    $texts['ru']['reg'] = 'Зарегистрироваться';
 
     $texts['ru']['succErr'] = 'Вы успешно зарегистрированы!';
 
