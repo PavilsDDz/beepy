@@ -193,12 +193,46 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
          $query .= " ASC";
     }
 
+
+    // $results_per_page = 10;
+
+    // $number_of_results = count($searchStmt);
+
+    // $number_of_pages = ceil($number_of_results/$results_per_page);
+
+    // if (!isset($_GET['page'])) {
+    //         $page = 1;
+    //     } else {
+    //         $page = $_GET['page'];
+    //     }
+    // }
+
+    // $this_page_first_result = ($page-1)*$results_per_page;
+
+   // $query .= " LIMIT ".$this_page_first_result ."," .$results_per_page;
+
+    //$searchStmt = "SELECT * FROM products LIMIT ' . $this_page_first_result . ',' .  $results_per_page";
+
+
     $searchStmt = getAllDataFromDatabase($query, $playload);
-    // echo'<br><br><br><br><br>';
-   // print_r($_GET);
-   //  echo $query.'<br>';
-    // print_r($playload);
-}
+
+    $new = explode("page=", $_SERVER['REQUEST_URI']);
+
+   
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+            
+    print_r($new);
+
+// Lapas Pārslēgšanas sākums! 
+
+
+
+// Lapas Pārslēgšanas beigas!
 
 ?>
 <html>
@@ -322,10 +356,54 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
     <div class="search">
 
     </div>
+
+    <?php
+        $link = "$_SERVER[REQUEST_URI]";
+        $count =  1;
+        $max = 6;
+        // print_r($link);
+    ?>
+
+
+    <form method="GET" action="<?php echo $link;?>">
+        <?php
+
+            while($count < $max){ ?> 
+
+                <input type="submit" value="<?php echo $count?>" name="page"><?php $count ?></input>
+
+                <?php
+
+                $count ++;
+
+            }
+            print_r($_POST);
+        ?>
+    </form>
+
+    <?php
+        // for ($page=1; $page<=$number_of_pages; $page++){
+
+        //     // echo '<a href=$new[0]."page="'. $page .'">' . $page . '</a> ';
+
+        // }
+    ?>
+<!--beidzas  -->
+
+
+
+
+
+
+
+
+
+
+
     <div class="search_ext">
 
         <form action="searching.php" method="GET">
-        <div class="large_filters">
+            <div class="large_filters">
             <!--Car TYPE-->
 
                 <div class="groupLabel flex"><label > <?php echo $texts[$lang]['type'] ?> </label></div>
@@ -614,5 +692,6 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
     })
 
 </script>
+
 </body>
 </html>
