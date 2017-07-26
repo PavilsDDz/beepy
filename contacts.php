@@ -55,15 +55,16 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 55vw;
+    height: auto;
     position: relative;
     padding-top: 30px;
     max-height: 60%;
 }
 .table_maps{
 	width: 70%;
-	margin-top: 10vw;
-	margin-left: 14%;
+    margin-top: 4vw;
+    margin-left: 14%;
+    padding-bottom: 3vw;
 }
 .table_maps td{
 	width: 50%;
