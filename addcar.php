@@ -377,7 +377,7 @@ $("input:checkbox").on('click', function() {
 			</tr>
 			<tr>
 				<td><label><?php echo $texts[$lang]['engine_capacity'] ?></label></td>
-				<td><input type="number" name="engineCapacity" value="<?php if (isset($_POST['engineCapacity'])) { echo $_POST['engineCapacity'];} ?>" pattern="[0-9]+([\.,][0-9]+)?" step="0.1"></input></td>
+				<td><input class="input_capacity" type="number" name="engineCapacity" value="<?php if (isset($_POST['engineCapacity'])) { echo $_POST['engineCapacity'];} ?>" pattern="[0-9]+([\.,][0-9]+)?" step="0.1"></input></td>
 			</tr>
 			<tr>
 				<td><label><?php echo $texts[$lang]['transmission'] ?></label></td>
@@ -400,7 +400,7 @@ $("input:checkbox").on('click', function() {
 			</tr>
 			<tr>
 				<td style="vertical-align:top;"><label><?php echo $texts[$lang]['info'] ?></label></td>
-				<td><textarea name="info" placeholder=""  style="width: 168px; height: 100px"><?php if (isset($_POST['info'])) { echo $_POST['info'];} ?></textarea></td>
+				<td><textarea name="info" placeholder=""><?php if (isset($_POST['info'])) { echo $_POST['info'];} ?></textarea></td>
 			</tr>
 			<tr>
 				<td><label><?php echo $texts[$lang]['price'] ?></label></td>
