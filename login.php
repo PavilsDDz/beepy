@@ -240,6 +240,17 @@ input:focus{
 button:focus{
     outline:none;
 }
+.forget_pass{
+	background-color: #00c6ff;
+    padding: 5px 15px;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    width: auto;
+}
 
 .menu{display: none;}
 @media screen and (max-width: 800px){
@@ -323,12 +334,10 @@ input {
                     <p class="borders"><?php echo $texts[$lang]['uname'] ?><input type="text" name="username" class="inputs_style"/></p><br>
                     <p class="borders" ><?php echo $texts[$lang]['pass'] ?><input type="password" name="password" class="inputs_style"/></p>
                     <button class="button_two"><?php echo $texts[$lang]['lgin'] ?></button>
+					<li class="borders" style="margin-top: 10px;">
+						<a class="forget_pass" href="forgetpass.php">Forget Password??</a>
+					</li>
                 </form>
-
-                <li class="borders">
-                    <a href="forgetpass.php">Forget Password??</a>
-                </li>
-                
 
                 <div class="links_under_forms">
                     <ul>
