@@ -12,6 +12,7 @@ include("assets/addcarLang.php");
 
 //search data by submited values
 
+
 if (isset($_GET['search']) OR isset($_GET['brand'])) {
     $query = "SELECT * FROM products WHERE";
     $playload = array();
@@ -194,45 +195,35 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
     }
 
 
-    // $results_per_page = 10;
+// Lapas Pārslēgšanas Sākums!!
 
-    // $number_of_results = count($searchStmt);
+    $results_per_page = 10;
 
-    // $number_of_pages = ceil($number_of_results/$results_per_page);
+    $countQuery = "SELECT id FROM products";
+    $stmtCount = getAllDataFromDatabase($countQuery);
 
-    // if (!isset($_GET['page'])) {
-    //         $page = 1;
-    //     } else {
-    //         $page = $_GET['page'];
-    //     }
-    // }
+    $number_of_results = count($stmtCount);
+    $number_of_pages = ceil($number_of_results/$results_per_page);
 
-    // $this_page_first_result = ($page-1)*$results_per_page;
+    print_r($number_of_results);
 
-   // $query .= " LIMIT ".$this_page_first_result ."," .$results_per_page;
+    if (!isset($_GET['page'])) {
+            $page = 1;
+        } else {
+            $page = $_GET['page'];
+        }
+    }
 
-    //$searchStmt = "SELECT * FROM products LIMIT ' . $this_page_first_result . ',' .  $results_per_page";
+    
+    $this_page_first_result = ($page-1)*$results_per_page;
 
+    $query .= " LIMIT ".$this_page_first_result ."," .$results_per_page;
 
     $searchStmt = getAllDataFromDatabase($query, $playload);
 
-    $new = explode("page=", $_SERVER['REQUEST_URI']);
-
-   
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-            
-    print_r($new);
-
-// Lapas Pārslēgšanas sākums! 
-
-
-
-// Lapas Pārslēgšanas beigas!
+    $new = explode('&page=',$_SERVER['REQUEST_URI']);
+    
+// Lapas Pārslēgšanas BEIGAS!!
 
 ?>
 <html>
@@ -240,7 +231,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
         <meta charset="utf-8">
 
         <link rel="stylesheet" type="text/css" href="css/search_style.css">
-    <?php include"assets/head.php" ?>
+       <?php include"assets/head.php" ?>   
         
         <script type="text/javascript" src="scripts/checkbox.js"></script>
         <script type="text/javascript" src="scripts/handles.js"></script>
@@ -321,7 +312,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
     
 <body>
 <div id="fixed" class="content_container">
-<?php include"assets/header.php"; ?>
+  <!-- /* <?php include"assets/header.php"; ?> */       /jaatkomentē atpakaļ  -->
 <?php include 'assets/menu_block.php'; ?>
     <div class="compare_box">
         <div class="compare_toggle">
@@ -357,47 +348,31 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
 
     </div>
 
+    <!--Paging sākas!!  -->
+
+
     <?php
+
         $link = "$_SERVER[REQUEST_URI]";
-        $count =  1;
+        $page =  1;
         $max = 6;
-        // print_r($link);
+
+
+        for ($page=1; $page<=$number_of_pages; $page++){
+
+            $page_link = $new[0].'&page='.$page;
+            echo '<a href="'.$page_link.'">' . $page . '</a> ';
+        }
     ?>
 
-
-    <form method="GET" action="<?php echo $link;?>">
-        <?php
-
-            while($count < $max){ ?> 
-
-                <input type="submit" value="<?php echo $count?>" name="page"><?php $count ?></input>
-
-                <?php
-
-                $count ++;
-
-            }
-            print_r($_POST);
-        ?>
-    </form>
-
-    <?php
-        // for ($page=1; $page<=$number_of_pages; $page++){
-
-        //     // echo '<a href=$new[0]."page="'. $page .'">' . $page . '</a> ';
-
-        // }
-    ?>
-<!--beidzas  -->
+    <select>
+        <option value="1">10</options>
+        <option value="2">20</options>
+        <option value="3">50</options>
+    </select>
 
 
-
-
-
-
-
-
-
+    <!-- Paging beidzas!!!  -->
 
 
     <div class="search_ext">
@@ -691,7 +666,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
 
     })
 
-</script>
+    </script>
 
-</body>
+    </body>
 </html>
