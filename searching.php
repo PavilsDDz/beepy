@@ -318,7 +318,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
 
         <div id="fixed" class="content_container">
 
-            <?php include"assets/header.php"; ?>
+            <?php include "assets/header.php"; ?>
             <?php include 'assets/menu_block.php'; ?>
 
             <div class="compare_box">
