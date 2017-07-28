@@ -58,7 +58,6 @@
     height: auto;
     position: relative;
     padding-top: 30px;
-    max-height: 60%;
 }
 .table_maps{
 	width: 70%;

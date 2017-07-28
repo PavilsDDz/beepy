@@ -52,6 +52,56 @@
 	}
 ?>
 
+<style>
+.div{
+	text-align: center;
+	padding: 5vw;
+}
+.div p{
+	font-family: 'Montserrat', sans-serif;
+    color: #00c6ff;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 500;
+}
+.div h2{
+	font-family: 'Montserrat', sans-serif;
+    color: #00c6ff;
+    font-size: 30px;
+    font-weight: 600;
+}
+.submit_button button{
+	background-color: #00c6ff;
+    color: rgba(255,255,255,1);
+    border: none;
+    font-size: 22px;
+    height: 50px;
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 30vw;
+    font-weight: 500;
+    line-height: 2px;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
+}
+.borders input{
+	border: 1px solid #00c6ff;
+    width: 257px;
+    height: 4px;
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 17px 12px;
+    font-size: 20px;
+}
+button:focus {
+	outline: none;
+}
+input:focus {
+	outline: none;
+}
+</style>
+
+<div class="div">
 <h2>Sveiki, šeit top recovery pass</h2>
 
 <form method="post">
@@ -60,5 +110,5 @@
 	<div class="submit_button">
 		<a><button type="submit" value="Submit" name="sub">Sūtīt uz E</button></a>
 	</div>
-					
-</form>	
+</form>
+</div>

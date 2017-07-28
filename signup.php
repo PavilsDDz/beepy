@@ -325,6 +325,7 @@ label{
 }
 form {
     padding-bottom: 20px;
+	margin-bottom: 0;
 }
 input{
 	font-family: 'Montserrat', sans-serif;
@@ -352,10 +353,10 @@ input{
 }
 #form input {
 	border: none;
-    width: 250px;
-    height: 27px;
+    width: 300px;
+    height: 30px;
     border-radius: 30px;
-    padding: 9px;
+    padding: 23px !important;
     background-color: white;
     padding-left: 30px;
     padding-right: 30px;
@@ -418,7 +419,7 @@ form #submit input{
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-	margin-top: 83px;
+	margin-top: 60px;
 }
 #submit {
     width: 100%;
