@@ -213,15 +213,18 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
         }
     }
 
+    if(isset($_GET["search"])){
+
+        $this_page_first_result = ($page-1)*$results_per_page;
+
+        $query .= " LIMIT ".$this_page_first_result ."," .$results_per_page;
+        $searchStmt = getAllDataFromDatabase($query, $playload);
+
+        $new = explode('&page=',$_SERVER['REQUEST_URI']);
+    }
     
-    $this_page_first_result = ($page-1)*$results_per_page;
-
-    $query .= " LIMIT ".$this_page_first_result ."," .$results_per_page;
-
-    $searchStmt = getAllDataFromDatabase($query, $playload);
-
-    $new = explode('&page=',$_SERVER['REQUEST_URI']);
     
+
 ?>
 
 
@@ -403,10 +406,10 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
                                                 echo "<input class='checkbox1' type='checkbox' id='input_".$brand."' name='brand[]' value='".$brand."' onchange='launch_req()'><label class='label1' id='labe_".$brand."' for='input_".$brand."' style='background-image:url(logos/".strtolower($brand)."_g.png)' 
                                                 brand='".strtolower($brand).")' ></label>";
                                             }
-                                                echo"<style>#brand input[type=checkbox]:checked + #labe_".$brand." {
+                                            echo"<style>#brand input[type=checkbox]:checked + #labe_".$brand." {
 
-                                                background-image:url( logos/".strtolower($brand).".png )!important;opacity: 1;}</style>"; 
-                                                $c++;
+                                            background-image:url( logos/".strtolower($brand).".png )!important;opacity: 1;}</style>"; 
+                                            $c++;
                                         }
 
                                     ?>
@@ -520,11 +523,20 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
                             <option value="ASC"><?php echo $searchL[$lang]['orderfrom'] ?></option>
                         </select>
                         
-                        <select id="records" name="per_page"> 
-                            <option  <?php if($results_per_page == 5){ echo "selected ";} ?>value="5">5</option>
-                            <option  <?php if($results_per_page == 10){ echo "selected ";} ?>value="10">10</option>
-                            <option  <?php if($results_per_page == 20){ echo "selected ";} ?>value="20">20</option>
-                        </select>
+                        <?php if(isset($_GET["search"])){ ?>
+
+                            <select id="records" name="per_page"> 
+                                <option  <?php if($results_per_page == 5){ echo "selected ";} ?>value="5">5</option>
+                                <option  <?php if($results_per_page == 10){ echo "selected ";} ?>value="10">10</option>
+                                <option  <?php if($results_per_page == 20){ echo "selected ";} ?>value="20">20</option>
+                            </select>
+                            
+                            <?php
+                        }else{
+
+                        }
+                        
+                        ?>
 
                         <br/>
                         <!--CHASSIS SERIAL-->
@@ -541,20 +553,51 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
 
                 </div>
 
+                <div>
                 <!--Paging sākas!!  -->
                 <?php
 
-                $link = "$_SERVER[REQUEST_URI]";
-                $page =  1;
-                $max = 6;
+                    $link = "$_SERVER[REQUEST_URI]";
+                    $max = 6;
 
-                for ($page=1; $page<=$number_of_pages; $page++){
+                    if(isset($_GET['search'])){
+                        $page =  $new[1];
+                        $page_link = $new[0].'&page='.$page;
+                    }
+                    
+                ?>
 
-                    $page_link = $new[0].'&page='.$page;
-                    echo '<a href="'.$page_link.'">' . $page . '</a> ';
+                <?php
+                if($page > 1){
+                    $page_link = $new[0].'&page='.($new[1]-1);
+                
+                    echo '<a href="'.$page_link.'"><<</a>';
+                    
+                }else{
+
                 }
                 ?>
 
+                <?php
+
+                for ($page=1; $page<=$number_of_pages; $page++){
+                    $page_link = $new[0].'&page='.$page;
+
+                    echo '<a href="'.$page_link.'">' . $page . '</a> ';
+  
+                }?>
+                    
+                <?php
+                if($page > $number_of_pages){
+
+                }else{
+                    $page_link = $new[0].'&page='.($new[1]+1);
+
+                    echo '<a href="'.$page_link.'">>></a>';
+                }
+                ?>
+                
+                <div>
                 <!-- Paging beidzas!!!  -->
 
                 <div id="table_cars">
@@ -610,7 +653,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
 
                 <?php include"assets/footer.php" ?>
 
-                
+
             </div>
         </div>
 
