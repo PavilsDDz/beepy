@@ -1,6 +1,6 @@
 <?php 
 	include 'brandsandmodels.php';
-	if(isset($_GET['carType'])&&!empty($_GET['carType'][0])){
+	if(isset($_GET['carType'])&&!empty($_GET['carType'][0])&&$_GET['carType'][0]!=" "){
 		?>
 
 
@@ -22,9 +22,10 @@
 		<?php
 	}
 
-	if(isset($_GET['brand'])){
-		?>
+	if(isset($_GET['brand'])&&!empty($_GET['brand'][0])&&$_GET['brand'][0]!=" "){
 
+		print_r($_GET['brand'])  ;
+		?>
 
 		<div class="filter_group">
 			<span>brands:</span>

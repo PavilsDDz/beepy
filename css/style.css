@@ -645,12 +645,13 @@ h4 {
     border: none;
     font-size: 1.3em;
     height: 55px;
-    width: 146px;
+    padding: 0 15px;
     border-radius: 30px;
     font-weight: 600;
     line-height: 0.8em;
     font-family: 'Montserrat', sans-serif;
     opacity: 0.9;
+    margin-top: 15px;
 }
 .beepylogo p{
 	padding: 0;

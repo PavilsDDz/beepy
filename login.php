@@ -22,6 +22,8 @@ include('assets/setup.php');
     $texts['lv']['mem'] = 'Jūs neesat reģistrējies';
     
     $texts['lv']['erre'] = 'Mēģiniet vēlreiz vai reģistrējaties';
+    $texts['lv']['fpw'] = 'Aizmirsāt paroli?';
+
 
 // ------------------------------------------------------>
 
@@ -40,6 +42,7 @@ include('assets/setup.php');
     $texts['en']['mem'] = 'Not a member';
 
     $texts['en']['erre'] = 'Re-try or Singin';
+    $texts['en']['fpw'] = 'Forgot password?';
 // --------------------------------------------------------->
     $texts['ru']['hello'] = 'Привет.';
 
@@ -56,6 +59,9 @@ include('assets/setup.php');
     $texts['ru']['mem'] = 'Вы не зарегистрированы';
 
     $texts['ru']['erre'] = 'попробуйте еще раз или зарегистрируйтесь';
+
+    $texts['ru']['fpw'] = 'Забыли пароль?';
+
 
 require_once __DIR__ . '/assets/Facebook/autoload.php';
 $fb = new \Facebook\Facebook([
@@ -119,8 +125,11 @@ function dumpAndDie($data) {
     <?php include"assets/head.php" ?>
 
 <style>
+#footer {
+    box-shadow: none !important;
+}
 html {
-    overflow: hidden;
+  
     height: 100%;
 }
 body{
@@ -128,7 +137,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    
 	width: 100%;
 	height: 100%;
 }
@@ -157,8 +166,10 @@ p{
 h1{
     font-family: 'Montserrat', sans-serif;
     color: white;
-    font-size: 120px;
-    font-weight:600;    
+    font-size: 100px;
+    font-weight:600;  
+    margin-top: 0;
+    margin-bottom: 30px;  
 }
 input {
     border-right: none;
@@ -199,13 +210,26 @@ input:focus{
     margin: 5px;
 }
 .login_forms{
-	margin-top: 5vw;
+	margin-top: 100px;
 }
-.forms{
+.links_under_forms, .forms{
     text-align: right;
     position: relative;
     top: 0vw;
     right: 42vw;
+}
+.links_under_forms ul {
+    font-size: 0.85em;
+    display: flex;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    align-items: baseline;
+}
+.links_under_forms ul li:nth-child(2){
+    border-left: solid #fff 1px;
+    border-right: solid #fff 1px;
+    padding: 0 10px;
+
 }
 .forms button {
     background-color: #00c6ff;
@@ -217,14 +241,26 @@ input:focus{
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     width: 90px;
+    margin: 5px;
 }
 .links_under_forms{
-    position: relative;
-    top: 2vw;
-    left: 46vw;
+  
+
+  
 }
 .sign_in{
     width: 20%;
+}
+
+.sign_up button{
+    background: rgba(0,0,0,0);
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+    padding: 0;
+    
 }
 .sign_in button{
     background-color: #00c6ff;
@@ -241,8 +277,8 @@ button:focus{
     outline:none;
 }
 .forget_pass{
-	background-color: #00c6ff;
-    padding: 5px 15px;
+	
+ 
     border-radius: 40px;
     font-size: 1em;
     color: #fff;
@@ -250,9 +286,12 @@ button:focus{
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     width: auto;
+    padding-right: 0;
+    display: inline-block;
 }
 
 .menu{display: none;}
+
 @media screen and (max-width: 800px){
 body{
 	width: auto;
@@ -261,12 +300,23 @@ body{
 #header{
 	background-position: 55% 10%;
 	padding-top: 0;
-	height: 200vw;
 }
 .hello_style{
     position: relative;
     left: 0vw;
 	text-align: center;
+}
+p.borders {
+    position: relative;
+    display: block !important;
+    text-align: right;
+    right: 61%;
+
+}
+.borders input {
+    position: absolute;
+    top: 5px;
+    left: 100%;
 }
 .hello_style h1 {
     font-size: 8em;
@@ -312,6 +362,11 @@ input {
 .borders{
 	line-height: 22px;
 }
+.links_under_forms ul {
+    justify-content: center;
+    -webkit-justify-content:center;
+}
+
 }
 </style>
 </head>
@@ -331,12 +386,10 @@ input {
                 
             <div class="login_forms">    
                 <form class="forms" action="login.php<?php if (isset($_GET['dir'])&&$_GET['dir']=='sell') {echo"?dir=sell";} ?>" method="POST">
-                    <p class="borders"><?php echo $texts[$lang]['uname'] ?><input type="text" name="username" class="inputs_style"/></p><br>
+                    <p class="borders"><?php echo $texts[$lang]['uname'] ?><input type="text" name="username" class="inputs_style"/></p>
                     <p class="borders" ><?php echo $texts[$lang]['pass'] ?><input type="password" name="password" class="inputs_style"/></p>
                     <button class="button_two"><?php echo $texts[$lang]['lgin'] ?></button>
-					<li class="borders" style="margin-top: 10px;">
-						<a class="forget_pass" href="forgetpass.php">Forget Password??</a>
-					</li>
+					
                 </form>
 
                 <div class="links_under_forms">
@@ -356,15 +409,18 @@ input {
 
                         <li class="borders">
                         
-                            <span href=""><?php echo $texts[$lang]['mem'] ?></span>
-                            <a href="signup.php" class="sign_in"><button type="button"><?php echo $texts[$lang]['reg'] ?></button></a>
+                            <span href=""><?php// echo $texts[$lang]['mem'] ?></span>
+                            <a href="signup.php" class="sign_up"><button type="button"><?php echo $texts[$lang]['reg'] ?></button></a>
                             
                         </li>
+                        <li class="borders" style="margin-top: 10px;">
+                        <a class="forget_pass" href="forgetpass.php"><?php echo $texts[$lang]['fpw']; ?></a>
+                    </li>
                     </ul>
                 </div>
             </div>
         </div>
-
+        <?php include "assets/footer.php" ?>
     </div>
 </body>
 </html>

@@ -220,7 +220,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
         $query .= " LIMIT ".$this_page_first_result ."," .$results_per_page;
         $searchStmt = getAllDataFromDatabase($query, $playload);
 
-        $new = explode('&page=',$_SERVER['REQUEST_URI']);
+      
     }
     
     
@@ -526,7 +526,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
                         <?php if(isset($_GET["search"])){ ?>
 
                             <select id="records" name="per_page"> 
-                                <option  <?php if($results_per_page == 5){ echo "selected ";} ?>value="5">5</option>
+                                <option  <?php if($results_per_page == 5){ echo "selected ";} ?>value="3">3</option>
                                 <option  <?php if($results_per_page == 10){ echo "selected ";} ?>value="10">10</option>
                                 <option  <?php if($results_per_page == 20){ echo "selected ";} ?>value="20">20</option>
                             </select>
@@ -553,52 +553,8 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
 
                 </div>
 
-                <div>
-                <!--Paging sākas!!  -->
-                <?php
-
-                    $link = "$_SERVER[REQUEST_URI]";
-                    $max = 6;
-
-                    if(isset($_GET['search'])){
-                        $page =  $new[1];
-                        $page_link = $new[0].'&page='.$page;
-                    }
-                    
-                ?>
-
-                <?php
-                if($page > 1){
-                    $page_link = $new[0].'&page='.($new[1]-1);
+               
                 
-                    echo '<a href="'.$page_link.'"><<</a>';
-                    
-                }else{
-
-                }
-                ?>
-
-                <?php
-
-                for ($page=1; $page<=$number_of_pages; $page++){
-                    $page_link = $new[0].'&page='.$page;
-
-                    echo '<a href="'.$page_link.'">' . $page . '</a> ';
-  
-                }?>
-                    
-                <?php
-                if($page > $number_of_pages){
-
-                }else{
-                    $page_link = $new[0].'&page='.($new[1]+1);
-
-                    echo '<a href="'.$page_link.'">>></a>';
-                }
-                ?>
-                
-                <div>
-                <!-- Paging beidzas!!!  -->
 
                 <div id="table_cars">
 
@@ -633,24 +589,60 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
 
                     </div>
 
+                         <div class="pages">
+                    <!--Paging sākas!!  -->
+
+                    <?php
+
+                        $link = "$_SERVER[REQUEST_URI]";
+                        $max = 6;
+
+                        if(isset($_GET['search'])){
+                                    $new = explode('&page=',$_SERVER['REQUEST_URI']);
+                                    if(!isset($new[1])){
+                                        $new[1]=1;
+                                    }
+                                    $page =  $new[1];
+                                    $page_link = $new[0].'&page='.$page;
+                                
+                            ?>
+
+                            <?php
+                            if($page > 1){
+                                $page_link = $new[0].'&page='.($new[1]-1);
+                            
+                                echo '<a href="'.$page_link.'"><<</a>';
+                                
+                            }else{
+
+                            }
+                            ?>
+
+                            <?php
+
+                            for ($page=1; $page<=$number_of_pages; $page++){
+                                $page_link = $new[0].'&page='.$page;
+
+                                echo '<a href="'.$page_link.'">' . $page . '</a> ';
+              
+                            }?>
+                                
+                            <?php
+                            if($page > $number_of_pages){
+
+                            }else{
+                                $page_link = $new[0].'&page='.($new[1]+1);
+
+                                echo '<a href="'.$page_link.'">>></a>';
+                            }
+                        }
+                    ?>
+                    
+                    </div>
+
                 </div>
 
-                <!--Paging sākas!!  -->
-                <?php
-
-                    $link = "$_SERVER[REQUEST_URI]";
-                    $page =  1;
-                    $max = 6;
-
-
-                    for ($page=1; $page<=$number_of_pages; $page++){
-
-                        $page_link = $new[0].'&page='.$page;
-                        echo '<a href="'.$page_link.'">' . $page . '</a> ';
-                    }
-                ?>
-                <!-- Paging beidzas!!!  -->
-
+             
                 <?php include"assets/footer.php" ?>
 
 

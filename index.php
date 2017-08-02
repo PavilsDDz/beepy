@@ -255,13 +255,13 @@ $fb = new \Facebook\Facebook([
 
                     <div class="header_forms flexx">
                         <div class="small_search">
-                            <form action="<?php echo $SiteUrl; ?>searching.php" method="POST">
+                            <form action="<?php echo $SiteUrl; ?>searching.php" method="GET">
                                 <div class="search_top flexx">
                                     <!-- CARTYPE -->
                                     <div class="select_input">
                                         <label><?php echo $texts[$lang]['type'] ?></label>
                                         <select name="carType[]" >
-                                            <option value=""></option>  
+                                            <option value=" "></option>  
                                             <?php  $car_types = ['coupe','hatchback','minivan','van','pickup','sedan','unversal','offroad','sport','other'];
                                             foreach ($car_types as $type) {
                                                ?>
@@ -274,7 +274,7 @@ $fb = new \Facebook\Facebook([
                                     <div class="select_input">
                                         <label><?php echo $texts[$lang]['brands'] ?></label>
                                         <select name="brand[]" id="brand" onchange="launch_req()">
-                                            <option value=""></option>
+                                            <option value=" "></option>
                                             <?php
                                             foreach ($cars as $brand) {
                                             echo "<option value='" . $brand . "'>" . $brand . "</option>";

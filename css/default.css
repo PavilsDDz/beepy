@@ -15,7 +15,7 @@ li{
 	color:#00c6ff;
 	background-color: rgba(255,255,255,0.95);
 	box-sizing: border-box;
-	padding: 0 4%;
+	padding: 0 4% 10px 4%;
 }
 .login_page .user_profile{
 	/*display: none !important;*/
@@ -64,7 +64,7 @@ button {
 }
 .header_logo{
 	position: relative;
-	width: 140px;
+	width: 110px;
 	
 }
 .header_logo img {
@@ -85,7 +85,7 @@ button {
     padding-right: 50px;
     font-weight: 300;
     margin: 0;
-    margin-top: 38px;
+    margin-top: 30px;
 	font-size: 1em;
 
 
@@ -99,7 +99,7 @@ button {
 }
 .acount_manage{
 	height: 20px;
-    margin-top: 35px;
+    margin-top: 26px;
     
 } 
 .acount_manage a {
@@ -120,7 +120,7 @@ button {
 	height: 20px;
 	margin-top: 40px;
 	position: relative;
-	margin: 35px 30px 0 auto;
+	margin: 26px 30px 0 auto;
 	font-size: 1em;
 }
 .langbutt {
@@ -170,7 +170,7 @@ button {
 .flex_div {
     position: relative;
     
-    width: 30%;
+    width: 36%;
 	margin-top: 0;
 }
 #footer a { 
@@ -189,15 +189,19 @@ button {
 	/*background-image:  url("../img/background4.png");*/
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-color: #555;
+	background-color: #fff;
 	box-sizing: border-box;
 	padding: 0 4% 0 5%;
+
+	box-shadow: 0 0px 26px rgba(0,0,0,0.2);
+    border-radius-left-top: 30px;
+    border-radius-right-top: 30px;
 }
 #footer ul, #footer li {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	color: #eee;
+	color: #555;
 	font-weight: 300;
 }
 #footer ul li p {
@@ -205,13 +209,13 @@ button {
     margin: 0 !important;
     padding-right: 18px;
     display: inline-block;
-    color: #eee;
+    color: #555;
     font-weight: 600 !important;
 	line-height: 0;
     font-size: 16px;
 }
 .cp {
-	color: #ddd;
+	color: #555;
 	font-weight: 300;
 	text-align: center;
 	margin: 0;
@@ -221,8 +225,8 @@ button {
 }
 
 .tablefooter{
-	padding-top: 3vw;
-    padding-bottom: 3vw;
+	padding-top: 2vw;
+    padding-bottom: 1vw;
 	width: 80%;
 }
 .bottom_text_style{
@@ -249,13 +253,13 @@ button {
 	margin-right: 2vw;
 }
 .fb {
-	background-image: url(../img/facebook_icon_w.svg);
+	background-image: url(../img/facebook_icon_g.svg);
 }
 .inst {
-	background-image: url(../img/instagram_icon_w.svg);
+	background-image: url(../img/instagram_icon_g.svg);
 }
 .tw {
-	background-image: url(../img/twitter_icon_w.svg);
+	background-image: url(../img/twitter_icon_g.svg);
 }
 .socials{
 
