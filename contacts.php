@@ -19,7 +19,7 @@
 	
 
 	$texts['en']['h1'] = 'Contact us';
-	$texts['en']['subscribe'] = 'Subscribe and get the latest news';
+	$texts['en']['subscribe_h2'] = 'Subscribe and get the latest news';
 	$texts['en']['placeholder'] = 'Your e-mail adress';
 	$texts['en']['subscribe'] = 'subscribe';
 	$texts['en']['adress'] = 'Udens iela 12, Riga, Latvia';

@@ -170,15 +170,7 @@ file_input input{
     font-size: 25px;
     padding: 6px 20px;
 }
-input[type="file" i]{
-	background-color: #fff;
-    cursor: pointer;
-    color: #00c6ff;
-    border: solid 1px #00c6ff;
-    font-size: 25px;
-    padding: 6px 20px;
-	width: 60%;
-}
+
 label, .car_info span{
 	font-family: 'Montserrat', sans-serif;
     color: #00c6ff;
@@ -203,17 +195,7 @@ input, textarea, select, button {
 select, .car_info input{
 	width: 172px;
 }
-.img_edit_block, #add_img_slot{
-	text-align: center;
-}
-#add_img_slot{
-	width: 2vw;
-	height: 8.5vw;
-	text-transform: uppercase;
-	font-size: 14px;
-	color: #00c6ff;
-    border: solid 1px #00c6ff;
-}
+
 .car_info{
 	width: 20%;
 	margin-bottom: 2vw;
@@ -243,15 +225,9 @@ select, .car_info input{
 .additional_checkbox{
 	width: 13%;
 }
-.img_edit_block, #add_img_slot {
-    display: flex;
-    justify-content: center;
-    padding: 0.5vw;
-}
-.img_edit_block{
-width: 100%;
-    flex-wrap: wrap;
-    }
+
+
+
 #btn-update, .btn-update{
 	background-color: #00c6ff;
     color: rgba(255,255,255,1);
@@ -271,18 +247,56 @@ width: 100%;
 .bottom_borders{
 	margin-bottom:3vw;
 }
-.file-upload input[type="file"]{
-	display: none;
+
+select{
+    width: 172px;
+    border: 1px solid #00c6ff;
+    width: 200px;
+    height: 25px;
+    color: #00c6ff;
+    font-family: 'Montserrat', sans-serif;
 }
-.file-upload span {
-	border: solid 1px;
-	padding: 5px;
-	border-radius: 20px;
+input[type="text" i],input[type="number" i] {
+    width: 172px;
+    border: 1px solid #00c6ff;
+    width: 200px;
+    height: 25px;
+    color: #00c6ff;
+    font-family: 'Montserrat', sans-serif;
 }
-.img_edit_block img{
-	padding-left: 2vw;
-	padding-right: 2vw;
+input[type="date" i]{
+    width: 172px;
+    border: 1px solid #00c6ff;
+    width: 200px;
+    height: 25px;
+    color: #00c6ff;
+    font-family: 'Montserrat', sans-serif;
 }
+.input_capacity{
+    width: 172px;
+    border: 1px solid #00c6ff;
+    width: 200px;
+    height: 25px;
+    color: #00c6ff;
+    font-family: 'Montserrat', sans-serif;
+}
+textarea{
+    width: 172px;
+    border: 1px solid #00c6ff;
+    width: 196px;
+    height: 50px;
+    color: #00c6ff;
+    font-family: 'Montserrat', sans-serif;
+}
+form select, form input {
+    border-radius: 20px;
+    padding: 0 7px;
+}
+
+form select:focus, form input:focus {
+    outline: none;
+}
+
 		</style>
     </head>
 
@@ -291,65 +305,8 @@ width: 100%;
 	<div align="center" style="margin-top: 6vw;">
         <form method="POST" action="editproduct.php?id=<?php echo $_GET['id']; ?>" enctype="multipart/form-data">
             <h1>EDIT</h1>
-            <div class="img_edit_block">
-                
-                <?php $imgLinks = explode(";", substr($productResult[0]['photoid'], 0, -1));print_r($imgLinks) ?>
-                
-
-                
-                <?php
-                $limit = 11;
-                $img_counter = 0;
-                
-                    foreach($imgLinks as $oneimg){
-                        ?>
-                        <div class="img_i_wrap">
-                        <div class="fake_i" >
-                            <img src='<?php echo $oneimg ?>' height='150' width='150'>
-                        </div>
-                        
-                        <!--<input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">-->
-						
-						 <label class="file-upload">
-							  <input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">
-							  <span>Choose File</span>
-						 </label>
-						
-                        </div>
-
-
-                  <?php $img_counter++; }
-                        echo "<script>var file_input_change;var have_imgs =".$img_counter."; var limit = ".$limit.";";
-
-                        $js_array = json_encode($imgLinks);
-                        echo "var links_list = ". $js_array . ";\n</script>";
-                       
-                        while( $img_counter<$limit){
-                            ?>
-
-                         <div class="img_i_wrap">
-                        <div class="fake_i" >
-                            <img src='' height='150' width='150'>
-                        </div>
-                        
-                        <!--<input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">-->
-						<label class="file-upload">
-							<input class="file_input"  type="file"  accept="image/*" name="img[]" onchange="file_input_change(event)">
-							<span>Choose File</span>
-						</label>
-						
-                        </div>
-
-                            <?php
-
-                            $img_counter++;
-                        }
-
-                ?>
-                <div id="add_img_slot">></div>
-                <input  type="hidden" name="files_del" value="" id="files_del">
-                <input  type="hidden" name="files_stay" value="" id="files_stay">
-            </div>
+            
+            <?php include "assets/img_upload.php" ?>
                     
 <table class="car_info">
 <tr>

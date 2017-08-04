@@ -17,6 +17,8 @@ a {
 }
 .properites {
 	width: 16%;
+	position: relative;
+	left: 8%;
 
 }
 .back {
@@ -41,10 +43,11 @@ a {
 
 }
 .cars_wrap{
-	width: 84%;
+	width: 76%;
 	position: relative;
 	flex-wrap: wrap;
 	-webkit-flex-wrap: wrap;
+	left: 8%;
 }
 .eqip {
 	width: 100%;
@@ -166,4 +169,7 @@ a {
 .last .imgs {
 	border-right: none; 
 	border-left: none;
+}
+#footer {
+	margin-top: 30px;
 }

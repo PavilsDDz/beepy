@@ -198,6 +198,4 @@
 <?php
 
   ?> 
-
- <?php echo $Q; ?>
  </html>

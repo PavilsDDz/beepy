@@ -399,7 +399,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
                                         $c = 1;
                                         foreach ($cars as $brand) {
                                             $select = getDataGET("brand") == $brand ? "selected" : "";
-
+                                            
                                             if(isset( $_GET['brand'])&&in_array($brand, $_GET['brand'])){
                                                 echo "<input class='checkbox1' type='checkbox' id='input_".$brand."' name='brand[]' value='".$brand."' checked='checked' onchange='launch_req()'><label class='lable1' id='labe_".$brand."' for='input_".$brand."' style='background-image:url(logos/".strtolower($brand).".png)' brand='".strtolower($brand).")'></label>";
                                             }else{
@@ -623,12 +623,17 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
                             for ($page=1; $page<=$number_of_pages; $page++){
                                 $page_link = $new[0].'&page='.$page;
 
-                                echo '<a href="'.$page_link.'">' . $page . '</a> ';
+                                if($page==$new[1]){
+                                    echo '<a style="color:#00c6ff;" >' . $page . '</a> ';
+
+                                }else{
+                                    echo '<a href="'.$page_link.'">' . $page . '</a> ';
+                                }
               
                             }?>
                                 
                             <?php
-                            if($page > $number_of_pages){
+                            if($new[1] > $number_of_pages-1){
 
                             }else{
                                 $page_link = $new[0].'&page='.($new[1]+1);

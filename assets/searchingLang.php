@@ -79,7 +79,7 @@ $texts['ru']['likes'] = 'Нравится';
     $texts['lv']['manual'] = 'mehāniskā';
     $texts['lv']['automatic'] = 'automātiskā';
     $texts['en']['countinously '] = '...';
-    $texts['lv']['semi'] = 'pusautomātiskā';
+    $texts['lv']['semi_automatic_and_dual_clutch'] = 'pusautomātiskā';
 
 // SORT
     $texts['lv']['sort'] = 'Sortēt';
@@ -166,7 +166,7 @@ $texts['ru']['likes'] = 'Нравится';
     $texts['en']['manual'] = 'manual';
     $texts['en']['automatic'] = 'automatic';
     $texts['en']['countinously '] = '...';
-    $texts['en']['semi'] = 'semi';
+    $texts['en']['semi_automatic_and_dual_clutch'] = 'semi';
 
 // SORT
     $texts['en']['sort'] = 'Sort by';
@@ -252,7 +252,7 @@ $texts['ru']['likes'] = 'Нравится';
 
     $texts['ru']['manual'] = 'механическая';
     $texts['ru']['automatic'] = 'автомат';
-    $texts['ru']['semi'] = 'семи';
+    $texts['ru']['semi_automatic_and_dual_clutch'] = 'семи';
 
 // SORT
     $texts['ru']['sort'] = 'сортировка';

@@ -511,11 +511,7 @@ $("input:checkbox").on('click', function() {
                 <br>
                 <!--<input name="submit" type="submit" value="Submit">-->
 				<!--<div class="submit_button"><button name="submit" type="submit">Submit</button></div>-->
-				<div class="upload_photo">
-                   
-                        <input type="file" name="file[]">
-                    
-                </div>
+				<?php include "assets/img_upload.php" ?>
 				<div class="submit_button"><button name="submit" type="submit">Submit</button></div>	
             </form>
 
@@ -572,4 +568,5 @@ $("input:checkbox").on('click', function() {
             <?php include"assets/footer.php" ?>
         </div>
     </body>
+    <script type="text/javascript" src='scripts/pic_uploader.js'></script>
 </html>

@@ -255,3 +255,14 @@ textarea{
 .img_inline_down{
 	margin-top: 2vw;
 }
+.img_i_wrap:nth-child(1) {
+	display: block;
+}
+form select, form input {
+	border-radius: 20px;
+	padding: 0 7px;
+}
+
+form select:focus, form input:focus {
+	outline: none;
+}

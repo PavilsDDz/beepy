@@ -3,6 +3,7 @@ $(function(){
 	function hide_imgs(h,l){
 		console.log('hide_imgs call')
 		while(h<l){
+			if (h==0) {h++}
 		console.log('hiding')
 
 			$('.img_i_wrap:eq('+h+')').css('display','none')
@@ -66,11 +67,16 @@ $(function(){
 
 			console.log(links_list/* + "THIS IS LIST OF LINKS THAT STAY"*/)
 
-			index =  $(this).parent().index() //
-			//console.log(index + "index")
+			index =  $(this).parent().parent().index() //
+			console.log(index + "index", $(this).parent().parent())
 
-			files_del.push(links_list[index-1])
-			links_list.splice(index-1,1)
+			if (links_list[index-1]==null || links_list[index-1]=='undefined') {
+			
+			}else {
+				files_del.push(links_list[index-1])
+				links_list.splice(index-1,1)
+				alert(links_list[index-1])
+			}
 
 			links_list_str = '';
 			files_del_str = '';
@@ -94,11 +100,11 @@ $(function(){
 	/* reveles hiden img inputs*/
 
 	$('#add_img_slot').click(function(){
-		if (counter<Limgs-1) {
+		if (counter<Limgs) {
 			console.log(counter)
 			counter++
-			$('.img_i_wrap:eq('+counter+')').css('display','block')
-			if (counter==Limgs-1) {
+			$('.img_i_wrap:eq('+(counter-1)+')').css('display','block')
+			if (counter==Limgs) {
 				$(this).css('opacity','0.3')
 			}
 		}else{
