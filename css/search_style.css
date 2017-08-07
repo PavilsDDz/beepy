@@ -17,7 +17,7 @@ a {
 .search_ext p {
 	font-family: 'Montserrat', sans-serif;
 	color: #939393;
-	font-size: 1vw;
+	
 	font-weight:600;
 	
 }
@@ -94,7 +94,7 @@ h3{
 	   outline: none;
    }
 #sell_search{
-	z-index: 1;
+	z-index: 3;
 	position: relative;
 	height: auto;
 }
@@ -210,11 +210,23 @@ outline: none;
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url(../img/compare.png);
+    cursor: pointer;
+	box-shadow: 0 0 5px rgba(0,0,0,0);
+	
+
+
+    transition: all ease 0.3s;
 }
+.compare_butt:hover {
+	box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+	top:-3px;
+	right: -3px;
+}
+
 .compare_box {
 	width: 250px;
 	position: fixed;
-	top: 79px;
+	top: 74px;
 	right: 0;
 	z-index: 4;
     color: #fff;
@@ -263,12 +275,17 @@ outline: none;
 #compare_link {
 }
 #compare_link div {
-	background-color: #00c6ff;
-	height: 20px;
-	line-height: 20px;
-	border-radius: 10px;
-	width: 100%;
+	background-color: #fff;
+	height: 30px;
+	line-height: 30px;
+	margin: auto;
+	border-radius: 20px;
+	width: 50%;
 	text-align: center;
+	background-image: url(../img/compare.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: auto 90%;  
 }
 .compare_content {
 	display: none;
@@ -348,10 +365,11 @@ outline: none;
 	height: 120px;
 	transition: all .5s ease;
 	cursor: pointer;
-	background-size: contain;
+	background-size: 90%;
 	background-repeat: no-repeat;
 	background-position: center center;
 	opacity: 0.5;
+	margin: 5px;
 }
 .groupLabel {
 	background-color: #00c6ff;
@@ -363,6 +381,74 @@ outline: none;
 	align-items: center;
 	-webkit-justify-content: center;
 	-webkit-align-items: center;
+}
+#brand{
+	border-left: solid 50px rgba(255 ,255 ,255 ,1);
+	border-right: solid 50px rgba(255 ,255 ,255 ,1);
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+}
+#brand .wrap {
+	position: fixed;
+	z-index: 19;
+	width: 90vw;
+	height: calc(100vh - 74px);
+	background-color: rgba(255,255,255,0.97);
+	top: 74px;
+	left: 5vw;
+	display: none;
+}
+#select_brands {
+	cursor: pointer;
+	background-color: #fff;
+	border: solid #00c6ff 2px;
+	color: #00c6ff;
+	box-sizing: border-box;
+	margin-top: 35px;
+	margin-bottom: 20px;
+
+}
+#select_brands label{
+	cursor: pointer;
+}
+.scroll_box {
+	flex-wrap: wrap;
+	justify-content: center;
+	-webkit-justify-content: center;
+}
+.brands_head {
+	width: 90%;
+	margin: auto;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	
+	align-items: baseline;
+}
+.brands_head h3{
+	margin: 0;
+	height: 40px;
+	line-height: 40px;	
+}
+.brands_head .done {
+	color: #fff;
+	background-color: #00c6ff;
+	padding: 6px 10px;
+	border-radius: 20px;
+	margin: 0 0 0 10px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+#brand input[type=checkbox]:checked + label{
+	box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.8);
+}
+.brands_container {
+	overflow-y: scroll;
+	width: 90%;
+	margin: auto;
+	height: calc(100% - 40px);
 }
 .brand_wrap {
 	
@@ -390,6 +476,7 @@ outline: none;
 	text-align: center;
 	top: 100%;
 }
+
 .inputs {
 	
 	width: calc(100% - 80px);
@@ -437,15 +524,20 @@ outline: none;
 
 .carType label {
 	display: inline-block;
-	width: 120px;
-	padding-top: 120px;
+	width: 19%;
+	padding-top: calc(4vw + 15px);
 	transition: all .5s ease;
 	cursor: pointer;
-	background-size: contain;
+	background-size: 57%;
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center  28%;
 	opacity: 0.5;
 	text-align: center;
+	position: relative;
+}
+.carType label span {
+	position: relative;
+	top: 20px;
 }
 #label_coupe {
 	background-image: url(../img/car_types/coupe_g.png);
@@ -513,7 +605,7 @@ outline: none;
 	min-width: 305px;
 }
 .range_select input {
-	width: 30%;
+	width: 24%;
 }
 
 /*SELECTED FILTERS   SELECTED FILTERS   SELECTED FILTERS   */
@@ -575,13 +667,8 @@ outline: none;
 
 
 
-#brand{
-	border-left: solid 50px rgba(255 ,255 ,255 ,1);
-	border-right: solid 50px rgba(255 ,255 ,255 ,1);
-	box-sizing: border-box;
-	position: relative;
-	overflow: hidden;
-}
+
+
 .search_ext .wrap{
 	white-space: nowrap;
 	position: relative;
@@ -593,7 +680,12 @@ outline: none;
 	margin: 30px 0 30px 0;
 	color: #555;
 }
-
+.menu {
+	display: none;
+}
+#header {
+	margin-top: 0;
+}
 @media screen and (max-width: 800px){
 .links{
 	font-size: 1.2em;

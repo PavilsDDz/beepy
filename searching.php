@@ -334,7 +334,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
                     <div class="car flex"> </div>
 
                     <div class="compare_link">
-                        <a id="compare_link" href=""><div>comp</div></a>
+                        <a id="compare_link" href=""><div></div></a>
                     </div>
 
                 </div>
@@ -374,7 +374,7 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
 
                                     foreach ($car_types as $type) { ?>
 
-                                    <input type="checkbox" id="input_<?php echo $type;?>" name="carType[]" value="<?php echo $type;?>"<?php if(isset($_GET['carType'])){if (in_array($type,$_GET['carType'])) {echo 'checked="checked"';}} ?>><label class="label2" for="input_<?php echo $type;?>" id="label_<?php echo $type;?>"><?php echo $texts[$lang][$type];?></label>
+                                    <input type="checkbox" id="input_<?php echo $type;?>" name="carType[]" value="<?php echo $type;?>"<?php if(isset($_GET['carType'])){if (in_array($type,$_GET['carType'])) {echo 'checked="checked"';}} ?>><label class="label2" for="input_<?php echo $type;?>" id="label_<?php echo $type;?>"><span><?php echo $texts[$lang][$type];?></span></label>
 
                                     <?php
                                     }
@@ -385,34 +385,55 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
             
 
                             <!--BRANDS--> 
-                            <div class="groupLabel flex"><label> <?php echo $texts[$lang]['brands'] ?> </label></div>
+                            <script type="text/javascript">
+                                $(function(){
+                                    $('#select_brands').click(function(){
+                                        $('#brand .wrap').css('display','block')
+                                    })
+                                    $('.done').click(function(){
+
+                                        $('#brand .wrap').css('display','none')
+                                    })
+                                })
+                            </script>
+                            <div class="groupLabel flex" id="select_brands"><label > <?php echo $texts[$lang]['brands'] ?> </label> </div>
 
                                 <div id="brand" class="">
                                     <div class='prev'><</div>
                                     <div class='next'>></div>
                                     <div class="wrap">
+                                    <div class="brands_head flex">
+                                        
+                                        <h3><?php echo $searchL[$lang]['brand_select'] ?></h3>
+                                        <div class="done"><?php echo $searchL[$lang]['done']; ?></div>
+                                    </div>
+                                    
+                                        <div class="brands_container flex">
+                                            <div class="scroll_box flex">
+                                            <?php
 
-                                    <?php
 
+                                                $selected = '';
+                                                $c = 1;
+                                                foreach ($cars as $brand) {
+                                                    $select = getDataGET("brand") == $brand ? "selected" : "";
 
-                                        $selected = '';
-                                        $c = 1;
-                                        foreach ($cars as $brand) {
-                                            $select = getDataGET("brand") == $brand ? "selected" : "";
-                                            
-                                            if(isset( $_GET['brand'])&&in_array($brand, $_GET['brand'])){
-                                                echo "<input class='checkbox1' type='checkbox' id='input_".$brand."' name='brand[]' value='".$brand."' checked='checked' onchange='launch_req()'><label class='lable1' id='labe_".$brand."' for='input_".$brand."' style='background-image:url(logos/".strtolower($brand).".png)' brand='".strtolower($brand).")'></label>";
-                                            }else{
-                                                echo "<input class='checkbox1' type='checkbox' id='input_".$brand."' name='brand[]' value='".$brand."' onchange='launch_req()'><label class='label1' id='labe_".$brand."' for='input_".$brand."' style='background-image:url(logos/".strtolower($brand)."_g.png)' 
-                                                brand='".strtolower($brand).")' ></label>";
-                                            }
-                                            echo"<style>#brand input[type=checkbox]:checked + #labe_".$brand." {
+                                                    if(isset( $_GET['brand'])&&in_array($brand, $_GET['brand'])){
+                                                        echo "<input class='checkbox1' type='checkbox' id='input_".$brand."' name='brand[]' value='".$brand."' checked='checked' onchange='launch_req()'><label class='lable1' id='labe_".$brand."' for='input_".$brand."' style='background-image:url(logos/".strtolower($brand).".png)' brand='".strtolower($brand).")'></label>";
+                                                    }else{
+                                                        echo "<input class='checkbox1' type='checkbox' id='input_".$brand."' name='brand[]' value='".$brand."' onchange='launch_req()'><label class='label1' id='labe_".$brand."' for='input_".$brand."' style='background-image:url(logos/".strtolower($brand)."_g.png)' 
+                                                        brand='".strtolower($brand).")' ></label>";
+                                                    }
+                                                    echo"<style>#brand input[type=checkbox]:checked + #labe_".$brand." {
 
-                                            background-image:url( logos/".strtolower($brand).".png )!important;opacity: 1;}</style>"; 
-                                            $c++;
-                                        }
+                                                    background-image:url( logos/".strtolower($brand).".png )!important;opacity: 1;}</style>"; 
+                                                    $c++;
+                                                }
 
-                                    ?>
+                                            ?>
+                                            </div>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -523,20 +544,12 @@ if (isset($_GET['search']) OR isset($_GET['brand'])) {
                             <option value="ASC"><?php echo $searchL[$lang]['orderfrom'] ?></option>
                         </select>
                         
-                        <?php if(isset($_GET["search"])){ ?>
-
+                            <label><?php echo $searchL[$lang]['per_page'] ?></label>
                             <select id="records" name="per_page"> 
-                                <option  <?php if($results_per_page == 5){ echo "selected ";} ?>value="3">3</option>
-                                <option  <?php if($results_per_page == 10){ echo "selected ";} ?>value="10">10</option>
-                                <option  <?php if($results_per_page == 20){ echo "selected ";} ?>value="20">20</option>
+                                <option  <?php if(isset($results_per_page)&&$results_per_page == 5){ echo "selected";} ?>value="3">3</option>
+                                <option  <?php if(isset($results_per_page)&&$results_per_page == 10){ echo "selected";} ?>value="10">10</option>
+                                <option  <?php if(isset($results_per_page)&&$results_per_page == 20){ echo "selected";} ?>value="20">20</option>
                             </select>
-                            
-                            <?php
-                        }else{
-
-                        }
-                        
-                        ?>
 
                         <br/>
                         <!--CHASSIS SERIAL-->

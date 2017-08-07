@@ -276,15 +276,14 @@ input[type="date" i]{
     width: 172px;
     border: 1px solid #00c6ff;
     width: 200px;
-    height: 25px;
+    height: 50px;
     color: #00c6ff;
     font-family: 'Montserrat', sans-serif;
 }
 textarea{
-    width: 172px;
+    width: 210px;
     border: 1px solid #00c6ff;
-    width: 196px;
-    height: 50px;
+    height: 150px;
     color: #00c6ff;
     font-family: 'Montserrat', sans-serif;
 }
@@ -292,7 +291,9 @@ form select, form input {
     border-radius: 20px;
     padding: 0 7px;
 }
-
+form select {
+    box-sizing: content-box;
+}
 form select:focus, form input:focus {
     outline: none;
 }
@@ -399,7 +400,7 @@ form select:focus, form input:focus {
 </tr>
 <tr>
     <td><label>Info:</label></td>
-    <td><input type="text" name="info" placeholder="info" value="<?php echo $productRow['info']; ?>"></td>
+    <td><textarea name="info"><?php echo $productRow['info']; ?></textarea></td>
 </tr>
 <tr>
     <td><label>Registration Number:</label></td>

@@ -318,14 +318,15 @@ $fb = new \Facebook\Facebook([
 label{
 	font-family: 'Montserrat', sans-serif;
 	color: white;
-	font-size: 22px;
+	font-size: 1.1em;
 	line-height: 1;
 	font-weight:500;
 	text-align: left;
 }
-form {
+.wraper form {
     padding-bottom: 20px;
 	margin-bottom: 0;
+    margin-top: 60px
 }
 input{
 	font-family: 'Montserrat', sans-serif;
@@ -356,7 +357,6 @@ input{
     width: 300px;
     height: 30px;
     border-radius: 30px;
-    padding: 23px !important;
     background-color: white;
     padding-left: 30px;
     padding-right: 30px;
@@ -389,7 +389,7 @@ form #submit input{
 	background-color: #00c6ff;
     color: rgba(255,255,255,1);
     border: none;
-    font-size: 22px;
+    font-size: 1.1em;
     height: 50px;
     width: 100%;
     padding: 10px 20px;
@@ -401,14 +401,15 @@ form #submit input{
 }
 .fb_link {
     position: relative;
-    top: 20px;
+    top: 136px;
     right: 25%;
     color: #00c6ff;
     transition: ease all 0.3s;
-    font-size: 22px;
+    font-size: 1em;
     background: white;
     padding: 10px;
     border-radius: 30px;
+    margin-top: 80px;
 }
 .fb_link:hover {
     color: #00aacc
@@ -419,7 +420,7 @@ form #submit input{
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-	margin-top: 60px;
+	
 }
 #submit {
     width: 100%;
@@ -492,7 +493,7 @@ form #submit input{
                     <table align="center">
                     <tr>
                         <td>
-                            <div id="submit" style="float:left"><input type="submit" name="submit" value="<?php echo $texts[$lang]['succErr'] ?>"></div>
+                            <div id="submit" style="float:left"><input type="submit" name="submit" value="<?php echo $texts[$lang]['reg'] ?>"></div>
                         </td>
 
                     </tr>

@@ -88,7 +88,7 @@
 			$P['id'] = $_SESSION['uid'];
 			$name = getDataFromDatabase($Q,$P);
 			?> 
-			<p><?php echo $texts_haeder[$lang]['hello']?><a href="profile.php"><b><?php echo $name['firstname'];?></b></a></p>
+			<p><?php echo $texts_haeder[$lang]['hello']?><a href="profile.php"><b style="color: #00c6ff"><?php echo $name['firstname'];?></b></a></p>
 
 			<a href = "index.php?logout"><?php echo $texts_haeder[$lang]['logout'] ?></a>
 			 
@@ -99,7 +99,7 @@
 			?>
 
 			<a class="signup" href="signup.php"><?php echo $texts_haeder[$lang]['signup'] ?></a>
-			<a href="login.php"><?php echo $texts_haeder[$lang]['login'] ?></a>
+			<a class="login" href="login.php"><?php echo $texts_haeder[$lang]['login'] ?></a>
 
 			<?php } ?>
 		</div>

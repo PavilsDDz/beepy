@@ -84,7 +84,7 @@ function dumpAndDie($data) {
     die();
 }
 
-
+ $login_error = false;
 
    if( isset($_POST['username']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -109,10 +109,13 @@ function dumpAndDie($data) {
                     }
                    
             }else{
-                echo $texts[$lang]['erre'];
+               // echo $texts[$lang]['erre'];
+                $login_error=true;
             }
         }else{
-           echo $texts[$lang]['erre'];
+         //  echo $texts[$lang]['erre'];
+                $login_error=true;
+
         }
     }
 ?>
@@ -176,7 +179,7 @@ input {
     border-left: none;
     border-top: none;
     border-bottom: 1px solid rgb(203,210,223);
-    font-size: 1vw;
+
     background-color: rgba(255,255,255,0) !important;
 	color: white;
 	margin-left: 25px;
@@ -204,7 +207,7 @@ input:focus{
 	top: 10vw;
 }
 .borders{
-    line-height: 1vw;
+ 
     color: white;
     font-weight:300; 
     margin: 5px;
@@ -275,6 +278,9 @@ input:focus{
 }
 button:focus{
     outline:none;
+}
+.error {
+    color: #fff;
 }
 .forget_pass{
 	
@@ -388,6 +394,9 @@ input {
                 <form class="forms" action="login.php<?php if (isset($_GET['dir'])&&$_GET['dir']=='sell') {echo"?dir=sell";} ?>" method="POST">
                     <p class="borders"><?php echo $texts[$lang]['uname'] ?><input type="text" name="username" class="inputs_style"/></p>
                     <p class="borders" ><?php echo $texts[$lang]['pass'] ?><input type="password" name="password" class="inputs_style"/></p>
+                    <?php if ($login_error==true) {
+                        echo "<p class='error'>".$texts[$lang]['erre']."</p>";
+                    } ?>
                     <button class="button_two"><?php echo $texts[$lang]['lgin'] ?></button>
 					
                 </form>

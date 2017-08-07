@@ -24,7 +24,7 @@
 
 	if(isset($_GET['brand'])&&!empty($_GET['brand'][0])&&$_GET['brand'][0]!=" "){
 
-		print_r($_GET['brand'])  ;
+		//print_r($_GET['brand'])  ;
 		?>
 
 		<div class="filter_group">

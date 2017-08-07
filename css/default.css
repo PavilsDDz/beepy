@@ -114,7 +114,9 @@ button {
 	background-color: #00c6ff;
 	border-radius: 20px;
 	height: 20px;
-
+}
+.login{
+	color: #00c6ff !important;
 }
 .language {
 	height: 20px;
